@@ -42,9 +42,7 @@ double Sensor::getValue() const {
 
 void Sensor::setValue(double value) {
     std::lock_guard<std::mutex> lock(mtx_);
-    double oldValue = currentValue_;
     currentValue_ = value;
-    LOG_DEBUG("Sensor", name_ + " value set: " + std::to_string(oldValue) + " -> " + std::to_string(value));
 }
 
 int Sensor::getTotalSensorCount() {

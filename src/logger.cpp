@@ -47,7 +47,7 @@ std::string LogEntry::levelToString(LogLevel lvl) {
 
 std::ostream& operator<<(std::ostream& os, const LogEntry& entry) {
     os << "[" << entry.timestamp << "] [" << LogEntry::levelToString(entry.level)
-       << "] [" << std::left << std::setw(28) << entry.source << "] " << entry.message;
+       << "] [" << std::left << std::setw(45) << entry.source << "] " << entry.message;
     return os;
 }
 
@@ -137,18 +137,13 @@ EventLogger* getGlobalLogger() {
     return g_logger;
 }
 
-void LOG_DEBUG(const std::string& source, const std::string& message) {
-    if (g_logger) g_logger->log(LogLevel::DEBUG, source, message);
-}
-
-void LOG_INFO(const std::string& source, const std::string& message) {
-    if (g_logger) g_logger->log(LogLevel::INFO, source, message);
-}
-
-void LOG_WARNING(const std::string& source, const std::string& message) {
-    if (g_logger) g_logger->log(LogLevel::WARNING, source, message);
-}
-
-void LOG_CRITICAL(const std::string& source, const std::string& message) {
-    if (g_logger) g_logger->log(LogLevel::CRITICAL, source, message);
+void log_impl(LogLevel level, const std::string& source, const std::string& file, const std::string& func, const std::string& message) {
+    if (g_logger) {
+        std::string filename = file;
+        auto pos = filename.find_last_of("/\\");
+        if (pos != std::string::npos) filename = filename.substr(pos + 1);
+        
+        std::string enhancedSource = source + " | " + filename + ":" + func;
+        g_logger->log(level, enhancedSource, message);
+    }
 }

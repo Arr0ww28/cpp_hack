@@ -116,9 +116,11 @@ public:
 void setGlobalLogger(EventLogger* logger);
 EventLogger* getGlobalLogger();
 
-void LOG_DEBUG(const std::string& source, const std::string& message);
-void LOG_INFO(const std::string& source, const std::string& message);
-void LOG_WARNING(const std::string& source, const std::string& message);
-void LOG_CRITICAL(const std::string& source, const std::string& message);
+void log_impl(LogLevel level, const std::string& source, const std::string& file, const std::string& func, const std::string& message);
+
+#define LOG_DEBUG(source, message)    log_impl(LogLevel::DEBUG, source, __FILE__, __func__, message)
+#define LOG_INFO(source, message)     log_impl(LogLevel::INFO, source, __FILE__, __func__, message)
+#define LOG_WARNING(source, message)  log_impl(LogLevel::WARNING, source, __FILE__, __func__, message)
+#define LOG_CRITICAL(source, message) log_impl(LogLevel::CRITICAL, source, __FILE__, __func__, message)
 
 #endif // LOGGER_HPP
