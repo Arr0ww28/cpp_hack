@@ -1,0 +1,30 @@
+[2026-05-26 06:46:30] [DEBUG   ] [Sensor                      ] Engine Temperature value set: 0.000000 -> 100.000000
+[2026-05-26 06:46:30] [INFO    ] [ManualInput                 ] Engine Temperature set to 100.000000
+[2026-05-26 06:46:50] [DEBUG   ] [Sensor                      ] Battery Voltage value set: 0.000000 -> 14.000000
+[2026-05-26 06:46:50] [INFO    ] [ManualInput                 ] Battery Voltage set to 14.000000
+[2026-05-26 06:46:51] [INFO    ] [AlertManager                ] LOW BATTERY cleared
+[2026-05-26 06:46:53] [DEBUG   ] [Sensor                      ] Vehicle Speed value set: 0.000000 -> 120.000000
+[2026-05-26 06:46:53] [INFO    ] [ManualInput                 ] Vehicle Speed set to 120.000000
+[2026-05-26 06:47:00] [DEBUG   ] [Sensor                      ] Tire Pressure value set: 0.000000 -> 35.000000
+[2026-05-26 06:47:00] [INFO    ] [ManualInput                 ] Tire Pressure set to 35.000000
+[2026-05-26 06:47:00] [INFO    ] [AlertManager                ] LOW TIRE PRESSURE cleared
+[2026-05-26 06:47:02] [DEBUG   ] [Sensor                      ] Door Status value set: 0.000000 -> 0.000000
+[2026-05-26 06:47:02] [INFO    ] [ManualInput                 ] Door Status set to 0.000000
+[2026-05-26 06:47:02] [DEBUG   ] [Sensor                      ] Seatbelt Status value set: 0.000000 -> 0.000000
+[2026-05-26 06:47:02] [INFO    ] [ManualInput                 ] Seatbelt Status set to 0.000000
+[2026-05-26 06:47:39] [DEBUG   ] [Sensor                      ] Engine Temperature value set: 100.000000 -> 170.000000
+[2026-05-26 06:47:39] [INFO    ] [ManualInput                 ] Engine Temperature set to 170.000000
+[2026-05-26 06:47:39] [CRITICAL] [AlertManager                ] ENGINE OVERHEAT triggered: Temperature 170.0 C exceeds 110.0 C
+[2026-05-26 06:48:15] [DEBUG   ] [Sensor                      ] Battery Voltage value set: 14.000000 -> 17.000000
+[2026-05-26 06:48:15] [INFO    ] [ManualInput                 ] Battery Voltage set to 17.000000
+[2026-05-26 06:48:20] [DEBUG   ] [Sensor                      ] Vehicle Speed value set: 120.000000 -> 170.000000
+[2026-05-26 06:48:20] [INFO    ] [ManualInput                 ] Vehicle Speed set to 170.000000
+[2026-05-26 06:48:21] [WARNING ] [AlertManager                ] OVERSPEED triggered: Speed 170.0 km/h exceeds 120.0 km/h
+[2026-05-26 06:48:23] [DEBUG   ] [Sensor                      ] Tire Pressure value set: 35.000000 -> 28.000000
+[2026-05-26 06:48:23] [INFO    ] [ManualInput                 ] Tire Pressure set to 28.000000
+[2026-05-26 06:48:29] [DEBUG   ] [Sensor                      ] Door Status value set: 0.000000 -> 1.000000
+[2026-05-26 06:48:29] [INFO    ] [ManualInput                 ] Door Status set to 1.000000
+[2026-05-26 06:48:30] [CRITICAL] [AlertManager                ] DOOR OPEN triggered: Door OPEN at 170.0 km/h (threshold: 10.0 km/h)
+[2026-05-26 06:48:30] [DEBUG   ] [Sensor                      ] Seatbelt Status value set: 0.000000 -> 1.000000
+[2026-05-26 06:48:30] [INFO    ] [ManualInput                 ] Seatbelt Status set to 1.000000
+[2026-05-26 06:48:30] [WARNING ] [AlertManager                ] SEATBELT WARNING triggered: Seatbelt UNLOCKED while moving at 170.0 km/h

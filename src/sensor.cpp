@@ -15,12 +15,10 @@ Sensor::Sensor(std::string name, SensorType type, std::string unit, double defau
     : name_(std::move(name)), type_(type), unit_(std::move(unit)), currentValue_(defaultVal)
 {
     ++totalSensorCount_;
-    LOG_INFO("Sensor", "Created sensor: " + name_);
 }
 
 Sensor::~Sensor() {
     --totalSensorCount_;
-    LOG_DEBUG("Sensor", "Destroyed sensor: " + name_);
 }
 
 std::string Sensor::getName() const {
@@ -88,7 +86,7 @@ std::ostream& operator<<(std::ostream& os, const Sensor& s) {
 // --- Derived Sensors ---
 
 EngineTemperatureSensor::EngineTemperatureSensor()
-    : Sensor("Engine Temperature", SensorType::EngineTemp, "C", 90.0) {}
+    : Sensor("Engine Temperature", SensorType::EngineTemp, "C", 0.0) {}
 
 void EngineTemperatureSensor::display() const {
     std::lock_guard<std::mutex> lock(mtx_);
@@ -112,7 +110,7 @@ bool EngineTemperatureSensor::isCritical() const {
 }
 
 BatterySensor::BatterySensor()
-    : Sensor("Battery Voltage", SensorType::BatteryVoltage, "V", 12.5) {}
+    : Sensor("Battery Voltage", SensorType::BatteryVoltage, "V", 0.0) {}
 
 void BatterySensor::display() const {
     std::lock_guard<std::mutex> lock(mtx_);
@@ -160,7 +158,7 @@ bool SpeedSensor::isCritical() const {
 }
 
 TirePressureSensor::TirePressureSensor()
-    : Sensor("Tire Pressure", SensorType::TirePressure, "PSI", 32.0) {}
+    : Sensor("Tire Pressure", SensorType::TirePressure, "PSI", 0.0) {}
 
 void TirePressureSensor::display() const {
     std::lock_guard<std::mutex> lock(mtx_);

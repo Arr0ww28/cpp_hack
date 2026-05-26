@@ -76,22 +76,17 @@ private:
     std::vector<std::string> threadNames_;
 
 public:
-    ThreadManager() {
-        LOG_INFO("ThreadManager", "ThreadManager created");
-    }
+    ThreadManager() {}
 
     ~ThreadManager() {
-        LOG_INFO("ThreadManager", "Joining all threads...");
         for (size_t i = 0; i < threads_.size(); ++i) {
             if (threads_[i].joinable()) {
                 threads_[i].join();
             }
         }
-        LOG_INFO("ThreadManager", "All threads joined successfully");
     }
 
     void start(std::function<void()> task, const std::string& name) {
-        LOG_INFO("ThreadManager", "Starting thread: " + name);
         threadNames_.push_back(name);
         threads_.emplace_back(std::move(task));
     }
@@ -102,8 +97,6 @@ public:
 };
 
 void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleStatistics& stats) {
-    LOG_INFO("ManualInput", "Manual sensor input mode entered");
-
     std::cout << "\n" << main_ansi::BOLD << "+----------------------------------------------+\n"
               << "|            MANUAL SENSOR INPUT               |\n"
               << "+----------------------------------------------+\n" << main_ansi::RESET
@@ -121,38 +114,39 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
             prompt = "  " + sensor->getName() + " (" + sensor->getUnit() + "): ";
         }
 
-        std::cout << prompt;
-        std::string input;
-        std::getline(std::cin, input);
+        while (true) {
+            std::cout << prompt;
+            std::string input;
+            std::getline(std::cin, input);
 
-        if (input.empty()) {
-            std::cout << "    (skipped, keeping current value)\n";
-            continue;
-        }
-
-        try {
-            double val = std::stod(input);
-            std::string warnMsg, errMsg;
-            
-            if (!sensor->validateInput(val, warnMsg, errMsg)) {
-                std::cout << "    " << main_ansi::RED << "[INVALID] " << errMsg << main_ansi::RESET << " (keeping previous value)\n";
-                LOG_WARNING("ManualInput", "Invalid input for " + sensor->getName() + ": " + errMsg);
-                continue;
+            if (input.empty()) {
+                std::cout << "    (skipped, keeping current value)\n";
+                break;
             }
 
-            sensor->setValue(val);
-            if (type != SensorType::DoorStatus && type != SensorType::Seatbelt) {
-                stats.recordReading(type, val);
+            try {
+                double val = std::stod(input);
+                std::string warnMsg, errMsg;
+                
+                if (!sensor->validateInput(val, warnMsg, errMsg)) {
+                    std::cout << "    " << main_ansi::RED << "[INVALID] " << errMsg << main_ansi::RESET << " Please try again.\n";
+                    continue;
+                }
+
+                sensor->setValue(val);
+                if (type != SensorType::DoorStatus && type != SensorType::Seatbelt) {
+                    stats.recordReading(type, val);
+                }
+                LOG_INFO("ManualInput", sensor->getName() + " set to " + std::to_string(val));
+                std::cout << "    " << main_ansi::GREEN << "[OK] Value accepted." << main_ansi::RESET << "\n";
+                
+                if (!warnMsg.empty()) {
+                    std::cout << "    " << main_ansi::YELLOW << "[WARNING] " << warnMsg << main_ansi::RESET << "\n";
+                }
+                break;
+            } catch (const std::exception&) {
+                std::cout << "    " << main_ansi::YELLOW << "Invalid numeric input. Please try again." << main_ansi::RESET << "\n";
             }
-            LOG_INFO("ManualInput", sensor->getName() + " set to " + std::to_string(val));
-            std::cout << "    " << main_ansi::GREEN << "[OK] Value accepted." << main_ansi::RESET << "\n";
-            
-            if (!warnMsg.empty()) {
-                std::cout << "    " << main_ansi::YELLOW << "[WARNING] " << warnMsg << main_ansi::RESET << "\n";
-            }
-        } catch (const std::exception&) {
-            std::cout << "    " << main_ansi::YELLOW << "Invalid input, keeping previous value." << main_ansi::RESET << "\n";
-            LOG_WARNING("ManualInput", "Invalid numeric input for " + sensor->getName() + ": " + input);
         }
     }
 
@@ -161,8 +155,6 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
 }
 
 void searchEventLog(EventLogger& logger) {
-    LOG_DEBUG("SearchLog", "Event log search entered");
-
     std::cout << "\n" << main_ansi::BOLD << "+----------------------------------------------+\n"
               << "|            SEARCH EVENT LOG                  |\n"
               << "+----------------------------------------------+\n" << main_ansi::RESET
@@ -225,7 +217,6 @@ int main() {
 
     std::map<std::string, std::string> config;
     int    alertInterval     = 750;
-    int    dashboardInterval = 1000;
     double engineThreshold   = 110.0;
     double batteryThreshold  = 10.0;
     double tireThreshold     = 25.0;
@@ -236,7 +227,6 @@ int main() {
     try {
         config = loadConfig("data/config.txt");
         alertInterval     = getConfigInt(config, "ALERT_CHECK_INTERVAL", 750);
-        dashboardInterval = getConfigInt(config, "DASHBOARD_REFRESH_INTERVAL", 1000);
         engineThreshold   = getConfigInt(config, "ENGINE_TEMP_CRITICAL", 110);
         batteryThreshold  = getConfigInt(config, "BATTERY_VOLTAGE_LOW", 10);
         tireThreshold     = getConfigInt(config, "TIRE_PRESSURE_LOW", 25);
@@ -310,8 +300,6 @@ int main() {
     }, "LoggerThread");
 
     // --- Dashboard logic moved to main thread ---
-
-    LOG_INFO("Main", "Entering interactive menu loop");
 
     while (g_running.load()) {
         dashboard.renderMenu();

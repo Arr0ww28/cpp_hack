@@ -106,10 +106,7 @@ void Dashboard::printDoubleSeparator(int width) {
 
 Dashboard::Dashboard(const std::vector<std::unique_ptr<Sensor>>& sensors,
                      const AlertManager& alertMgr, VehicleStatistics& stats)
-    : sensors_(sensors), alertMgr_(alertMgr), stats_(stats)
-{
-    LOG_INFO("Dashboard", "Dashboard initialized");
-}
+    : sensors_(sensors), alertMgr_(alertMgr), stats_(stats) {}
 
 std::string Dashboard::sensorTypeName(SensorType type) {
     switch (type) {
@@ -250,7 +247,6 @@ void Dashboard::printFooter(const std::string& prompt) const {
 }
 
 void Dashboard::renderLiveDashboard() const {
-    LOG_DEBUG("Dashboard", "renderLiveDashboard() called");
     std::lock_guard<std::mutex> lock(mtx_);
     clearScreen();
     printHeader("[LIVE]");
@@ -260,7 +256,6 @@ void Dashboard::renderLiveDashboard() const {
 }
 
 void Dashboard::renderActiveAlerts() const {
-    LOG_DEBUG("Dashboard", "renderActiveAlerts() called");
     std::lock_guard<std::mutex> lock(mtx_);
     clearScreen();
     printHeader("[ALERTS]");
@@ -269,7 +264,6 @@ void Dashboard::renderActiveAlerts() const {
 }
 
 void Dashboard::renderAlertHistory(size_t count) const {
-    LOG_DEBUG("Dashboard", "renderAlertHistory() called");
     std::lock_guard<std::mutex> lock(mtx_);
     clearScreen();
     printHeader("[HISTORY]");
@@ -278,7 +272,6 @@ void Dashboard::renderAlertHistory(size_t count) const {
 }
 
 void Dashboard::renderStatistics() const {
-    LOG_DEBUG("Dashboard", "renderStatistics() called");
     std::lock_guard<std::mutex> lock(mtx_);
     clearScreen();
     printDoubleSeparator();
@@ -292,7 +285,6 @@ void Dashboard::renderStatistics() const {
 }
 
 void Dashboard::renderMenu() const {
-    LOG_DEBUG("Dashboard", "renderMenu() called");
     std::lock_guard<std::mutex> lock(mtx_);
     clearScreen();
     printDoubleSeparator();

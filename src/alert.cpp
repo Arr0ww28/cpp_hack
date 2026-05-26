@@ -34,7 +34,6 @@ Alert::Alert(AlertType type, AlertSeverity severity, std::string message)
     , timestamp_(getAlertTimestamp()), active_(true)
 {
     ++totalAlertCount_;
-    LOG_INFO("Alert", "Created: [" + severityToString(severity_) + "] " + typeToString(type_) + " - " + message_);
 }
 
 // Copy constructor
@@ -42,7 +41,6 @@ Alert::Alert(const Alert& other)
     : type_(other.type_), severity_(other.severity_), message_(other.message_)
     , timestamp_(other.timestamp_), active_(other.active_)
 {
-    LOG_DEBUG("Alert", "Copy constructed: " + typeToString(type_));
 }
 
 // Copy assignment
@@ -50,7 +48,6 @@ Alert& Alert::operator=(const Alert& other) {
     if (this != &other) {
         type_ = other.type_; severity_ = other.severity_; message_ = other.message_;
         timestamp_ = other.timestamp_; active_ = other.active_;
-        LOG_DEBUG("Alert", "Copy assigned: " + typeToString(type_));
     }
     return *this;
 }
@@ -60,7 +57,6 @@ Alert::Alert(Alert&& other) noexcept
     : type_(other.type_), severity_(other.severity_), message_(std::move(other.message_))
     , timestamp_(std::move(other.timestamp_)), active_(other.active_)
 {
-    LOG_DEBUG("Alert", "Move constructed: " + typeToString(type_));
 }
 
 // Move assignment
@@ -68,7 +64,6 @@ Alert& Alert::operator=(Alert&& other) noexcept {
     if (this != &other) {
         type_ = other.type_; severity_ = other.severity_; message_ = std::move(other.message_);
         timestamp_ = std::move(other.timestamp_); active_ = other.active_;
-        LOG_DEBUG("Alert", "Move assigned: " + typeToString(type_));
     }
     return *this;
 }
@@ -81,7 +76,6 @@ bool          Alert::isActive() const      { return active_; }
 
 void Alert::deactivate() {
     active_ = false;
-    LOG_DEBUG("Alert", "Deactivated: " + typeToString(type_));
 }
 
 int Alert::getTotalAlertCount() {
@@ -122,9 +116,7 @@ bool Alert::operator==(const Alert& other) const {
     return type_ == other.type_;
 }
 
-AlertManager::AlertManager(size_t maxHistory) : maxHistory_(maxHistory) {
-    LOG_INFO("AlertManager", "Initialized with max history: " + std::to_string(maxHistory));
-}
+AlertManager::AlertManager(size_t maxHistory) : maxHistory_(maxHistory) {}
 
 bool AlertManager::isAlertActive(AlertType type) const {
     return std::any_of(activeAlerts_.begin(), activeAlerts_.end(),
@@ -136,8 +128,6 @@ void AlertManager::evaluateConditions(
     double engineThreshold, double batteryThreshold,
     double tireThreshold, double speedLimit, double doorSpeedThreshold)
 {
-    LOG_DEBUG("AlertManager", "evaluateConditions() called");
-
     double engineTemp = 0.0, batteryVolts = 0.0, speed = 0.0;
     double tirePressure = 0.0, doorStatus = 0.0, seatbeltStatus = 0.0;
 
@@ -206,15 +196,12 @@ void AlertManager::evaluateConditions(
     while (alertHistory_.size() > maxHistory_) {
         alertHistory_.pop_front();
     }
-
-    LOG_DEBUG("AlertManager", "evaluateConditions() complete — active: " + std::to_string(activeAlerts_.size()) + ", history: " + std::to_string(alertHistory_.size()));
 }
 
 void AlertManager::addAlert(std::shared_ptr<Alert> alert) {
     std::lock_guard<std::mutex> lock(mtx_);
     activeAlerts_.push_back(alert);
     alertHistory_.push_back(alert);
-    LOG_DEBUG("AlertManager", "addAlert(): " + Alert::typeToString(alert->getType()));
     while (alertHistory_.size() > maxHistory_) alertHistory_.pop_front();
 }
 
@@ -222,7 +209,6 @@ void AlertManager::clearAlert(AlertType type) {
     std::lock_guard<std::mutex> lock(mtx_);
     activeAlerts_.erase(std::remove_if(activeAlerts_.begin(), activeAlerts_.end(),
         [type](const std::shared_ptr<Alert>& a) { return a->getType() == type; }), activeAlerts_.end());
-    LOG_DEBUG("AlertManager", "clearAlert(): " + Alert::typeToString(type));
 }
 
 void AlertManager::clearAllAlerts() {
