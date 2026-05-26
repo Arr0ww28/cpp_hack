@@ -13,9 +13,11 @@ SRCDIR    = src
 BUILDDIR  = build
 TARGET    = vehicle_monitor
 
-# Module 1: Only sensor.cpp and main.cpp for now.
-# Additional modules will be added as they are implemented.
+# All source modules
 SOURCES   = $(SRCDIR)/sensor.cpp \
+            $(SRCDIR)/logger.cpp \
+            $(SRCDIR)/alert.cpp \
+            $(SRCDIR)/dashboard.cpp \
             $(SRCDIR)/main.cpp
 
 OBJECTS   = $(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SOURCES))

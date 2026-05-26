@@ -1,0 +1,81 @@
+#!/bin/bash
+# ==============================================================================
+# slog — Smart Log Viewer for Vehicle Health Monitor
+# ==============================================================================
+#
+# Usage:
+#   ./slog                        Show all logs
+#   ./slog sensor                 Filter logs containing "sensor" (case-insensitive)
+#   ./slog CRITICAL               Show only CRITICAL entries
+#   ./slog "ENGINE OVERHEAT"      Search for a phrase
+#   ./slog | grep "pattern"       Pipe to grep for custom filtering
+#   ./slog -f                     Follow log in real-time (like tail -f)
+#   ./slog -n 50                  Show last 50 lines
+#   ./slog --clear                Clear the log file
+#
+# ==============================================================================
+
+LOG_FILE="logs/vehicle_logs.txt"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_PATH="${SCRIPT_DIR}/${LOG_FILE}"
+
+# Color codes
+RED='\033[31m'
+YELLOW='\033[33m'
+GREEN='\033[32m'
+BOLD='\033[1m'
+RESET='\033[0m'
+
+# Check if log file exists
+if [ ! -f "$LOG_PATH" ]; then
+    echo -e "${YELLOW}[slog] No log file found at: ${LOG_PATH}${RESET}"
+    echo "  Run ./vehicle_monitor first to generate logs."
+    exit 1
+fi
+
+# Parse arguments
+case "${1}" in
+    -f|--follow)
+        echo -e "${BOLD}[slog] Following log file (Ctrl+C to stop)...${RESET}"
+        tail -f "$LOG_PATH"
+        ;;
+    -n)
+        COUNT="${2:-20}"
+        echo -e "${BOLD}[slog] Last ${COUNT} log entries:${RESET}"
+        echo "--------------------------------------------------------------"
+        tail -n "$COUNT" "$LOG_PATH"
+        ;;
+    --clear)
+        echo -e "${YELLOW}[slog] Clearing log file...${RESET}"
+        > "$LOG_PATH"
+        echo -e "${GREEN}[slog] Log file cleared.${RESET}"
+        ;;
+    --help|-h)
+        echo "slog — Smart Log Viewer for Vehicle Health Monitor"
+        echo ""
+        echo "Usage:"
+        echo "  slog                     Show all logs"
+        echo "  slog <keyword>           Filter by keyword (case-insensitive)"
+        echo "  slog -f                  Follow in real-time (tail -f)"
+        echo "  slog -n <count>          Show last N lines"
+        echo "  slog --clear             Clear the log file"
+        echo "  slog | grep <pattern>    Pipe to grep"
+        echo ""
+        echo "Examples:"
+        echo "  slog sensor              Show all sensor-related logs"
+        echo "  slog CRITICAL            Show only critical alerts"
+        echo "  slog \"ENGINE\"            Search for engine entries"
+        echo "  slog -n 30               Show last 30 entries"
+        ;;
+    "")
+        # No arguments — show all logs
+        cat "$LOG_PATH"
+        ;;
+    *)
+        # Keyword filter (case-insensitive grep)
+        MATCHES=$(grep -ic "$1" "$LOG_PATH" 2>/dev/null)
+        echo -e "${BOLD}[slog] Filter: '${1}' — ${MATCHES} matches${RESET}"
+        echo "--------------------------------------------------------------"
+        grep -i --color=auto "$1" "$LOG_PATH"
+        ;;
+esac
