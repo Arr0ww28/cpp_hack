@@ -1,0 +1,34 @@
+# ==============================================================================
+# Smart Cabin & Vehicle Health Monitor — Configuration
+# ==============================================================================
+# Format: KEY=VALUE (no spaces around '=')
+# Lines starting with '#' are comments and are ignored.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Input Mode
+# ------------------------------------------------------------------------------
+# 0 = Simulation mode (sensors auto-generate values via RNG)
+# 1 = Manual input mode (user enters sensor values via CLI for debugging)
+MANUAL_INPUT_MODE=0
+
+# ------------------------------------------------------------------------------
+# Update Intervals (milliseconds)
+# ------------------------------------------------------------------------------
+SENSOR_UPDATE_INTERVAL=500
+ALERT_CHECK_INTERVAL=750
+DASHBOARD_REFRESH_INTERVAL=1000
+
+# ------------------------------------------------------------------------------
+# Alert Thresholds
+# ------------------------------------------------------------------------------
+ENGINE_TEMP_CRITICAL=110
+BATTERY_VOLTAGE_LOW=10
+TIRE_PRESSURE_LOW=25
+SPEED_LIMIT=120
+DOOR_SPEED_THRESHOLD=10
+
+# ------------------------------------------------------------------------------
+# History Limits
+# ------------------------------------------------------------------------------
+MAX_ALERT_HISTORY=100
