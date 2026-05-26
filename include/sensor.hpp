@@ -39,6 +39,7 @@ public:
 
     // Manually set the sensor reading
     void setValue(double value);
+    virtual bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const;
 
     static int getTotalSensorCount();
 
@@ -52,6 +53,7 @@ public:
     void display() const override;
     std::string getFormattedValue() const override;
     bool isCritical() const override;
+    bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
 // Battery voltage sensor
@@ -61,6 +63,7 @@ public:
     void display() const override;
     std::string getFormattedValue() const override;
     bool isCritical() const override;
+    bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
 // Vehicle speed sensor
@@ -70,6 +73,7 @@ public:
     void display() const override;
     std::string getFormattedValue() const override;
     bool isCritical() const override;
+    bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
 // Tire pressure sensor
@@ -79,6 +83,7 @@ public:
     void display() const override;
     std::string getFormattedValue() const override;
     bool isCritical() const override;
+    bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
 // Door status sensor
@@ -88,6 +93,7 @@ public:
     void display() const override;
     std::string getFormattedValue() const override;
     bool isCritical() const override;
+    bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
 // Seatbelt status sensor
@@ -97,6 +103,7 @@ public:
     void display() const override;
     std::string getFormattedValue() const override;
     bool isCritical() const override;
+    bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
 #endif // SENSOR_HPP

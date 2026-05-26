@@ -132,15 +132,27 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
 
         try {
             double val = std::stod(input);
+            std::string warnMsg, errMsg;
+            
+            if (!sensor->validateInput(val, warnMsg, errMsg)) {
+                std::cout << "    " << main_ansi::RED << "[INVALID] " << errMsg << main_ansi::RESET << " (keeping previous value)\n";
+                LOG_WARNING("ManualInput", "Invalid input for " + sensor->getName() + ": " + errMsg);
+                continue;
+            }
+
             sensor->setValue(val);
             if (type != SensorType::DoorStatus && type != SensorType::Seatbelt) {
                 stats.recordReading(type, val);
             }
             LOG_INFO("ManualInput", sensor->getName() + " set to " + std::to_string(val));
-            std::cout << "    " << main_ansi::GREEN << "OK" << main_ansi::RESET << "\n";
+            std::cout << "    " << main_ansi::GREEN << "[OK] Value accepted." << main_ansi::RESET << "\n";
+            
+            if (!warnMsg.empty()) {
+                std::cout << "    " << main_ansi::YELLOW << "[WARNING] " << warnMsg << main_ansi::RESET << "\n";
+            }
         } catch (const std::exception&) {
             std::cout << "    " << main_ansi::YELLOW << "Invalid input, keeping previous value." << main_ansi::RESET << "\n";
-            LOG_WARNING("ManualInput", "Invalid input for " + sensor->getName() + ": " + input);
+            LOG_WARNING("ManualInput", "Invalid numeric input for " + sensor->getName() + ": " + input);
         }
     }
 
@@ -297,22 +309,7 @@ int main() {
         LOG_INFO("LoggerThread", "Logger processing thread stopped");
     }, "LoggerThread");
 
-    // --- Thread 3: Dashboard Auto-Refresh ---
-    std::atomic<bool> liveViewActive{false};
-    threadMgr.start([&]() {
-        LOG_INFO("DashboardThread", "Dashboard refresh thread started");
-        while (g_running.load()) {
-            if (liveViewActive.load()) {
-                try {
-                    dashboard.renderLiveDashboard();
-                } catch (const std::exception& e) {
-                    LOG_CRITICAL("DashboardThread", std::string("Exception: ") + e.what());
-                }
-            }
-            std::this_thread::sleep_for(std::chrono::milliseconds(dashboardInterval));
-        }
-        LOG_INFO("DashboardThread", "Dashboard refresh thread stopped");
-    }, "DashboardThread");
+    // --- Dashboard logic moved to main thread ---
 
     LOG_INFO("Main", "Entering interactive menu loop");
 
@@ -331,10 +328,9 @@ int main() {
 
         switch (input[0]) {
             case '1':
-                liveViewActive.store(true);
                 dashboard.renderLiveDashboard();
+                std::cout << "\nPress Enter to return to menu...";
                 std::getline(std::cin, input);
-                liveViewActive.store(false);
                 break;
             case '2':
                 dashboard.renderActiveAlerts();

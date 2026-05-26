@@ -224,3 +224,63 @@ bool SeatbeltSensor::isCritical() const {
     std::lock_guard<std::mutex> lock(mtx_);
     return currentValue_ >= 1.0;
 }
+
+bool Sensor::validateInput(double /*value*/, std::string& /*warningMsg*/, std::string& /*errorMsg*/) const {
+    return true;
+}
+
+bool EngineTemperatureSensor::validateInput(double value, std::string& /*warningMsg*/, std::string& errorMsg) const {
+    if (value < -50.0 || value > 200.0) {
+        errorMsg = "Invalid temperature. Must be between -50 C and 200 C.";
+        return false;
+    }
+    return true;
+}
+
+bool BatterySensor::validateInput(double value, std::string& warningMsg, std::string& errorMsg) const {
+    if (value < 0.0 || value > 20.0) {
+        errorMsg = "Invalid voltage. Must be between 0 V and 20 V.";
+        return false;
+    }
+    if (value < 13.5) {
+        warningMsg = "Low battery voltage.";
+    } else if (value > 15.0) {
+        warningMsg = "High battery voltage.";
+    }
+    return true;
+}
+
+bool SpeedSensor::validateInput(double value, std::string& /*warningMsg*/, std::string& errorMsg) const {
+    if (value < 0.0 || value > 300.0) {
+        errorMsg = "Invalid speed. Must be between 0 and 300 km/h.";
+        return false;
+    }
+    return true;
+}
+
+bool TirePressureSensor::validateInput(double value, std::string& warningMsg, std::string& errorMsg) const {
+    if (value < 0.0 || value > 50.0) {
+        errorMsg = "Invalid tire pressure. Must be between 0 and 50 PSI.";
+        return false;
+    }
+    if (value > 40.0) {
+        warningMsg = "High tire pressure detected.";
+    }
+    return true;
+}
+
+bool DoorSensor::validateInput(double value, std::string& /*warningMsg*/, std::string& errorMsg) const {
+    if (value != 0.0 && value != 1.0) {
+        errorMsg = "Invalid door status. Must be exactly 0 (CLOSED) or 1 (OPEN).";
+        return false;
+    }
+    return true;
+}
+
+bool SeatbeltSensor::validateInput(double value, std::string& /*warningMsg*/, std::string& errorMsg) const {
+    if (value != 0.0 && value != 1.0) {
+        errorMsg = "Invalid seatbelt status. Must be exactly 0 (LOCKED) or 1 (UNLOCKED).";
+        return false;
+    }
+    return true;
+}
