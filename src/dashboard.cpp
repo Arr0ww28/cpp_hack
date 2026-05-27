@@ -305,3 +305,34 @@ void Dashboard::renderMenu() const {
     printDoubleSeparator();
     std::cout << "Enter choice [1-7]: " << std::flush;
 }
+
+void Dashboard::logSensorSnapshot() const {
+    std::lock_guard<std::mutex> lock(mtx_);
+    std::ostringstream oss;
+    oss << "--- SENSOR SNAPSHOT ---";
+    for (const auto& sensor : sensors_) {
+        oss << " | " << sensor->getName() << ": " << sensor->getFormattedValue();
+        if (sensor->isCritical()) oss << " [!]";
+    }
+    LOG_INFO("Dashboard", oss.str());
+}
+
+void Dashboard::logAlertSnapshot() const {
+    std::lock_guard<std::mutex> lock(mtx_);
+    auto alerts = alertMgr_.getActiveAlerts();
+    std::ostringstream oss;
+    oss << "--- ALERT SNAPSHOT --- Active: " << alerts.size();
+    for (const auto& alert : alerts) {
+        oss << " | [" << Alert::severityToString(alert->getSeverity()) << "] "
+            << Alert::typeToString(alert->getType()) << " - " << alert->getMessage();
+    }
+    if (alerts.empty()) oss << " | All systems nominal";
+    LOG_INFO("Dashboard", oss.str());
+}
+
+void Dashboard::logStatisticsSnapshot() const {
+    std::lock_guard<std::mutex> lock(mtx_);
+    std::ostringstream oss;
+    oss << "--- STATISTICS SNAPSHOT ---\n" << stats_;
+    LOG_INFO("Dashboard", oss.str());
+}

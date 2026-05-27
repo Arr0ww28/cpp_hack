@@ -76,6 +76,11 @@ public:
     void renderAlertHistory(size_t count = 20) const;
     void renderStatistics() const;
     void renderMenu() const;
+
+    // File logging — routes dashboard data through the global EventLogger
+    void logSensorSnapshot() const;
+    void logAlertSnapshot() const;
+    void logStatisticsSnapshot() const;
 };
 
 #endif // DASHBOARD_HPP

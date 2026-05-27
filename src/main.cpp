@@ -331,11 +331,14 @@ int main() {
         switch (input[0]) {
             case '1':
                 dashboard.renderLiveDashboard();
+                dashboard.logSensorSnapshot();
+                dashboard.logAlertSnapshot();
                 std::cout << "\nPress Enter to return to menu...";
                 std::getline(std::cin, input);
                 break;
             case '2':
                 dashboard.renderActiveAlerts();
+                dashboard.logAlertSnapshot();
                 std::getline(std::cin, input);
                 break;
             case '3':
@@ -344,6 +347,7 @@ int main() {
                 break;
             case '4':
                 dashboard.renderStatistics();
+                dashboard.logStatisticsSnapshot();
                 std::getline(std::cin, input);
                 break;
             case '5':
