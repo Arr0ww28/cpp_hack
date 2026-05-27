@@ -55,7 +55,7 @@ EventLogger::EventLogger(const std::string& filePath)
     : logFilePath_(filePath), fileOpen_(false)
 {
     try {
-        logFile_.open(filePath, std::ios::out | std::ios::app);
+        logFile_.open(filePath, std::ios::out | std::ios::trunc);
         if (logFile_.is_open()) {
             fileOpen_ = true;
             logFile_ << "\n================================================================\n"
