@@ -28,6 +28,7 @@ namespace main_ansi {
 }
 
 static std::atomic<bool> g_running{true};
+static std::atomic<bool> g_sensorsInitialized{false};
 
 void signalHandler(int /*signum*/) {
     g_running.store(false);
@@ -150,6 +151,7 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
         }
     }
 
+    g_sensorsInitialized.store(true);
     std::cout << "\n" << main_ansi::GREEN << "Values updated. Returning to menu..." << main_ansi::RESET << "\n";
     std::this_thread::sleep_for(std::chrono::seconds(1));
 }
@@ -274,6 +276,10 @@ int main() {
     threadMgr.start([&]() {
         LOG_INFO("MonitorThread", "Alert monitoring thread started");
         while (g_running.load()) {
+            if (!g_sensorsInitialized.load()) {
+                std::this_thread::sleep_for(std::chrono::milliseconds(alertInterval));
+                continue;
+            }
             try {
                 alertMgr.evaluateConditions(sensors, engineThreshold, batteryThreshold, tireThreshold, speedLimit, doorSpeedThreshold);
             } catch (const std::exception& e) {
