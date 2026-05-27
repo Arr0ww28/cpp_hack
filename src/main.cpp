@@ -71,6 +71,14 @@ int getConfigInt(const std::map<std::string, std::string>& config, const std::st
     return defaultVal;
 }
 
+double getConfigDouble(const std::map<std::string, std::string>& config, const std::string& key, double defaultVal) {
+    auto it = config.find(key);
+    if (it != config.end()) {
+        try { return std::stod(it->second); } catch (const std::exception&) {}
+    }
+    return defaultVal;
+}
+
 class ThreadManager {
 private:
     std::vector<std::thread> threads_;
@@ -220,7 +228,7 @@ int main() {
     std::map<std::string, std::string> config;
     int    alertInterval     = 750;
     double engineThreshold   = 110.0;
-    double batteryThreshold  = 10.0;
+    double batteryThreshold  = 11;
     double tireThreshold     = 25.0;
     double speedLimit        = 120.0;
     double doorSpeedThreshold = 10.0;
@@ -229,11 +237,11 @@ int main() {
     try {
         config = loadConfig("data/config.txt");
         alertInterval     = getConfigInt(config, "ALERT_CHECK_INTERVAL", 750);
-        engineThreshold   = getConfigInt(config, "ENGINE_TEMP_CRITICAL", 110);
-        batteryThreshold  = getConfigInt(config, "BATTERY_VOLTAGE_LOW", 10);
-        tireThreshold     = getConfigInt(config, "TIRE_PRESSURE_LOW", 25);
-        speedLimit        = getConfigInt(config, "SPEED_LIMIT", 120);
-        doorSpeedThreshold = getConfigInt(config, "DOOR_SPEED_THRESHOLD", 10);
+        engineThreshold   = getConfigDouble(config, "ENGINE_TEMP_CRITICAL", 110.0);
+        batteryThreshold  = getConfigDouble(config, "BATTERY_VOLTAGE_LOW", 11);
+        tireThreshold     = getConfigDouble(config, "TIRE_PRESSURE_LOW", 25.0);
+        speedLimit        = getConfigDouble(config, "SPEED_LIMIT", 120.0);
+        doorSpeedThreshold = getConfigDouble(config, "DOOR_SPEED_THRESHOLD", 10.0);
         maxAlertHistory   = getConfigInt(config, "MAX_ALERT_HISTORY", 100);
 
         LOG_INFO("Main", "Configuration loaded from data/config.txt");
