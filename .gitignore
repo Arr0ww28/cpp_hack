@@ -1,0 +1,4 @@
+build/
+vehicle_monitor
+logs/vehicle_logs.txt
+*.o
