@@ -294,13 +294,13 @@ void Dashboard::renderMenu() const {
               << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
     printDoubleSeparator();
     std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n"
-              << "|   [1] Live Dashboard              (auto-refreshing sensor view)|\n"
-              << "|   [2] View Active Alerts             (current warnings/criticals)\n"
-              << "|   [3] View Alert History             (last 20 alerts with time)  |\n"
-              << "|   [4] View Statistics             (min / max / avg per sensor) |\n"
-              << "|   [5] Search Event Log             (filter by severity/keyword) |\n"
-              << "|   [6] Manual Sensor Input                (set values for debug)  |\n"
-              << "|   [7] Exit                                 (graceful shutdown) |\n"
+              << "|   [1] Live Dashboard      (auto-refreshing sensor view)      |\n"
+              << "|   [2] View Active Alerts     (current warnings/criticals     |\n"
+              << "|   [3] View Alert History     (last 20 alerts with time)      |\n"
+              << "|   [4] View Statistics     (min / max / avg per sensor)       |\n"
+              << "|   [5] Search Event Log     (filter by severity/keyword)      |\n"
+              << "|   [6] Manual Sensor Input        (set values for debug)      |\n"
+              << "|   [7] Exit                         (graceful shutdown)       |\n"
               << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
     printDoubleSeparator();
     std::cout << "Enter choice [1-7]: " << std::flush;
