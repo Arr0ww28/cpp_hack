@@ -23,6 +23,9 @@ void VehicleStatistics::recordReading(SensorType type, double value) {
     if (minValues_.find(type) == minValues_.end() || value < minValues_[type]) minValues_[type] = value;
     avgAccumulators_[type] += value;
     sampleCounts_[type]++;
+    auto& hist = historyValues_[type];
+    hist.push_back(value);
+    if (hist.size() > HISTORY_SIZE) hist.pop_front();
 }
 
 double VehicleStatistics::getMax(SensorType type) const {
@@ -54,6 +57,13 @@ int VehicleStatistics::getSampleCount(SensorType type) const {
 bool VehicleStatistics::hasData(SensorType type) const {
     std::lock_guard<std::mutex> lock(mtx_);
     return sampleCounts_.find(type) != sampleCounts_.end();
+}
+
+std::deque<double> VehicleStatistics::getHistory(SensorType type) const {
+    std::lock_guard<std::mutex> lock(mtx_);
+    auto it = historyValues_.find(type);
+    if (it != historyValues_.end()) return it->second;
+    return {};
 }
 
 std::ostream& operator<<(std::ostream& os, const VehicleStatistics& stats) {
@@ -271,6 +281,77 @@ void Dashboard::printStatisticsTable() const {
               << std::string(TABLE_WIDTH - 50 - std::to_string(Alert::getTotalAlertCount()).size(), ' ') << "|\n";
 }
 
+void Dashboard::printSparklines() const {
+    const std::string blocks[] = {"\u2581", "\u2582", "\u2583", "\u2584", "\u2585", "\u2586", "\u2587", "\u2588"};
+    const int GRAPH_WIDTH = 40;
+
+    printDoubleSeparator();
+    std::string title = "PERFORMANCE TREND (Last 20 Readings)";
+    int pad = (TABLE_WIDTH - static_cast<int>(title.size())) / 2;
+    std::cout << "|" << dash_ansi::BOLD << std::string(pad, ' ') << title
+              << std::string(TABLE_WIDTH - pad - static_cast<int>(title.size()), ' ')
+              << dash_ansi::RESET << "|\n";
+    printSeparator();
+
+    auto drawSensor = [&](SensorType type, const std::string& name, const std::string& unit) {
+        auto history = stats_.getHistory(type);
+
+        std::string label = name + " (" + unit + ")";
+        std::cout << "|  " << dash_ansi::BOLD << std::left << std::setw(TABLE_WIDTH - 3) << label
+                  << dash_ansi::RESET << "|\n";
+
+        if (history.empty()) {
+            std::string noData = "  (no readings recorded)";
+            std::cout << "|" << noData << std::string(TABLE_WIDTH - noData.size(), ' ') << "|\n";
+            std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
+            return;
+        }
+
+        double lo = *std::min_element(history.begin(), history.end());
+        double hi = *std::max_element(history.begin(), history.end());
+        double range = hi - lo;
+        if (range < 0.001) range = 1.0;
+
+        std::string spark;
+        int charCount = 0;
+        for (double v : history) {
+            int level = static_cast<int>(((v - lo) / range) * 7.0);
+            if (level < 0) level = 0;
+            if (level > 7) level = 7;
+            spark += blocks[level];
+            charCount++;
+        }
+        for (int i = charCount; i < GRAPH_WIDTH; i++) {
+            spark += "\u00B7";
+            charCount++;
+        }
+
+        std::string prefix = "  ";
+        int rem = TABLE_WIDTH - static_cast<int>(prefix.size()) - charCount;
+        std::cout << "|" << prefix << dash_ansi::GREEN << spark << dash_ansi::RESET;
+        if (rem > 0) std::cout << std::string(rem, ' ');
+        std::cout << "|\n";
+
+        std::ostringstream loStr, hiStr;
+        loStr << std::fixed << std::setprecision(1) << lo << " " << unit;
+        hiStr << std::fixed << std::setprecision(1) << hi << " " << unit;
+        std::string scaleLeft = "  " + loStr.str();
+        std::string scaleRight = hiStr.str();
+        int gap = TABLE_WIDTH - static_cast<int>(scaleLeft.size()) - static_cast<int>(scaleRight.size());
+        if (gap < 1) gap = 1;
+        std::cout << "|" << scaleLeft << std::string(gap, ' ') << scaleRight << "|\n";
+
+        std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
+    };
+
+    std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
+    drawSensor(SensorType::EngineTemp,     "Engine Temperature", "C");
+    drawSensor(SensorType::BatteryVoltage, "Battery Voltage",    "V");
+    drawSensor(SensorType::VehicleSpeed,   "Vehicle Speed",      "km/h");
+    drawSensor(SensorType::TirePressure,   "Tire Pressure",      "PSI");
+    printSeparator();
+}
+
 void Dashboard::printFooter(const std::string& prompt) const {
     printDoubleSeparator();
     int padding = (TABLE_WIDTH - static_cast<int>(prompt.size())) / 2;
@@ -314,6 +395,7 @@ void Dashboard::renderStatistics() const {
               << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
     printDoubleSeparator();
     printStatisticsTable();
+    printSparklines();
     printFooter("Press [Enter] to return to menu");
 }
 

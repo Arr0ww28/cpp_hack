@@ -6,6 +6,7 @@
 
 #include <string>
 #include <vector>
+#include <deque>
 #include <map>
 #include <memory>
 #include <mutex>
@@ -15,13 +16,15 @@
 #include <chrono>
 #include <ctime>
 
-// Tracks min/max/avg for sensors
+// Tracks min/max/avg and rolling history for sensors
 class VehicleStatistics {
 private:
+    static constexpr size_t HISTORY_SIZE = 20;
     std::map<SensorType, double> maxValues_;
     std::map<SensorType, double> minValues_;
     std::map<SensorType, double> avgAccumulators_;
     std::map<SensorType, int>    sampleCounts_;
+    std::map<SensorType, std::deque<double>> historyValues_;
     mutable std::mutex mtx_;
 
 public:
@@ -34,6 +37,7 @@ public:
     double getAvg(SensorType type) const;
     int getSampleCount(SensorType type) const;
     bool hasData(SensorType type) const;
+    std::deque<double> getHistory(SensorType type) const;
 
     friend std::ostream& operator<<(std::ostream& os, const VehicleStatistics& stats);
 };
@@ -62,6 +66,7 @@ private:
     void printActiveAlerts() const;
     void printAlertHistorySection(size_t count = 10) const;
     void printStatisticsTable() const;
+    void printSparklines() const;
     void printFooter(const std::string& prompt = "Press [Enter] to return to menu") const;
 
     static std::string sensorTypeName(SensorType type);
