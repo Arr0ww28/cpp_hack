@@ -8,6 +8,7 @@
 #include <ctime>
 #include <algorithm>
 #include <limits>
+#include <queue>
 
 namespace dash_ansi {
     const std::string GREEN  = "\033[32m";
@@ -196,6 +197,15 @@ void Dashboard::printSensorTable() const {
     printSeparator();
 }
 
+struct AlertPriorityCmp {
+    bool operator()(const std::shared_ptr<Alert>& a, const std::shared_ptr<Alert>& b) const {
+        if (a->getSeverity() != b->getSeverity()) {
+            return static_cast<int>(a->getSeverity()) < static_cast<int>(b->getSeverity());
+        }
+        return a->getTimestamp() > b->getTimestamp();
+    }
+};
+
 void Dashboard::printActiveAlerts() const {
     auto alerts = alertMgr_.getActiveAlerts();
     std::cout << "| " << dash_ansi::BOLD << "ACTIVE ALERTS (" << alerts.size() << ")"
@@ -205,7 +215,15 @@ void Dashboard::printActiveAlerts() const {
     if (alerts.empty()) {
         std::cout << "| " << green("No active alerts — all systems nominal") << std::string(1, ' ') << "|\n";
     } else {
+        std::priority_queue<std::shared_ptr<Alert>, std::vector<std::shared_ptr<Alert>>, AlertPriorityCmp> pq;
         for (const auto& alert : alerts) {
+            pq.push(alert);
+        }
+
+        while (!pq.empty()) {
+            auto alert = pq.top();
+            pq.pop();
+            
             std::string rawMsg = "[" + Alert::severityToString(alert->getSeverity()) + "] " + Alert::typeToString(alert->getType()) + " - " + alert->getMessage();
             std::string color = (alert->getSeverity() == AlertSeverity::CRITICAL) ? dash_ansi::RED : (alert->getSeverity() == AlertSeverity::WARNING) ? dash_ansi::YELLOW : dash_ansi::GREEN;
 

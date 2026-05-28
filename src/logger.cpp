@@ -36,6 +36,19 @@ LogEntry& LogEntry::operator=(LogEntry&& other) noexcept {
     return *this;
 }
 
+bool LogEntry::operator<(const LogEntry& other) const {
+    // std::priority_queue is a max-heap. 
+    // We want higher severity (CRITICAL) to pop first.
+    // If severity is the same, we compare timestamps (lexicographical comparison works for HH:MM:SS)
+    // Wait, we want the EARLIER timestamp to pop first if severity is the same.
+    // So if this->timestamp > other.timestamp, then this is "less" priority.
+    if (this->level != other.level) {
+        return static_cast<int>(this->level) < static_cast<int>(other.level);
+    }
+    // Same level, earlier timestamp should have higher priority
+    return this->timestamp > other.timestamp;
+}
+
 std::string LogEntry::levelToString(LogLevel lvl) {
     switch (lvl) {
         case LogLevel::DEBUG:    return "DEBUG   ";

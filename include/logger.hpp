@@ -37,13 +37,14 @@ struct LogEntry {
 
     static std::string levelToString(LogLevel lvl);
     friend std::ostream& operator<<(std::ostream& os, const LogEntry& entry);
+    bool operator<(const LogEntry& other) const;
 };
 
-// Thread-safe FIFO queue
+// Thread-safe Priority queue
 template<typename T>
 class ThreadSafeQueue {
 private:
-    std::queue<T>           queue_;
+    std::priority_queue<T>  queue_;
     mutable std::mutex      mtx_;
     std::condition_variable cv_;
 
@@ -59,7 +60,7 @@ public:
     bool tryPop(T& item) {
         std::lock_guard<std::mutex> lock(mtx_);
         if (queue_.empty()) return false;
-        item = std::move(queue_.front());
+        item = std::move(const_cast<T&>(queue_.top()));
         queue_.pop();
         return true;
     }
@@ -68,7 +69,7 @@ public:
         std::unique_lock<std::mutex> lock(mtx_);
         cv_.wait(lock, [&]() { return !queue_.empty() || !running.load(); });
         if (!running.load() && queue_.empty()) return false;
-        item = std::move(queue_.front());
+        item = std::move(const_cast<T&>(queue_.top()));
         queue_.pop();
         return true;
     }
