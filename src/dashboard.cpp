@@ -146,7 +146,43 @@ void Dashboard::printSensorTable() const {
     std::cout << "| " << dash_ansi::BOLD << std::left << std::setw(22) << "SENSOR"
               << "| " << std::setw(14) << "VALUE" << "| " << std::setw(23) << "STATUS" << dash_ansi::RESET << "|\n";
     printSeparator();
-    for (const auto& sensor : sensors_) std::cout << *sensor << "\n";
+    for (const auto& sensor : sensors_) {
+        bool hasAlert = false;
+        std::string statusStr = "[NORMAL] ";
+        std::string color = dash_ansi::GREEN;
+
+        switch (sensor->getType()) {
+            case SensorType::EngineTemp:     
+                hasAlert = alertMgr_.isAlertActive(AlertType::ENGINE_OVERHEAT); 
+                if(hasAlert) { statusStr = "[CRITICAL]"; color = dash_ansi::RED; }
+                break;
+            case SensorType::BatteryVoltage: 
+                hasAlert = alertMgr_.isAlertActive(AlertType::LOW_BATTERY) || alertMgr_.isAlertActive(AlertType::HIGH_BATTERY); 
+                if(hasAlert) { statusStr = "[WARNING]"; color = dash_ansi::YELLOW; }
+                break;
+            case SensorType::VehicleSpeed:   
+                hasAlert = alertMgr_.isAlertActive(AlertType::OVERSPEED); 
+                if(hasAlert) { statusStr = "[WARNING]"; color = dash_ansi::YELLOW; }
+                break;
+            case SensorType::TirePressure:   
+                hasAlert = alertMgr_.isAlertActive(AlertType::LOW_TIRE_PRESSURE) || alertMgr_.isAlertActive(AlertType::HIGH_TIRE_PRESSURE); 
+                if(hasAlert) { statusStr = "[WARNING]"; color = dash_ansi::YELLOW; }
+                break;
+            case SensorType::DoorStatus:     
+                hasAlert = alertMgr_.isAlertActive(AlertType::DOOR_OPEN); 
+                if(hasAlert) { statusStr = "[CRITICAL]"; color = dash_ansi::RED; }
+                break;
+            case SensorType::Seatbelt:       
+                hasAlert = alertMgr_.isAlertActive(AlertType::SEATBELT_WARNING); 
+                if(hasAlert) { statusStr = "[WARNING]"; color = dash_ansi::YELLOW; }
+                break;
+        }
+
+        std::cout << "| " << std::left << std::setw(22) << sensor->getName()
+                  << "| " << std::setw(14) << sensor->getFormattedValue()
+                  << "| " << color << statusStr << dash_ansi::RESET
+                  << std::string(14 - (statusStr.length() - 9), ' ') << "|\n";
+    }
     printSeparator();
 }
 
@@ -160,22 +196,19 @@ void Dashboard::printActiveAlerts() const {
         std::cout << "| " << green("No active alerts — all systems nominal") << std::string(1, ' ') << "|\n";
     } else {
         for (const auto& alert : alerts) {
-            std::ostringstream line;
-            line << *alert;
-            std::string lineStr = line.str();
             std::string rawMsg = "[" + Alert::severityToString(alert->getSeverity()) + "] " + Alert::typeToString(alert->getType()) + " - " + alert->getMessage();
+            std::string color = (alert->getSeverity() == AlertSeverity::CRITICAL) ? dash_ansi::RED : (alert->getSeverity() == AlertSeverity::WARNING) ? dash_ansi::YELLOW : dash_ansi::GREEN;
 
-            if (static_cast<int>(rawMsg.size()) > TABLE_WIDTH - 4) {
-                rawMsg = rawMsg.substr(0, TABLE_WIDTH - 7) + "...";
-                std::string color = (alert->getSeverity() == AlertSeverity::CRITICAL) ? dash_ansi::RED : (alert->getSeverity() == AlertSeverity::WARNING) ? dash_ansi::YELLOW : dash_ansi::GREEN;
-                std::cout << "| " << color << rawMsg << dash_ansi::RESET;
-                if (TABLE_WIDTH - 2 - static_cast<int>(rawMsg.size()) > 0) std::cout << std::string(TABLE_WIDTH - 2 - rawMsg.size(), ' ');
-                std::cout << "|\n";
-            } else {
-                std::cout << "| " << lineStr;
-                int remaining = TABLE_WIDTH - 2 - rawMsg.size();
+            size_t maxLen = TABLE_WIDTH - 4;
+            size_t pos = 0;
+            
+            while (pos < rawMsg.size()) {
+                std::string chunk = rawMsg.substr(pos, maxLen);
+                std::cout << "| " << color << chunk << dash_ansi::RESET;
+                int remaining = TABLE_WIDTH - 2 - chunk.size();
                 if (remaining > 0) std::cout << std::string(remaining, ' ');
                 std::cout << "|\n";
+                pos += maxLen;
             }
         }
     }
@@ -311,8 +344,17 @@ void Dashboard::logSensorSnapshot() const {
     std::ostringstream oss;
     oss << "--- SENSOR SNAPSHOT ---";
     for (const auto& sensor : sensors_) {
+        bool hasAlert = false;
+        switch (sensor->getType()) {
+            case SensorType::EngineTemp:     hasAlert = alertMgr_.isAlertActive(AlertType::ENGINE_OVERHEAT); break;
+            case SensorType::BatteryVoltage: hasAlert = alertMgr_.isAlertActive(AlertType::LOW_BATTERY) || alertMgr_.isAlertActive(AlertType::HIGH_BATTERY); break;
+            case SensorType::VehicleSpeed:   hasAlert = alertMgr_.isAlertActive(AlertType::OVERSPEED); break;
+            case SensorType::TirePressure:   hasAlert = alertMgr_.isAlertActive(AlertType::LOW_TIRE_PRESSURE) || alertMgr_.isAlertActive(AlertType::HIGH_TIRE_PRESSURE); break;
+            case SensorType::DoorStatus:     hasAlert = alertMgr_.isAlertActive(AlertType::DOOR_OPEN); break;
+            case SensorType::Seatbelt:       hasAlert = alertMgr_.isAlertActive(AlertType::SEATBELT_WARNING); break;
+        }
         oss << " | " << sensor->getName() << ": " << sensor->getFormattedValue();
-        if (sensor->isCritical()) oss << " [!]";
+        if (hasAlert) oss << " [!]";
     }
     LOG_INFO("Dashboard", oss.str());
 }

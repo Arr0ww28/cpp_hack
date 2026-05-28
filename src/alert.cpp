@@ -93,12 +93,14 @@ std::string Alert::severityToString(AlertSeverity s) {
 
 std::string Alert::typeToString(AlertType t) {
     switch (t) {
-        case AlertType::ENGINE_OVERHEAT:     return "CRITICAL ENGINE OVERHEAT";
-        case AlertType::LOW_BATTERY:         return "LOW BATTERY WARNING";
-        case AlertType::LOW_TIRE_PRESSURE:   return "LOW TIRE PRESSURE";
-        case AlertType::OVERSPEED:           return "OVERSPEED WARNING";
-        case AlertType::DOOR_OPEN:           return "DOOR OPEN WARNING";
-        case AlertType::SEATBELT_WARNING:    return "SEATBELT WARNING";
+        case AlertType::ENGINE_OVERHEAT:   return "ENGINE OVERHEAT";
+        case AlertType::LOW_BATTERY:       return "LOW BATTERY";
+        case AlertType::HIGH_BATTERY:      return "HIGH BATTERY";
+        case AlertType::LOW_TIRE_PRESSURE: return "LOW TIRE PRESSURE";
+        case AlertType::HIGH_TIRE_PRESSURE:return "HIGH TIRE PRESSURE";
+        case AlertType::OVERSPEED:         return "OVERSPEED";
+        case AlertType::DOOR_OPEN:         return "DOOR OPEN";
+        case AlertType::SEATBELT_WARNING:  return "SEATBELT WARNING";
     }
     return "UNKNOWN ALERT";
 }
@@ -167,15 +169,35 @@ void AlertManager::evaluateConditions(
     engineMsg << std::fixed << std::setprecision(1) << "Temperature " << engineTemp << " C exceeds " << engineThreshold << " C";
     checkCondition(engineTemp > engineThreshold, AlertType::ENGINE_OVERHEAT, AlertSeverity::CRITICAL, engineMsg.str(), "ENGINE OVERHEAT");
 
-    // Low Battery
+    // Low/High Battery
     std::ostringstream battMsg;
-    battMsg << std::fixed << std::setprecision(1) << "Voltage " << batteryVolts << " V below " << batteryThreshold << " V";
-    checkCondition(batteryVolts < batteryThreshold, AlertType::LOW_BATTERY, AlertSeverity::WARNING, battMsg.str(), "LOW BATTERY");
+    if (batteryVolts < batteryThreshold) {
+        battMsg << std::fixed << std::setprecision(1) << "Voltage " << batteryVolts << " V below " << batteryThreshold << " V";
+        checkCondition(true, AlertType::LOW_BATTERY, AlertSeverity::WARNING, battMsg.str(), "LOW BATTERY");
+        checkCondition(false, AlertType::HIGH_BATTERY, AlertSeverity::WARNING, "", "");
+    } else if (batteryVolts > 15.0) {
+        battMsg << std::fixed << std::setprecision(1) << "Voltage " << batteryVolts << " V above 15.0 V";
+        checkCondition(true, AlertType::HIGH_BATTERY, AlertSeverity::WARNING, battMsg.str(), "HIGH BATTERY");
+        checkCondition(false, AlertType::LOW_BATTERY, AlertSeverity::WARNING, "", "");
+    } else {
+        checkCondition(false, AlertType::LOW_BATTERY, AlertSeverity::WARNING, "", "");
+        checkCondition(false, AlertType::HIGH_BATTERY, AlertSeverity::WARNING, "", "");
+    }
 
-    // Low Tire Pressure
+    // Low/High Tire Pressure
     std::ostringstream tireMsg;
-    tireMsg << std::fixed << std::setprecision(1) << "Pressure " << tirePressure << " PSI below " << tireThreshold << " PSI";
-    checkCondition(tirePressure < tireThreshold, AlertType::LOW_TIRE_PRESSURE, AlertSeverity::WARNING, tireMsg.str(), "LOW TIRE PRESSURE");
+    if (tirePressure < tireThreshold) {
+        tireMsg << std::fixed << std::setprecision(1) << "Pressure " << tirePressure << " PSI below " << tireThreshold << " PSI";
+        checkCondition(true, AlertType::LOW_TIRE_PRESSURE, AlertSeverity::WARNING, tireMsg.str(), "LOW TIRE PRESSURE");
+        checkCondition(false, AlertType::HIGH_TIRE_PRESSURE, AlertSeverity::WARNING, "", "");
+    } else if (tirePressure > 40.0) {
+        tireMsg << std::fixed << std::setprecision(1) << "Pressure " << tirePressure << " PSI above 40.0 PSI";
+        checkCondition(true, AlertType::HIGH_TIRE_PRESSURE, AlertSeverity::WARNING, tireMsg.str(), "HIGH TIRE PRESSURE");
+        checkCondition(false, AlertType::LOW_TIRE_PRESSURE, AlertSeverity::WARNING, "", "");
+    } else {
+        checkCondition(false, AlertType::LOW_TIRE_PRESSURE, AlertSeverity::WARNING, "", "");
+        checkCondition(false, AlertType::HIGH_TIRE_PRESSURE, AlertSeverity::WARNING, "", "");
+    }
 
     // Overspeed
     std::ostringstream speedMsg;

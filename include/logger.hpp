@@ -95,6 +95,9 @@ private:
     ThreadSafeQueue<LogEntry>    pendingQueue_;
     mutable std::mutex           historyMtx_;
     bool                         fileOpen_;
+    size_t                       maxFileSize_ = 1024 * 1024; // 1 MB rotation threshold
+
+    void rotateLogFileIfNeeded();
 
 public:
     explicit EventLogger(const std::string& filePath);

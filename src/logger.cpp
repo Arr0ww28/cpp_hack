@@ -9,10 +9,11 @@
 
 // Generate a timestamp string
 static std::string getCurrentTimestamp() {
-    auto now = std::chrono::system_clock::now();
+    // Offset for IST (+5:30) since the system defaults to UTC
+    auto now = std::chrono::system_clock::now() + std::chrono::hours(5) + std::chrono::minutes(30);
     std::time_t t = std::chrono::system_clock::to_time_t(now);
     std::tm tm_buf{};
-    localtime_r(&t, &tm_buf);
+    gmtime_r(&t, &tm_buf);
     std::ostringstream oss;
     oss << std::put_time(&tm_buf, "%Y-%m-%d %H:%M:%S");
     return oss.str();
@@ -55,8 +56,9 @@ EventLogger::EventLogger(const std::string& filePath)
     : logFilePath_(filePath), fileOpen_(false)
 {
     try {
-        logFile_.open(filePath, std::ios::out | std::ios::trunc);
+        logFile_.open(filePath, std::ios::out | std::ios::app);
         if (logFile_.is_open()) {
+            rotateLogFileIfNeeded(); // Initial check in case it's already too large
             fileOpen_ = true;
             logFile_ << "\n================================================================\n"
                      << "  Vehicle Health Monitor — Log Session Started\n"
@@ -68,6 +70,34 @@ EventLogger::EventLogger(const std::string& filePath)
     } catch (const std::exception& e) {
         std::cerr << "[LOGGER] ERROR: Exception opening log file: " << e.what() << std::endl;
         fileOpen_ = false;
+    }
+}
+
+void EventLogger::rotateLogFileIfNeeded() {
+    if (!logFile_.is_open()) return;
+    
+    // Check if current file size exceeds threshold
+    if (static_cast<size_t>(logFile_.tellp()) > maxFileSize_) {
+        logFile_.close();
+        
+        // Generate a timestamped backup filename
+        std::string backupPath = logFilePath_;
+        size_t dotPos = backupPath.find_last_of('.');
+        std::string ts = getCurrentTimestamp();
+        // Replace spaces and colons for safe filenames
+        std::replace(ts.begin(), ts.end(), ' ', '_');
+        std::replace(ts.begin(), ts.end(), ':', '-');
+        
+        if (dotPos != std::string::npos) {
+            backupPath.insert(dotPos, "_" + ts);
+        } else {
+            backupPath += "_" + ts;
+        }
+        
+        std::rename(logFilePath_.c_str(), backupPath.c_str());
+        
+        // Reopen fresh file
+        logFile_.open(logFilePath_, std::ios::out | std::ios::trunc);
     }
 }
 
@@ -93,11 +123,17 @@ void EventLogger::log(LogLevel level, const std::string& source, const std::stri
 void EventLogger::processPendingEvents() {
     LogEntry entry;
     while (pendingQueue_.tryPop(entry)) {
-        if (fileOpen_ && logFile_.is_open()) logFile_ << entry << "\n" << std::flush;
+        if (fileOpen_ && logFile_.is_open()) {
+            rotateLogFileIfNeeded();
+            logFile_ << entry << "\n";
+        }
         {
             std::lock_guard<std::mutex> lock(historyMtx_);
             eventHistory_.push_back(std::move(entry));
         }
+    }
+    if (fileOpen_ && logFile_.is_open()) {
+        logFile_.flush();
     }
 }
 

@@ -23,7 +23,7 @@ enum class AlertSeverity {
 
 // Discriminator for alert conditions
 enum class AlertType {
-    ENGINE_OVERHEAT, LOW_BATTERY, LOW_TIRE_PRESSURE,
+    ENGINE_OVERHEAT, LOW_BATTERY, HIGH_BATTERY, LOW_TIRE_PRESSURE, HIGH_TIRE_PRESSURE,
     OVERSPEED, DOOR_OPEN, SEATBELT_WARNING
 };
 
@@ -70,9 +70,8 @@ private:
     mutable std::mutex mtx_;
     size_t maxHistory_;
 
-    bool isAlertActive(AlertType type) const;
-
 public:
+    bool isAlertActive(AlertType type) const;
     explicit AlertManager(size_t maxHistory = 100);
     ~AlertManager() = default;
 
