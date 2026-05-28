@@ -42,19 +42,6 @@ public:
             // Optionally could save active profile to a separate file, but for now it's runtime only
         }
     }
-
-    void updateActiveProfile(const DriverProfile& updatedProfile) {
-        if (activeProfileIndex_ < profiles_.size()) {
-            profiles_[activeProfileIndex_] = updatedProfile;
-            saveProfiles();
-        }
-    }
-    
-    void addProfile(const DriverProfile& newProfile) {
-        profiles_.push_back(newProfile);
-        saveProfiles();
-        activeProfileIndex_ = profiles_.size() - 1; // Auto-switch to newly created profile
-    }
 };
 
 #endif // PROFILE_HPP

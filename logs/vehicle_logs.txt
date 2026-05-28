@@ -244,3 +244,30 @@
 [2026-05-28 11:00:22] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
 [2026-05-28 11:00:24] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
 [2026-05-28 11:00:24] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-28 11:21:22
+================================================================
+[2026-05-28 11:21:22] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-28 11:21:22] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-28 11:21:22] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-28 11:21:22] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-28 11:21:24] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-28 11:21:24] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-28 11:22:00] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-28 11:22:00
+  Total Events Logged: 7
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-28 11:22:19
+================================================================
+[2026-05-28 11:22:19] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-28 11:22:19] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-28 11:22:19] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-28 11:22:19] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-28 11:22:21] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-28 11:22:21] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started

@@ -84,8 +84,6 @@ public:
     void renderStatistics() const;
     void renderMenu() const;
     void renderProfileMenu();
-    void handleProfileEdit();
-    void handleProfileCreate();
     
     // File logging — routes dashboard data through the global EventLogger
     void logSensorSnapshot() const;

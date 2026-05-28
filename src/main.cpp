@@ -374,12 +374,6 @@ int main() {
                     
                     if (pInput[0] == 'B' || pInput[0] == 'b') {
                         inProfileMenu = false;
-                    } else if (pInput[0] == 'E' || pInput[0] == 'e') {
-                        dashboard.handleProfileEdit();
-                        alertMgr.updateThresholds(profileMgr.getActiveProfile());
-                    } else if (pInput[0] == 'N' || pInput[0] == 'n') {
-                        dashboard.handleProfileCreate();
-                        alertMgr.updateThresholds(profileMgr.getActiveProfile());
                     } else {
                         try {
                             size_t idx = std::stoul(pInput) - 1;
