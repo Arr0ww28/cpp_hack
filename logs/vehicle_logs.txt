@@ -195,3 +195,52 @@
 | Vehicle Speed         | 200.0 km/h| 0.0 km/h  | 116.7 km/h      |
 | Tire Pressure         | 34.0 PSI  | 0.0 PSI   | 22.7 PSI        |
 
+[2026-05-28 10:56:00] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-28 10:56:00
+  Total Events Logged: 26
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-28 10:56:08
+================================================================
+[2026-05-28 10:56:08] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-28 10:56:08] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-28 10:56:08] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-28 10:56:08] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-28 10:56:10] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-28 10:56:10] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-28 10:56:54] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Engine Temperature set to 100.000000
+[2026-05-28 10:56:58] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Battery Voltage set to 20.000000
+[2026-05-28 10:56:59] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Vehicle Speed set to 20.000000
+[2026-05-28 10:57:00] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Tire Pressure set to 20.000000
+[2026-05-28 10:57:01] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Door Status set to 0.000000
+[2026-05-28 10:57:01] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Seatbelt Status set to 0.000000
+[2026-05-28 10:57:02] [WARNING ] [AlertManager | alert.cpp:operator()          ] HIGH BATTERY triggered: Voltage 20.0 V above 15.0 V
+[2026-05-28 10:57:02] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW TIRE PRESSURE triggered: Pressure 20.0 PSI below 30.0 PSI
+[2026-05-28 10:57:02] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 100.00 C | Battery Voltage: 20.00 V [!] | Vehicle Speed: 20.00 km/h | Tire Pressure: 20.00 PSI [!] | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-28 10:57:02] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] HIGH BATTERY - Voltage 20.0 V above 15.0 V | [WARNING] LOW TIRE PRESSURE - Pressure 20.0 PSI below 30.0 PSI
+[2026-05-28 10:58:57] [INFO    ] [Dashboard | dashboard.cpp:logStatisticsSnapshot] --- STATISTICS SNAPSHOT ---
+[1m| SENSOR                | MAX       | MIN       | AVG             [0m|
+| Engine Temperature    | 100.0 C   | 0.0 C     | 50.0 C          |
+| Battery Voltage       | 20.0 V    | 0.0 V     | 10.0 V          |
+| Vehicle Speed         | 20.0 km/h | 0.0 km/h  | 10.0 km/h       |
+| Tire Pressure         | 20.0 PSI  | 0.0 PSI   | 10.0 PSI        |
+
+[2026-05-28 11:00:16] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-28 11:00:17
+  Total Events Logged: 18
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-28 11:00:22
+================================================================
+[2026-05-28 11:00:22] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-28 11:00:22] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-28 11:00:22] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-28 11:00:22] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-28 11:00:24] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-28 11:00:24] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started

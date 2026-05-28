@@ -3,6 +3,7 @@
 
 #include "sensor.hpp"
 #include "alert.hpp"
+#include "profile.hpp"
 
 #include <string>
 #include <vector>
@@ -48,6 +49,7 @@ private:
     const std::vector<std::unique_ptr<Sensor>>& sensors_;
     const AlertManager&                         alertMgr_;
     VehicleStatistics&                          stats_;
+    ProfileManager&                             profileMgr_;
     mutable std::mutex mtx_;
 
     static constexpr int TABLE_WIDTH = 62;
@@ -73,7 +75,7 @@ private:
 
 public:
     Dashboard(const std::vector<std::unique_ptr<Sensor>>& sensors,
-              const AlertManager& alertMgr, VehicleStatistics& stats);
+              const AlertManager& alertMgr, VehicleStatistics& stats, ProfileManager& profileMgr);
     ~Dashboard() = default;
 
     void renderLiveDashboard() const;
@@ -81,7 +83,10 @@ public:
     void renderAlertHistory(size_t count = 20) const;
     void renderStatistics() const;
     void renderMenu() const;
-
+    void renderProfileMenu();
+    void handleProfileEdit();
+    void handleProfileCreate();
+    
     // File logging — routes dashboard data through the global EventLogger
     void logSensorSnapshot() const;
     void logAlertSnapshot() const;

@@ -2,6 +2,7 @@
 #include "alert.hpp"
 #include "dashboard.hpp"
 #include "logger.hpp"
+#include "profile.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -262,9 +263,12 @@ int main() {
     LOG_INFO("Main", std::to_string(Sensor::getTotalSensorCount()) + " sensors initialized");
     std::cout << main_ansi::GREEN << "[OK] " << Sensor::getTotalSensorCount() << " sensors initialized." << main_ansi::RESET << "\n";
 
+    ProfileManager profileMgr("data/profiles.json");
     AlertManager alertMgr(static_cast<size_t>(maxAlertHistory));
+    alertMgr.updateThresholds(profileMgr.getActiveProfile());
+
     VehicleStatistics stats;
-    Dashboard dashboard(sensors, alertMgr, stats);
+    Dashboard dashboard(sensors, alertMgr, stats, profileMgr);
 
     // Initial stats recording so dashboard has some initial values (instead of N/A)
     for (const auto& sensor : sensors) {
@@ -289,7 +293,7 @@ int main() {
                 continue;
             }
             try {
-                alertMgr.evaluateConditions(sensors, engineThreshold, batteryThreshold, tireThreshold, speedLimit, doorSpeedThreshold);
+                alertMgr.evaluateConditions(sensors);
             } catch (const std::exception& e) {
                 LOG_CRITICAL("MonitorThread", std::string("Exception: ") + e.what());
             }
@@ -359,8 +363,39 @@ int main() {
             case '7':
                 g_running.store(false);
                 break;
+            case '8': {
+                bool inProfileMenu = true;
+                while (inProfileMenu) {
+                    dashboard.renderProfileMenu();
+                    std::string pInput;
+                    std::cout << "Choice: ";
+                    std::getline(std::cin, pInput);
+                    if (pInput.empty()) continue;
+                    
+                    if (pInput[0] == 'B' || pInput[0] == 'b') {
+                        inProfileMenu = false;
+                    } else if (pInput[0] == 'E' || pInput[0] == 'e') {
+                        dashboard.handleProfileEdit();
+                        alertMgr.updateThresholds(profileMgr.getActiveProfile());
+                    } else if (pInput[0] == 'N' || pInput[0] == 'n') {
+                        dashboard.handleProfileCreate();
+                        alertMgr.updateThresholds(profileMgr.getActiveProfile());
+                    } else {
+                        try {
+                            size_t idx = std::stoul(pInput) - 1;
+                            if (idx < profileMgr.getProfiles().size()) {
+                                profileMgr.setActiveProfile(idx);
+                                alertMgr.updateThresholds(profileMgr.getActiveProfile());
+                                std::cout << main_ansi::GREEN << "  [OK] Switched active profile." << main_ansi::RESET << "\n";
+                                std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                            }
+                        } catch (...) {}
+                    }
+                }
+                break;
+            }
             default:
-                std::cout << main_ansi::YELLOW << "  Invalid choice. Please enter 1-7." << main_ansi::RESET << "\n";
+                std::cout << main_ansi::YELLOW << "  Invalid choice. Please enter 1-8." << main_ansi::RESET << "\n";
                 std::this_thread::sleep_for(std::chrono::seconds(1));
                 break;
         }

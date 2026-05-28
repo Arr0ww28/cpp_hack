@@ -1,0 +1,28 @@
+{
+  "profiles": [
+    {
+      "name": "Default",
+      "engineThreshold": 112,
+      "batteryThreshold": 10,
+      "tireThreshold": 28,
+      "speedLimit": 130,
+      "doorSpeedThreshold": 10
+    },
+    {
+      "name": "Teen Driver",
+      "engineThreshold": 100,
+      "batteryThreshold": 12,
+      "tireThreshold": 30,
+      "speedLimit": 80,
+      "doorSpeedThreshold": 0
+    },
+    {
+      "name": "Mohan",
+      "engineThreshold": 100,
+      "batteryThreshold": 13,
+      "tireThreshold": 27,
+      "speedLimit": 140,
+      "doorSpeedThreshold": 10
+    }
+  ]
+}

@@ -115,8 +115,8 @@ void Dashboard::printDoubleSeparator(int width) {
 }
 
 Dashboard::Dashboard(const std::vector<std::unique_ptr<Sensor>>& sensors,
-                     const AlertManager& alertMgr, VehicleStatistics& stats)
-    : sensors_(sensors), alertMgr_(alertMgr), stats_(stats) {}
+                     const AlertManager& alertMgr, VehicleStatistics& stats, ProfileManager& profileMgr)
+    : sensors_(sensors), alertMgr_(alertMgr), stats_(stats), profileMgr_(profileMgr) {}
 
 std::string Dashboard::sensorTypeName(SensorType type) {
     switch (type) {
@@ -416,9 +416,10 @@ void Dashboard::renderMenu() const {
               << "|   [5] Search Event Log     (filter by severity/keyword)      |\n"
               << "|   [6] Manual Sensor Input        (set values for debug)      |\n"
               << "|   [7] Exit                         (graceful shutdown)       |\n"
+              << "|   [8] Manage Driver Profiles       (swap/edit profiles)      |\n"
               << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
     printDoubleSeparator();
-    std::cout << "Enter choice [1-7]: " << std::flush;
+    std::cout << "Enter choice [1-8]: " << std::flush;
 }
 
 void Dashboard::logSensorSnapshot() const {
@@ -459,4 +460,129 @@ void Dashboard::logStatisticsSnapshot() const {
     std::ostringstream oss;
     oss << "--- STATISTICS SNAPSHOT ---\n" << stats_;
     LOG_INFO("Dashboard", oss.str());
+}
+
+void Dashboard::renderProfileMenu() {
+    std::lock_guard<std::mutex> lock(mtx_);
+    clearScreen();
+    printDoubleSeparator();
+    std::string title = "DRIVER PROFILE MANAGEMENT";
+    int padding = (TABLE_WIDTH - static_cast<int>(title.size())) / 2;
+    std::cout << "|" << dash_ansi::BOLD << std::string(padding, ' ') << title
+              << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
+    printDoubleSeparator();
+
+    const auto& profiles = profileMgr_.getProfiles();
+    size_t activeIdx = profileMgr_.getActiveIndex();
+
+    std::cout << "| Available Profiles:\n";
+    for (size_t i = 0; i < profiles.size(); ++i) {
+        std::cout << "|   [" << (i + 1) << "] " << std::left << std::setw(20) << profiles[i].name;
+        if (i == activeIdx) std::cout << dash_ansi::GREEN << " (ACTIVE)" << dash_ansi::RESET;
+        std::cout << "\n";
+    }
+    std::cout << "|\n|   [N] Create New Profile\n";
+    std::cout << "|   [E] Edit Current Profile (" << profiles[activeIdx].name << ")\n";
+    std::cout << "|   [B] Back to Main Menu\n";
+    printSeparator();
+}
+
+void Dashboard::handleProfileEdit() {
+    // Note: No mutex lock here because this blocks waiting for cin
+    // and is called from main thread when dashboard isn't actively rendering updates
+    
+    DriverProfile p = profileMgr_.getActiveProfile();
+    clearScreen();
+    printDoubleSeparator();
+    std::string title = "EDIT PROFILE: " + p.name;
+    int padding = (TABLE_WIDTH - static_cast<int>(title.size())) / 2;
+    std::cout << "|" << dash_ansi::BOLD << std::string(padding, ' ') << title
+              << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
+    printDoubleSeparator();
+    std::cout << "(You must provide a valid numeric value for each threshold)\n\n";
+
+    auto promptDouble = [](const std::string& label, double currentVal, double minVal, double maxVal) -> double {
+        while (true) {
+            std::cout << label << " [" << currentVal << "]: ";
+            std::string input;
+            std::getline(std::cin, input);
+            if (input.empty()) {
+                std::cout << dash_ansi::RED << "  [!] Error: Input cannot be empty. Please enter a value." << dash_ansi::RESET << "\n";
+                continue;
+            }
+            try {
+                double val = std::stod(input);
+                if (val >= minVal && val <= maxVal) return val;
+                std::cout << dash_ansi::RED << "  [!] Error: Value must be between " << minVal << " and " << maxVal << dash_ansi::RESET << "\n";
+            } catch (...) {
+                std::cout << dash_ansi::RED << "  [!] Error: Invalid numeric input." << dash_ansi::RESET << "\n";
+            }
+        }
+    };
+
+    p.engineThreshold = promptDouble("Engine Temp Warning (C)  ", p.engineThreshold, 50.0, 150.0);
+    p.batteryThreshold = promptDouble("Low Battery Warning (V)  ", p.batteryThreshold, 8.0, 14.0);
+    p.tireThreshold = promptDouble("Low Tire Warning (PSI)   ", p.tireThreshold, 15.0, 35.0);
+    p.speedLimit = promptDouble("Speed Limit Warning (km/h)", p.speedLimit, 20.0, 300.0);
+    p.doorSpeedThreshold = promptDouble("Door Open Warning (km/h) ", p.doorSpeedThreshold, 0.0, 50.0);
+
+    profileMgr_.updateActiveProfile(p);
+    
+    std::cout << "\n" << dash_ansi::GREEN << "Profile '" << p.name << "' successfully updated and saved!" << dash_ansi::RESET << "\n";
+    std::cout << "Press [Enter] to continue...";
+    std::string dummy;
+    std::getline(std::cin, dummy);
+}
+
+void Dashboard::handleProfileCreate() {
+    clearScreen();
+    printDoubleSeparator();
+    std::string title = "CREATE NEW PROFILE";
+    int padding = (TABLE_WIDTH - static_cast<int>(title.size())) / 2;
+    std::cout << "|" << dash_ansi::BOLD << std::string(padding, ' ') << title
+              << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
+    printDoubleSeparator();
+    std::cout << "(You must provide a valid numeric value for each threshold)\n\n";
+
+    std::string profileName;
+    while (true) {
+        std::cout << "Enter new profile name: ";
+        std::getline(std::cin, profileName);
+        if (!profileName.empty()) break;
+        std::cout << dash_ansi::RED << "  [!] Error: Name cannot be empty." << dash_ansi::RESET << "\n";
+    }
+
+    auto promptDouble = [](const std::string& label, double minVal, double maxVal) -> double {
+        while (true) {
+            std::cout << label << ": ";
+            std::string input;
+            std::getline(std::cin, input);
+            if (input.empty()) {
+                std::cout << dash_ansi::RED << "  [!] Error: Input cannot be empty. Please enter a value." << dash_ansi::RESET << "\n";
+                continue;
+            }
+            try {
+                double val = std::stod(input);
+                if (val >= minVal && val <= maxVal) return val;
+                std::cout << dash_ansi::RED << "  [!] Error: Value must be between " << minVal << " and " << maxVal << dash_ansi::RESET << "\n";
+            } catch (...) {
+                std::cout << dash_ansi::RED << "  [!] Error: Invalid numeric input." << dash_ansi::RESET << "\n";
+            }
+        }
+    };
+
+    DriverProfile p;
+    p.name = profileName;
+    p.engineThreshold = promptDouble("Engine Temp Warning (C)  ", 50.0, 150.0);
+    p.batteryThreshold = promptDouble("Low Battery Warning (V)  ", 8.0, 14.0);
+    p.tireThreshold = promptDouble("Low Tire Warning (PSI)   ", 15.0, 35.0);
+    p.speedLimit = promptDouble("Speed Limit Warning (km/h)", 20.0, 300.0);
+    p.doorSpeedThreshold = promptDouble("Door Open Warning (km/h) ", 0.0, 50.0);
+
+    profileMgr_.addProfile(p);
+    
+    std::cout << "\n" << dash_ansi::GREEN << "Profile '" << p.name << "' successfully created and activated!" << dash_ansi::RESET << "\n";
+    std::cout << "Press [Enter] to continue...";
+    std::string dummy;
+    std::getline(std::cin, dummy);
 }
