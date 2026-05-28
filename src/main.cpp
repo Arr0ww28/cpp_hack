@@ -3,6 +3,7 @@
 #include "dashboard.hpp"
 #include "logger.hpp"
 #include "profile.hpp"
+#include "health.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -29,7 +30,8 @@ namespace main_ansi {
 }
 
 static std::atomic<bool> g_running{true};
-static std::atomic<bool> g_sensorsInitialized{false};
+std::atomic<bool> g_sensorsInitialized{false};
+std::atomic<bool> g_simulateHang{false};
 
 void signalHandler(int /*signum*/) {
     g_running.store(false);
@@ -284,10 +286,14 @@ int main() {
 
     ThreadManager threadMgr;
 
+    HealthMonitor healthMonitor;
+
     // --- Thread 1: Alert Monitor ---
     threadMgr.start([&]() {
         LOG_INFO("MonitorThread", "Alert monitoring thread started");
         while (g_running.load()) {
+            healthMonitor.ping("MonitorThread");
+            
             if (!g_sensorsInitialized.load()) {
                 std::this_thread::sleep_for(std::chrono::milliseconds(alertInterval));
                 continue;
@@ -306,6 +312,13 @@ int main() {
     threadMgr.start([&]() {
         LOG_INFO("LoggerThread", "Logger processing thread started");
         while (g_running.load()) {
+            if (g_simulateHang.load()) {
+                std::this_thread::sleep_for(std::chrono::seconds(10));
+                g_simulateHang.store(false);
+            }
+            
+            healthMonitor.ping("LoggerThread");
+            
             try {
                 logger.processPendingEvents();
             } catch (const std::exception& e) {
@@ -316,6 +329,16 @@ int main() {
         logger.flushAll();
         LOG_INFO("LoggerThread", "Logger processing thread stopped");
     }, "LoggerThread");
+
+    // --- Thread 3: Watchdog ---
+    threadMgr.start([&]() {
+        LOG_INFO("WatchdogThread", "Health monitor thread started");
+        while (g_running.load()) {
+            healthMonitor.checkHealth(alertMgr);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+        LOG_INFO("WatchdogThread", "Health monitor thread stopped");
+    }, "WatchdogThread");
 
     // --- Dashboard logic moved to main thread ---
 
@@ -388,6 +411,11 @@ int main() {
                 }
                 break;
             }
+            case '9':
+                std::cout << main_ansi::RED << "  [DEBUG] Simulating LoggerThread hang for 10 seconds..." << main_ansi::RESET << "\n";
+                g_simulateHang.store(true);
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+                break;
             default:
                 std::cout << main_ansi::YELLOW << "  Invalid choice. Please enter 1-8." << main_ansi::RESET << "\n";
                 std::this_thread::sleep_for(std::chrono::seconds(1));

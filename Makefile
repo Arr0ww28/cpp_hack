@@ -19,6 +19,7 @@ SOURCES   = $(SRCDIR)/sensor.cpp \
             $(SRCDIR)/alert.cpp \
             $(SRCDIR)/dashboard.cpp \
             $(SRCDIR)/profile.cpp \
+            $(SRCDIR)/health.cpp \
             $(SRCDIR)/main.cpp
 
 OBJECTS   = $(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SOURCES))

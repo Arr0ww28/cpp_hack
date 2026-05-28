@@ -25,7 +25,7 @@ enum class AlertSeverity {
 // Discriminator for alert conditions
 enum class AlertType {
     ENGINE_OVERHEAT, LOW_BATTERY, HIGH_BATTERY, LOW_TIRE_PRESSURE, HIGH_TIRE_PRESSURE,
-    OVERSPEED, DOOR_OPEN, SEATBELT_WARNING
+    OVERSPEED, DOOR_OPEN, SEATBELT_WARNING, ECU_FAULT
 };
 
 // Represents a single vehicle alert event

@@ -101,6 +101,7 @@ std::string Alert::typeToString(AlertType t) {
         case AlertType::OVERSPEED:         return "OVERSPEED";
         case AlertType::DOOR_OPEN:         return "DOOR OPEN";
         case AlertType::SEATBELT_WARNING:  return "SEATBELT WARNING";
+        case AlertType::ECU_FAULT:         return "ECU FAULT";
     }
     return "UNKNOWN ALERT";
 }
