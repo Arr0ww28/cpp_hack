@@ -434,7 +434,7 @@ void Dashboard::renderMenu() const {
               << "|   [5] Search Event Log     (filter by severity/keyword)      |\n"
               << "|   [6] Manual Sensor Input        (set values for debug)      |\n"
               << "|   [7] Exit                         (graceful shutdown)       |\n"
-              << "|   [8] Manage Driver Profiles       (swap/edit profiles)      |\n"
+              << "|   [8] Manage Driver Profiles       (set profiles)            |\n"
               << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
     printDoubleSeparator();
     std::cout << "Enter choice [1-8]: " << std::flush;
