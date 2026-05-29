@@ -4,6 +4,7 @@
 #include <string>
 #include <mutex>
 #include <atomic>
+#include "profile.hpp"
 #include <iostream>
 #include <sstream>
 #include <iomanip>
@@ -28,9 +29,9 @@ public:
     Sensor(std::string name, SensorType type, std::string unit, double defaultVal);
     virtual ~Sensor();
 
-    virtual void display() const = 0;
+    virtual void display(const DriverProfile& profile) const = 0;
     virtual std::string getFormattedValue() const = 0;
-    virtual bool isCritical() const = 0;
+    virtual bool isCritical(const DriverProfile& profile) const = 0;
 
     std::string getName() const;
     SensorType  getType() const;
@@ -50,9 +51,9 @@ public:
 class EngineTemperatureSensor : public Sensor {
 public:
     EngineTemperatureSensor();
-    void display() const override;
+    void display(const DriverProfile& profile) const override;
     std::string getFormattedValue() const override;
-    bool isCritical() const override;
+    bool isCritical(const DriverProfile& profile) const override;
     bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
@@ -60,9 +61,9 @@ public:
 class BatterySensor : public Sensor {
 public:
     BatterySensor();
-    void display() const override;
+    void display(const DriverProfile& profile) const override;
     std::string getFormattedValue() const override;
-    bool isCritical() const override;
+    bool isCritical(const DriverProfile& profile) const override;
     bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
@@ -70,9 +71,9 @@ public:
 class SpeedSensor : public Sensor {
 public:
     SpeedSensor();
-    void display() const override;
+    void display(const DriverProfile& profile) const override;
     std::string getFormattedValue() const override;
-    bool isCritical() const override;
+    bool isCritical(const DriverProfile& profile) const override;
     bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
@@ -80,9 +81,9 @@ public:
 class TirePressureSensor : public Sensor {
 public:
     TirePressureSensor();
-    void display() const override;
+    void display(const DriverProfile& profile) const override;
     std::string getFormattedValue() const override;
-    bool isCritical() const override;
+    bool isCritical(const DriverProfile& profile) const override;
     bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
@@ -90,9 +91,9 @@ public:
 class DoorSensor : public Sensor {
 public:
     DoorSensor();
-    void display() const override;
+    void display(const DriverProfile& profile) const override;
     std::string getFormattedValue() const override;
-    bool isCritical() const override;
+    bool isCritical(const DriverProfile& profile) const override;
     bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 
@@ -100,9 +101,9 @@ public:
 class SeatbeltSensor : public Sensor {
 public:
     SeatbeltSensor();
-    void display() const override;
+    void display(const DriverProfile& profile) const override;
     std::string getFormattedValue() const override;
-    bool isCritical() const override;
+    bool isCritical(const DriverProfile& profile) const override;
     bool validateInput(double value, std::string& warningMsg, std::string& errorMsg) const override;
 };
 

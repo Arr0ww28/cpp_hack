@@ -499,9 +499,13 @@ void Dashboard::renderProfileMenu() {
 
     std::cout << "| Available Profiles:\n";
     for (size_t i = 0; i < profiles.size(); ++i) {
-        std::cout << "|   [" << (i + 1) << "] " << std::left << std::setw(20) << profiles[i].name;
+        std::cout << "|   [" << (i + 1) << "] " << dash_ansi::BOLD << std::left << std::setw(15) << profiles[i].name << dash_ansi::RESET;
         if (i == activeIdx) std::cout << dash_ansi::GREEN << " (ACTIVE)" << dash_ansi::RESET;
         std::cout << "\n";
+        std::cout << "|       Engine: " << profiles[i].engineThreshold << " C, "
+                  << "Speed: " << profiles[i].speedLimit << " km/h, "
+                  << "Battery: " << profiles[i].batteryThreshold << " V, "
+                  << "Tire: " << profiles[i].tireThreshold << " PSI\n|\n";
     }
     std::cout << "|\n|   [B] Back to Main Menu\n";
     printSeparator();

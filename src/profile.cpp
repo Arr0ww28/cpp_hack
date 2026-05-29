@@ -27,7 +27,7 @@ void ProfileManager::loadProfiles() {
     std::ifstream file(configFilePath_);
     if (!file.is_open()) {
         // Create default profiles if file doesn't exist
-        profiles_.push_back({"Default", 115.0, 11.0, 25.0, 120.0, 5.0});
+        profiles_.push_back({"Default", 110.0, 11.0, 25.0, 120.0, 10.0});
         profiles_.push_back({"Eco", 100.0, 11.5, 30.0, 90.0, 0.0});
         profiles_.push_back({"Sport", 125.0, 10.5, 22.0, 150.0, 10.0});
         profiles_.push_back({"Performance", 135.0, 10.0, 20.0, 180.0, 15.0});

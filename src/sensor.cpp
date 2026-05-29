@@ -86,9 +86,9 @@ std::ostream& operator<<(std::ostream& os, const Sensor& s) {
 EngineTemperatureSensor::EngineTemperatureSensor()
     : Sensor("Engine Temperature", SensorType::EngineTemp, "C", 0.0) {}
 
-void EngineTemperatureSensor::display() const {
+void EngineTemperatureSensor::display(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    bool critical = (currentValue_ > 110.0);
+    bool critical = isCritical(profile);
     std::cout << "| " << std::left << std::setw(22) << name_ << "| " << std::right << std::setw(9) << std::fixed
               << std::setprecision(2) << currentValue_ << " " << std::left << std::setw(4) << unit_
               << "| " << (critical ? ansi::RED : ansi::GREEN) << (critical ? "[WARNING]" : "[NORMAL] ") << ansi::RESET
@@ -102,17 +102,17 @@ std::string EngineTemperatureSensor::getFormattedValue() const {
     return oss.str();
 }
 
-bool EngineTemperatureSensor::isCritical() const {
+bool EngineTemperatureSensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ > 110.0;
+    return currentValue_ >= profile.engineThreshold;
 }
 
 BatterySensor::BatterySensor()
     : Sensor("Battery Voltage", SensorType::BatteryVoltage, "V", 0.0) {}
 
-void BatterySensor::display() const {
+void BatterySensor::display(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    bool critical = (currentValue_ < 10.0);
+    bool critical = isCritical(profile);
     std::cout << "| " << std::left << std::setw(22) << name_ << "| " << std::right << std::setw(9) << std::fixed
               << std::setprecision(2) << currentValue_ << " " << std::left << std::setw(4) << unit_
               << "| " << (critical ? ansi::RED : ansi::GREEN) << (critical ? "[WARNING]" : "[NORMAL] ") << ansi::RESET
@@ -126,17 +126,17 @@ std::string BatterySensor::getFormattedValue() const {
     return oss.str();
 }
 
-bool BatterySensor::isCritical() const {
+bool BatterySensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ < 10.0;
+    return currentValue_ <= profile.batteryThreshold || currentValue_ >= 15.0;
 }
 
 SpeedSensor::SpeedSensor()
     : Sensor("Vehicle Speed", SensorType::VehicleSpeed, "km/h", 0.0) {}
 
-void SpeedSensor::display() const {
+void SpeedSensor::display(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    bool critical = (currentValue_ > 120.0);
+    bool critical = isCritical(profile);
     std::cout << "| " << std::left << std::setw(22) << name_ << "| " << std::right << std::setw(9) << std::fixed
               << std::setprecision(2) << currentValue_ << " " << std::left << std::setw(4) << unit_
               << "| " << (critical ? ansi::YELLOW : ansi::GREEN) << (critical ? "[WARNING]" : "[NORMAL] ") << ansi::RESET
@@ -150,17 +150,17 @@ std::string SpeedSensor::getFormattedValue() const {
     return oss.str();
 }
 
-bool SpeedSensor::isCritical() const {
+bool SpeedSensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ > 120.0;
+    return currentValue_ >= profile.speedLimit;
 }
 
 TirePressureSensor::TirePressureSensor()
     : Sensor("Tire Pressure", SensorType::TirePressure, "PSI", 0.0) {}
 
-void TirePressureSensor::display() const {
+void TirePressureSensor::display(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    bool critical = (currentValue_ < 25.0);
+    bool critical = isCritical(profile);
     std::cout << "| " << std::left << std::setw(22) << name_ << "| " << std::right << std::setw(9) << std::fixed
               << std::setprecision(2) << currentValue_ << " " << std::left << std::setw(4) << unit_
               << "| " << (critical ? ansi::YELLOW : ansi::GREEN) << (critical ? "[WARNING]" : "[NORMAL] ") << ansi::RESET
@@ -174,17 +174,17 @@ std::string TirePressureSensor::getFormattedValue() const {
     return oss.str();
 }
 
-bool TirePressureSensor::isCritical() const {
+bool TirePressureSensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ < 25.0;
+    return currentValue_ <= profile.tireThreshold || currentValue_ >= 45.0;
 }
 
 DoorSensor::DoorSensor()
     : Sensor("Door Status", SensorType::DoorStatus, "", 0.0) {}
 
-void DoorSensor::display() const {
+void DoorSensor::display(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    bool isOpen = (currentValue_ >= 1.0);
+    bool isOpen = isCritical(profile);
     std::cout << "| " << std::left << std::setw(22) << name_ << "| " << std::setw(14) << (isOpen ? "OPEN" : "CLOSED")
               << "| " << (isOpen ? ansi::YELLOW : ansi::GREEN) << (isOpen ? "[WARNING]" : "[NORMAL] ") << ansi::RESET
               << std::string(14, ' ') << "|" << std::endl;
@@ -195,7 +195,7 @@ std::string DoorSensor::getFormattedValue() const {
     return (currentValue_ >= 1.0) ? "OPEN" : "CLOSED";
 }
 
-bool DoorSensor::isCritical() const {
+bool DoorSensor::isCritical(const DriverProfile& /*profile*/) const {
     std::lock_guard<std::mutex> lock(mtx_);
     return currentValue_ >= 1.0;
 }
@@ -203,9 +203,9 @@ bool DoorSensor::isCritical() const {
 SeatbeltSensor::SeatbeltSensor()
     : Sensor("Seatbelt Status", SensorType::Seatbelt, "", 0.0) {}
 
-void SeatbeltSensor::display() const {
+void SeatbeltSensor::display(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    bool isUnlocked = (currentValue_ >= 1.0);
+    bool isUnlocked = isCritical(profile);
     std::cout << "| " << std::left << std::setw(22) << name_ << "| " << std::setw(14) << (isUnlocked ? "UNLOCKED" : "LOCKED")
               << "| " << (isUnlocked ? ansi::YELLOW : ansi::GREEN) << (isUnlocked ? "[WARNING]" : "[NORMAL] ") << ansi::RESET
               << std::string(14, ' ') << "|" << std::endl;
@@ -216,7 +216,7 @@ std::string SeatbeltSensor::getFormattedValue() const {
     return (currentValue_ >= 1.0) ? "UNLOCKED" : "LOCKED";
 }
 
-bool SeatbeltSensor::isCritical() const {
+bool SeatbeltSensor::isCritical(const DriverProfile& /*profile*/) const {
     std::lock_guard<std::mutex> lock(mtx_);
     return currentValue_ >= 1.0;
 }
