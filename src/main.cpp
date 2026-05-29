@@ -435,6 +435,12 @@ int main() {
 
         if (input.empty()) continue;
 
+        if (input.length() > 1) {
+            std::cout << main_ansi::YELLOW << "  Invalid choice. Please enter a single digit between 1 and 8." << main_ansi::RESET << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            continue;
+        }
+
         switch (input[0]) {
             case '1':
                 while (true) {
