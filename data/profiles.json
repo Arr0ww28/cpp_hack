@@ -2,11 +2,11 @@
   "profiles": [
     {
       "name": "Default",
-      "engineThreshold": 115,
+      "engineThreshold": 110,
       "batteryThreshold": 11,
       "tireThreshold": 25,
       "speedLimit": 120,
-      "doorSpeedThreshold": 5
+      "doorSpeedThreshold": 10
     },
     {
       "name": "Eco",
