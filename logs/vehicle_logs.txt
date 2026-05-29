@@ -379,3 +379,420 @@
 
 [2026-05-29 10:03:15] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
 [2026-05-29 10:03:23] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.3 km/h (Limit: 5.0)
+[2026-05-29 10:04:18] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:04:26] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.9 km/h (Limit: 5.0)
+[2026-05-29 10:04:48] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:05:21] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:05:29] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.4 km/h (Limit: 5.0)
+[2026-05-29 10:06:01] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:06:24] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:06:32] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 7.0 km/h (Limit: 5.0)
+[2026-05-29 10:06:39] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-29 10:06:39
+  Total Events Logged: 64
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 10:06:43
+================================================================
+[2026-05-29 10:06:43] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 10:06:43] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 10:06:43] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 10:06:43] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 10:06:45] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 10:06:45] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 10:06:45] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 10:06:45] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 10:07:18] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.95 C | Battery Voltage: 13.71 V | Vehicle Speed: 53.39 km/h | Tire Pressure: 33.60 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:18] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:21] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.21 C | Battery Voltage: 13.82 V | Vehicle Speed: 33.33 km/h | Tire Pressure: 33.76 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:21] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:22] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 113.83 C | Battery Voltage: 13.85 V | Vehicle Speed: 28.09 km/h | Tire Pressure: 33.81 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:22] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:23] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 113.61 C | Battery Voltage: 13.86 V | Vehicle Speed: 25.59 km/h | Tire Pressure: 33.83 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:23] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:24] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 113.13 C | Battery Voltage: 13.89 V | Vehicle Speed: 20.85 km/h | Tire Pressure: 33.88 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:24] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:24] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 112.86 C | Battery Voltage: 13.91 V | Vehicle Speed: 18.63 km/h | Tire Pressure: 33.90 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:24] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:25] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 112.57 C | Battery Voltage: 13.92 V | Vehicle Speed: 16.51 km/h | Tire Pressure: 33.93 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:25] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:25] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 111.94 C | Battery Voltage: 13.95 V | Vehicle Speed: 12.60 km/h | Tire Pressure: 33.97 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:25] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:26] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 111.60 C | Battery Voltage: 13.96 V | Vehicle Speed: 10.82 km/h | Tire Pressure: 33.99 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:26] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:27] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 111.25 C | Battery Voltage: 13.98 V | Vehicle Speed: 9.16 km/h | Tire Pressure: 34.02 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:27] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:27] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 110.88 C | Battery Voltage: 13.99 V | Vehicle Speed: 7.63 km/h | Tire Pressure: 34.04 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:27] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:28] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 110.49 C | Battery Voltage: 14.00 V | Vehicle Speed: 6.23 km/h | Tire Pressure: 34.06 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:28] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:28] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 110.09 C | Battery Voltage: 14.02 V | Vehicle Speed: 4.97 km/h | Tire Pressure: 34.09 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:28] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:29] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 109.67 C | Battery Voltage: 14.03 V | Vehicle Speed: 3.84 km/h | Tire Pressure: 34.11 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:29] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:30] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 108.32 C | Battery Voltage: 14.07 V | Vehicle Speed: 1.31 km/h | Tire Pressure: 34.18 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:30] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:31] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 107.84 C | Battery Voltage: 14.08 V | Vehicle Speed: 0.76 km/h | Tire Pressure: 34.20 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:31] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:32] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 106.83 C | Battery Voltage: 14.10 V | Vehicle Speed: 0.11 km/h | Tire Pressure: 34.24 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:32] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:32] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 106.31 C | Battery Voltage: 14.12 V | Vehicle Speed: 0.00 km/h | Tire Pressure: 34.27 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:32] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:33] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 105.78 C | Battery Voltage: 14.13 V | Vehicle Speed: 0.05 km/h | Tire Pressure: 34.29 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:33] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:33] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 105.23 C | Battery Voltage: 14.14 V | Vehicle Speed: 0.25 km/h | Tire Pressure: 34.31 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:33] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:34] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 104.67 C | Battery Voltage: 14.15 V | Vehicle Speed: 0.59 km/h | Tire Pressure: 34.33 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:34] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:34] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 104.10 C | Battery Voltage: 14.16 V | Vehicle Speed: 1.09 km/h | Tire Pressure: 34.35 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:34] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:35] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 103.51 C | Battery Voltage: 14.17 V | Vehicle Speed: 1.73 km/h | Tire Pressure: 34.38 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:35] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:35] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 102.31 C | Battery Voltage: 14.19 V | Vehicle Speed: 3.45 km/h | Tire Pressure: 34.42 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:35] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:36] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 101.69 C | Battery Voltage: 14.20 V | Vehicle Speed: 4.53 km/h | Tire Pressure: 34.44 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:36] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:37] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 101.06 C | Battery Voltage: 14.22 V | Vehicle Speed: 5.74 km/h | Tire Pressure: 34.46 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:37] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:37] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 100.42 C | Battery Voltage: 14.23 V | Vehicle Speed: 7.09 km/h | Tire Pressure: 34.49 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:37] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:39] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 97.78 C | Battery Voltage: 14.26 V | Vehicle Speed: 13.76 km/h | Tire Pressure: 34.57 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:39] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:52] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 78.72 C | Battery Voltage: 14.45 V | Vehicle Speed: 84.57 km/h | Tire Pressure: 35.11 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:52] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:53] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 77.99 C | Battery Voltage: 14.45 V | Vehicle Speed: 87.28 km/h | Tire Pressure: 35.13 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:53] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:53] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 77.26 C | Battery Voltage: 14.46 V | Vehicle Speed: 89.92 km/h | Tire Pressure: 35.15 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:53] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:54] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 75.82 C | Battery Voltage: 14.46 V | Vehicle Speed: 94.97 km/h | Tire Pressure: 35.18 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:54] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:55] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 75.11 C | Battery Voltage: 14.47 V | Vehicle Speed: 97.36 km/h | Tire Pressure: 35.20 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:55] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:55] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 74.40 C | Battery Voltage: 14.47 V | Vehicle Speed: 99.66 km/h | Tire Pressure: 35.22 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:55] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:56] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 73.70 C | Battery Voltage: 14.47 V | Vehicle Speed: 101.87 km/h | Tire Pressure: 35.24 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:56] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:57] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 72.33 C | Battery Voltage: 14.48 V | Vehicle Speed: 105.95 km/h | Tire Pressure: 35.28 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:57] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:57] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 71.65 C | Battery Voltage: 14.48 V | Vehicle Speed: 107.82 km/h | Tire Pressure: 35.30 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:57] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:58] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 70.98 C | Battery Voltage: 14.49 V | Vehicle Speed: 109.58 km/h | Tire Pressure: 35.32 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:58] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:58] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 70.32 C | Battery Voltage: 14.49 V | Vehicle Speed: 111.20 km/h | Tire Pressure: 35.34 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:58] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:07:59] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 69.03 C | Battery Voltage: 14.49 V | Vehicle Speed: 114.07 km/h | Tire Pressure: 35.37 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:07:59] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:00] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 68.40 C | Battery Voltage: 14.49 V | Vehicle Speed: 115.31 km/h | Tire Pressure: 35.39 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:00] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:08] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 59.57 C | Battery Voltage: 14.49 V | Vehicle Speed: 113.96 km/h | Tire Pressure: 35.69 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:08] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:09] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 58.81 C | Battery Voltage: 14.49 V | Vehicle Speed: 111.07 km/h | Tire Pressure: 35.73 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:09] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:10] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 58.45 C | Battery Voltage: 14.49 V | Vehicle Speed: 109.43 km/h | Tire Pressure: 35.74 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:10] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:10] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 58.11 C | Battery Voltage: 14.48 V | Vehicle Speed: 107.67 km/h | Tire Pressure: 35.76 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:10] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:11] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 57.48 C | Battery Voltage: 14.48 V | Vehicle Speed: 103.79 km/h | Tire Pressure: 35.79 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:11] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:12] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 57.19 C | Battery Voltage: 14.47 V | Vehicle Speed: 101.69 km/h | Tire Pressure: 35.81 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:12] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:08:12] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 56.91 C | Battery Voltage: 14.47 V | Vehicle Speed: 99.48 km/h | Tire Pressure: 35.82 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:08:12] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:01] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-29 10:10:02
+  Total Events Logged: 105
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 10:10:09
+================================================================
+[2026-05-29 10:10:09] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 10:10:09] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 10:10:09] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 10:10:09] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 10:10:11] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 10:10:11] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 10:10:11] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 10:10:11] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 10:10:19] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 100.05 C | Battery Voltage: 13.23 V | Vehicle Speed: 119.85 km/h | Tire Pressure: 33.12 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:19] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:22] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 105.13 C | Battery Voltage: 13.50 V | Vehicle Speed: 111.75 km/h | Tire Pressure: 33.55 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:22] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:23] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 107.35 C | Battery Voltage: 13.63 V | Vehicle Speed: 100.46 km/h | Tire Pressure: 33.76 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:23] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:24] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 108.70 C | Battery Voltage: 13.71 V | Vehicle Speed: 90.84 km/h | Tire Pressure: 33.90 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:24] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:25] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 109.33 C | Battery Voltage: 13.75 V | Vehicle Speed: 85.55 km/h | Tire Pressure: 33.97 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:25] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:26] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 110.49 C | Battery Voltage: 13.83 V | Vehicle Speed: 74.25 km/h | Tire Pressure: 34.11 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:26] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:27] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 111.54 C | Battery Voltage: 13.90 V | Vehicle Speed: 62.38 km/h | Tire Pressure: 34.24 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:27] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:28] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 112.01 C | Battery Voltage: 13.94 V | Vehicle Speed: 56.38 km/h | Tire Pressure: 34.31 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:28] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:29] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 112.86 C | Battery Voltage: 14.00 V | Vehicle Speed: 44.54 km/h | Tire Pressure: 34.44 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:29] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:29] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 113.57 C | Battery Voltage: 14.07 V | Vehicle Speed: 33.32 km/h | Tire Pressure: 34.57 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:29] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:30] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 113.87 C | Battery Voltage: 14.10 V | Vehicle Speed: 28.09 km/h | Tire Pressure: 34.64 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:30] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:31] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.14 C | Battery Voltage: 14.13 V | Vehicle Speed: 23.17 km/h | Tire Pressure: 34.70 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:31] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:31] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.37 C | Battery Voltage: 14.16 V | Vehicle Speed: 18.62 km/h | Tire Pressure: 34.76 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:31] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:32] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.73 C | Battery Voltage: 14.21 V | Vehicle Speed: 10.81 km/h | Tire Pressure: 34.89 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:32] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:33] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.85 C | Battery Voltage: 14.24 V | Vehicle Speed: 7.62 km/h | Tire Pressure: 34.95 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:33] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:33] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.94 C | Battery Voltage: 14.26 V | Vehicle Speed: 4.96 km/h | Tire Pressure: 35.01 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:33] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:34] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.99 C | Battery Voltage: 14.28 V | Vehicle Speed: 2.85 km/h | Tire Pressure: 35.07 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:34] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:34] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.98 C | Battery Voltage: 14.33 V | Vehicle Speed: 0.36 km/h | Tire Pressure: 35.18 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:34] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:10:35] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.92 C | Battery Voltage: 14.35 V | Vehicle Speed: 0.00 km/h | Tire Pressure: 35.24 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:10:35] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:32] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:11:38] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-29 10:11:38
+  Total Events Logged: 48
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 10:11:40
+================================================================
+[2026-05-29 10:11:40] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 10:11:40] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 10:11:40] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 10:11:40] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 10:11:42] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 10:11:42] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 10:11:42] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 10:11:42] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 10:11:49] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 113.91 C | Battery Voltage: 14.43 V | Vehicle Speed: 53.42 km/h | Tire Pressure: 36.82 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:49] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:51] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 114.21 C | Battery Voltage: 14.45 V | Vehicle Speed: 1.33 km/h | Tire Pressure: 36.87 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:51] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:53] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 110.88 C | Battery Voltage: 14.23 V | Vehicle Speed: 8.53 km/h | Tire Pressure: 36.31 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:53] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:54] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 107.35 C | Battery Voltage: 13.99 V | Vehicle Speed: 29.62 km/h | Tire Pressure: 35.73 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:54] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:54] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 105.24 C | Battery Voltage: 13.85 V | Vehicle Speed: 43.37 km/h | Tire Pressure: 35.37 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:54] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:55] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 100.44 C | Battery Voltage: 13.53 V | Vehicle Speed: 73.06 km/h | Tire Pressure: 34.57 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:55] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:56] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 97.79 C | Battery Voltage: 13.35 V | Vehicle Speed: 87.15 km/h | Tire Pressure: 34.13 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:56] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:56] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 95.02 C | Battery Voltage: 13.17 V | Vehicle Speed: 99.55 km/h | Tire Pressure: 33.67 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:56] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:57] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 89.19 C | Battery Voltage: 12.78 V | Vehicle Speed: 116.35 km/h | Tire Pressure: 32.70 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:57] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:58] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 86.21 C | Battery Voltage: 12.58 V | Vehicle Speed: 119.70 km/h | Tire Pressure: 32.20 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:58] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:59] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 83.21 C | Battery Voltage: 12.38 V | Vehicle Speed: 119.33 km/h | Tire Pressure: 31.70 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:59] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:11:59] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 77.29 C | Battery Voltage: 11.99 V | Vehicle Speed: 107.76 km/h | Tire Pressure: 30.71 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:11:59] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:02] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:03] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 60.42 C | Battery Voltage: 10.86 V [!] | Vehicle Speed: 15.72 km/h | Tire Pressure: 27.90 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:03] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:04] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 57.49 C | Battery Voltage: 10.67 V [!] | Vehicle Speed: 1.72 km/h | Tire Pressure: 27.41 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:04] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:05] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 56.43 C | Battery Voltage: 10.60 V [!] | Vehicle Speed: 0.00 km/h | Tire Pressure: 27.24 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:05] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:05] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 55.18 C | Battery Voltage: 10.51 V [!] | Vehicle Speed: 7.64 km/h | Tire Pressure: 27.03 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:05] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:06] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 55.00 C | Battery Voltage: 10.50 V [!] | Vehicle Speed: 16.53 km/h | Tire Pressure: 27.00 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:06] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:06] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 55.12 C | Battery Voltage: 10.51 V [!] | Vehicle Speed: 28.12 km/h | Tire Pressure: 27.02 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:06] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:07] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 55.54 C | Battery Voltage: 10.54 V [!] | Vehicle Speed: 41.69 km/h | Tire Pressure: 27.09 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:07] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:07] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 56.25 C | Battery Voltage: 10.58 V [!] | Vehicle Speed: 56.40 km/h | Tire Pressure: 27.21 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:07] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:09] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 58.53 C | Battery Voltage: 10.74 V [!] | Vehicle Speed: 85.57 km/h | Tire Pressure: 27.59 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:09] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:09] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 61.87 C | Battery Voltage: 10.96 V [!] | Vehicle Speed: 108.47 km/h | Tire Pressure: 28.14 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:09] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:10] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:12:10] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 63.89 C | Battery Voltage: 11.09 V | Vehicle Speed: 115.71 km/h | Tire Pressure: 28.48 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:10] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:11] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 68.55 C | Battery Voltage: 11.40 V | Vehicle Speed: 119.57 km/h | Tire Pressure: 29.26 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:11] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:11] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 71.14 C | Battery Voltage: 11.58 V | Vehicle Speed: 115.94 km/h | Tire Pressure: 29.69 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:11] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:12] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 73.86 C | Battery Voltage: 11.76 V | Vehicle Speed: 108.83 km/h | Tire Pressure: 30.14 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:12] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:13] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 79.62 C | Battery Voltage: 12.14 V | Vehicle Speed: 86.13 km/h | Tire Pressure: 31.10 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:13] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:13] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 82.60 C | Battery Voltage: 12.34 V | Vehicle Speed: 71.95 km/h | Tire Pressure: 31.60 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:12:13] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:12:34] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:12:41] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:13:05] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:13:13] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:13:37] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:13:44] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:14:08] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:14:14] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===
+================================================================
+  Log Session Ended: 2026-05-29 10:14:15
+  Total Events Logged: 74
+================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 10:14:18
+================================================================
+[2026-05-29 10:14:18] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 10:14:18] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 10:14:18] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 10:14:18] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 10:14:20] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 10:14:20] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 10:14:20] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 10:14:20] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 10:15:06] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 94.47 C | Battery Voltage: 13.13 V | Vehicle Speed: 18.32 km/h | Tire Pressure: 33.58 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:06] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:07] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 85.63 C | Battery Voltage: 12.54 V | Vehicle Speed: 0.08 km/h | Tire Pressure: 32.11 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:07] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:08] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 82.63 C | Battery Voltage: 12.34 V | Vehicle Speed: 1.17 km/h | Tire Pressure: 31.61 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:08] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:08] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 79.66 C | Battery Voltage: 12.14 V | Vehicle Speed: 5.91 km/h | Tire Pressure: 31.11 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:08] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:09] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 76.73 C | Battery Voltage: 11.95 V | Vehicle Speed: 14.03 km/h | Tire Pressure: 30.62 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:09] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:09] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 76.73 C | Battery Voltage: 11.95 V | Vehicle Speed: 14.03 km/h | Tire Pressure: 30.62 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:09] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:10] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 71.17 C | Battery Voltage: 11.58 V | Vehicle Speed: 38.15 km/h | Tire Pressure: 29.69 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:10] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:10] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 68.58 C | Battery Voltage: 11.41 V | Vehicle Speed: 52.66 km/h | Tire Pressure: 29.26 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:10] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:11] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 66.15 C | Battery Voltage: 11.24 V | Vehicle Speed: 67.63 km/h | Tire Pressure: 28.86 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:11] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:11] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 63.92 C | Battery Voltage: 11.09 V | Vehicle Speed: 82.12 km/h | Tire Pressure: 28.49 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 10:15:11] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 0 | All systems nominal
+[2026-05-29 10:15:12] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:15:12] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 60.09 C | Battery Voltage: 10.84 V [!] | Vehicle Speed: 106.16 km/h | Tire Pressure: 27.85 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED
+[2026-05-29 10:15:12] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V
+[2026-05-29 10:15:13] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:13] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 58.55 C | Battery Voltage: 10.74 V [!] | Vehicle Speed: 114.21 km/h | Tire Pressure: 27.59 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:13] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:16] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 55.65 C | Battery Voltage: 10.54 V [!] | Vehicle Speed: 75.60 km/h | Tire Pressure: 27.11 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:16] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:17] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 56.42 C | Battery Voltage: 10.59 V [!] | Vehicle Speed: 60.77 km/h | Tire Pressure: 27.24 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:17] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:17] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 57.48 C | Battery Voltage: 10.67 V [!] | Vehicle Speed: 45.90 km/h | Tire Pressure: 27.41 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:17] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:18] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 58.80 C | Battery Voltage: 10.75 V [!] | Vehicle Speed: 31.90 km/h | Tire Pressure: 27.63 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:18] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:19] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 62.23 C | Battery Voltage: 10.98 V [!] | Vehicle Speed: 9.92 km/h | Tire Pressure: 28.21 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:19] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:19] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 64.30 C | Battery Voltage: 11.12 V [!] | Vehicle Speed: 3.30 km/h | Tire Pressure: 28.55 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:19] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:19] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:15:20] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 66.57 C | Battery Voltage: 11.27 V | Vehicle Speed: 0.21 km/h | Tire Pressure: 28.93 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:20] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:20] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 69.03 C | Battery Voltage: 11.44 V | Vehicle Speed: 0.84 km/h | Tire Pressure: 29.34 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:20] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:21] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 71.69 C | Battery Voltage: 11.61 V | Vehicle Speed: 5.26 km/h | Tire Pressure: 29.78 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:21] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:22] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 77.30 C | Battery Voltage: 11.99 V | Vehicle Speed: 23.74 km/h | Tire Pressure: 30.72 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:22] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:22] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 80.23 C | Battery Voltage: 12.18 V | Vehicle Speed: 36.70 km/h | Tire Pressure: 31.21 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:22] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:23] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 83.22 C | Battery Voltage: 12.38 V | Vehicle Speed: 51.11 km/h | Tire Pressure: 31.70 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:23] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:23] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 86.22 C | Battery Voltage: 12.58 V | Vehicle Speed: 66.08 km/h | Tire Pressure: 32.20 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:23] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:24] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 89.20 C | Battery Voltage: 12.78 V | Vehicle Speed: 80.66 km/h | Tire Pressure: 32.70 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:24] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:24] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 92.15 C | Battery Voltage: 12.98 V | Vehicle Speed: 93.96 km/h | Tire Pressure: 33.19 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:24] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:25] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 95.02 C | Battery Voltage: 13.17 V | Vehicle Speed: 105.14 km/h | Tire Pressure: 33.67 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:25] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:26] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 97.80 C | Battery Voltage: 13.35 V | Vehicle Speed: 113.52 km/h | Tire Pressure: 34.13 PSI | Door Status: CLOSED | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:26] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:26] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 102.93 C | Battery Voltage: 13.70 V | Vehicle Speed: 119.97 km/h | Tire Pressure: 34.99 PSI | Door Status: OPEN | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:15:26] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 106.2 km/h
+[2026-05-29 10:15:27] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 117.6 km/h (Limit: 5.0)
+[2026-05-29 10:15:32] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:15:41] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 92.3 km/h (Limit: 5.0)
+[2026-05-29 10:15:43] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:15:45] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:15:46] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.9 km/h (Limit: 5.0)
+[2026-05-29 10:15:46] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:15:50] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 2 | [WARNING] LOW BATTERY - Voltage 10.9 V below 11.0 V | [CRITICAL] DOOR OPEN - Door OPEN at 10.9 km/h (Limit: 5.0)
+[2026-05-29 10:15:51] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:15:54] [INFO    ] [Dashboard | dashboard.cpp:logStatisticsSnapshot] --- STATISTICS SNAPSHOT ---
+[1m| SENSOR                | MAX       | MIN       | AVG             [0m|
+| Engine Temperature    | 115.0 C   | 0.0 C     | 78.6 C          |
+| Battery Voltage       | 14.5 V    | 0.0 V     | 12.0 V          |
+| Vehicle Speed         | 120.0 km/h| 0.0 km/h  | 59.4 km/h       |
+| Tire Pressure         | 37.0 PSI  | 0.0 PSI   | 30.8 PSI        |
+
+[2026-05-29 10:15:55] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 36.5 km/h
+[2026-05-29 10:15:57] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:16:04] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:16:07] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 52.6 km/h
+[2026-05-29 10:16:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 30.4 km/h (Limit: 5.0)
+[2026-05-29 10:16:15] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:16:22] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:16:22] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:16:24] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 8.1 km/h (Limit: 5.0)
+[2026-05-29 10:16:25] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:16:27] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 86.4 km/h
+[2026-05-29 10:16:35] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:16:37] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 7.3 km/h (Limit: 5.0)
+[2026-05-29 10:16:37] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:16:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:16:43] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 99.0 km/h (Limit: 5.0)
+[2026-05-29 10:16:43] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 99.0 km/h
+[2026-05-29 10:16:46] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:16:48] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:16:50] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 26.3 km/h (Limit: 5.0)
+[2026-05-29 10:16:52] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:16:54] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:16:56] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:16:58] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 59.2 km/h
+[2026-05-29 10:16:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:17:00] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 2.8 km/h
+[2026-05-29 10:17:01] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.8 km/h (Limit: 5.0)
+[2026-05-29 10:17:03] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:17:05] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:17:16] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 65.7 km/h (Limit: 5.0)
+[2026-05-29 10:17:18] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:17:25] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:17:25] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:17:27] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.8 km/h (Limit: 5.0)
+[2026-05-29 10:17:32] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:17:43] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 111.7 km/h
+[2026-05-29 10:17:45] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:17:48] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 51.0 km/h
+[2026-05-29 10:17:49] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:17:57] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:18:06] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:18:08] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 100.3 km/h (Limit: 5.0)
+[2026-05-29 10:18:09] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 116.7 km/h
+[2026-05-29 10:18:16] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:18:17] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 8.1 km/h (Limit: 5.0)
+[2026-05-29 10:18:21] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:18:21] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:18:28] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:18:28] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 0.0 km/h
+[2026-05-29 10:18:28] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:18:35] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 119.7 km/h (Limit: 5.0)
+[2026-05-29 10:18:40] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:18:42] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.3 km/h (Limit: 5.0)
+[2026-05-29 10:18:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:18:45] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:18:52] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:18:59] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:19:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 112.3 km/h (Limit: 5.0)

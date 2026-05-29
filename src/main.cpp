@@ -21,6 +21,7 @@
 #include <stdexcept>
 #include <functional>
 #include <cmath>
+#include <cstdlib>
 
 namespace main_ansi {
     const std::string GREEN  = "\033[32m";
@@ -143,7 +144,8 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
                 bool state = g_autoSimulate.load();
                 g_autoSimulate.store(!state);
                 std::cout << "    " << main_ansi::GREEN << "[OK] Auto-Simulation is now " << (g_autoSimulate.load() ? "ON" : "OFF") << main_ansi::RESET << "\n";
-                break; // Skip the rest of the current input since they just wanted to toggle
+                std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                return; // Return back to main menu immediately
             }
 
             try {
@@ -370,20 +372,29 @@ int main() {
                     switch (type) {
                         case SensorType::EngineTemp:
                             // Base 85C, Amp 30C, Freq 0.05
-                            newVal = 85.0 + 30.0 * std::sin(elapsed * 0.05);
+                            newVal = 85.0 + 30.0 * std::sin(elapsed * 0.2);
                             break;
                         case SensorType::VehicleSpeed:
                             // Base 60km/h, Amp 60km/h, Freq 0.1
-                            newVal = 60.0 + 60.0 * std::sin(elapsed * 0.1);
+                            newVal = 60.0 + 60.0 * std::sin(elapsed * 0.5);
                             if (newVal < 0) newVal = 0.0; // Don't go backwards
                             break;
                         case SensorType::BatteryVoltage:
                             // Base 12.5V, Amp 2.0V, Freq 0.02
-                            newVal = 12.5 + 2.0 * std::sin(elapsed * 0.02);
+                            newVal = 12.5 + 2.0 * std::sin(elapsed * 0.2);
                             break;
                         case SensorType::TirePressure:
                             // Base 32 PSI, Amp 5 PSI, Freq 0.01
-                            newVal = 32.0 + 5.0 * std::sin(elapsed * 0.01);
+                            newVal = 32.0 + 5.0 * std::sin(elapsed * 0.2);
+                            break;
+                        case SensorType::DoorStatus:
+                        case SensorType::Seatbelt:
+                            // 5% chance to toggle state every 500ms
+                            if (std::rand() % 100 < 5) {
+                                newVal = (sensor->getValue() >= 1.0) ? 0.0 : 1.0;
+                            } else {
+                                skip = true;
+                            }
                             break;
                         default:
                             skip = true;
@@ -419,11 +430,16 @@ int main() {
 
         switch (input[0]) {
             case '1':
-                dashboard.renderLiveDashboard();
-                dashboard.logSensorSnapshot();
-                dashboard.logAlertSnapshot();
-                std::cout << "\nPress Enter to return to menu...";
-                std::getline(std::cin, input);
+                while (true) {
+                    dashboard.renderLiveDashboard();
+                    dashboard.logSensorSnapshot();
+                    dashboard.logAlertSnapshot();
+                    std::cout << "\nPress [R] to Refresh, or [Enter] to return to menu: ";
+                    std::getline(std::cin, input);
+                    if (input.empty()) break;
+                    if (input[0] == 'R' || input[0] == 'r') continue;
+                    break;
+                }
                 break;
             case '2':
                 dashboard.renderActiveAlerts();
