@@ -2,6 +2,7 @@
 #define ALERT_HPP
 
 #include "sensor.hpp"
+#include "profile.hpp"
 
 #include <string>
 #include <vector>
@@ -24,7 +25,7 @@ enum class AlertSeverity {
 // Discriminator for alert conditions
 enum class AlertType {
     ENGINE_OVERHEAT, LOW_BATTERY, HIGH_BATTERY, LOW_TIRE_PRESSURE, HIGH_TIRE_PRESSURE,
-    OVERSPEED, DOOR_OPEN, SEATBELT_WARNING
+    OVERSPEED, DOOR_OPEN, SEATBELT_WARNING, ECU_FAULT
 };
 
 // Represents a single vehicle alert event
@@ -62,6 +63,7 @@ public:
     bool operator==(const Alert& other) const;
 };
 
+
 // Evaluates sensor conditions and manages alert lifecycle
 class AlertManager {
 private:
@@ -69,16 +71,20 @@ private:
     std::deque<std::shared_ptr<Alert>>  alertHistory_;
     mutable std::mutex mtx_;
     size_t maxHistory_;
+    
+    DriverProfile currentProfile_;
 
 public:
     bool isAlertActive(AlertType type) const;
     explicit AlertManager(size_t maxHistory = 100);
     ~AlertManager() = default;
 
-    void evaluateConditions(const std::vector<std::unique_ptr<Sensor>>& sensors,
-                            double engineThreshold, double batteryThreshold,
-                            double tireThreshold, double speedLimit,
-                            double doorSpeedThreshold);
+    void updateThresholds(const DriverProfile& profile) {
+        std::lock_guard<std::mutex> lock(mtx_);
+        currentProfile_ = profile;
+    }
+
+    void evaluateConditions(const std::vector<std::unique_ptr<Sensor>>& sensors);
 
     void addAlert(std::shared_ptr<Alert> alert);
     void clearAlert(AlertType type);

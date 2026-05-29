@@ -2,6 +2,8 @@
 #include "alert.hpp"
 #include "dashboard.hpp"
 #include "logger.hpp"
+#include "profile.hpp"
+#include "health.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -18,6 +20,8 @@
 #include <iomanip>
 #include <stdexcept>
 #include <functional>
+#include <cmath>
+#include <cstdlib>
 
 namespace main_ansi {
     const std::string GREEN  = "\033[32m";
@@ -28,7 +32,9 @@ namespace main_ansi {
 }
 
 static std::atomic<bool> g_running{true};
-static std::atomic<bool> g_sensorsInitialized{false};
+std::atomic<bool> g_sensorsInitialized{false};
+std::atomic<bool> g_simulateHang{false};
+std::atomic<bool> g_autoSimulate{false};
 
 void signalHandler(int /*signum*/) {
     g_running.store(false);
@@ -109,7 +115,8 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
     std::cout << "\n" << main_ansi::BOLD << "+----------------------------------------------+\n"
               << "|            MANUAL SENSOR INPUT               |\n"
               << "+----------------------------------------------+\n" << main_ansi::RESET
-              << "(Enter a value for each sensor. Press Enter to skip.)\n\n";
+              << "(Enter a value for each sensor. Press Enter to skip)\n"
+              << "Type 'S' and press Enter to toggle Auto-Simulation thread\n\n";
 
     for (auto& sensor : sensors) {
         SensorType type = sensor->getType();
@@ -133,6 +140,14 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
                 break;
             }
 
+            if (input == "S" || input == "s") {
+                bool state = g_autoSimulate.load();
+                g_autoSimulate.store(!state);
+                std::cout << "    " << main_ansi::GREEN << "[OK] Auto-Simulation is now " << (g_autoSimulate.load() ? "ON" : "OFF") << main_ansi::RESET << "\n";
+                std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                return; // Return back to main menu immediately
+            }
+
             try {
                 double val = std::stod(input);
                 std::string warnMsg, errMsg;
@@ -140,6 +155,13 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
                 if (!sensor->validateInput(val, warnMsg, errMsg)) {
                     std::cout << "    " << main_ansi::RED << "[INVALID] " << errMsg << main_ansi::RESET << " Please try again.\n";
                     continue;
+                }
+
+                // If they entered a manual value, auto-simulate MUST be disabled
+                // otherwise the background thread will overwrite it in 500ms
+                if (g_autoSimulate.load()) {
+                    g_autoSimulate.store(false);
+                    std::cout << "    " << main_ansi::YELLOW << "[NOTE] Auto-Simulation automatically turned OFF to preserve manual input." << main_ansi::RESET << "\n";
                 }
 
                 sensor->setValue(val);
@@ -262,9 +284,12 @@ int main() {
     LOG_INFO("Main", std::to_string(Sensor::getTotalSensorCount()) + " sensors initialized");
     std::cout << main_ansi::GREEN << "[OK] " << Sensor::getTotalSensorCount() << " sensors initialized." << main_ansi::RESET << "\n";
 
+    ProfileManager profileMgr("data/profiles.json");
     AlertManager alertMgr(static_cast<size_t>(maxAlertHistory));
+    alertMgr.updateThresholds(profileMgr.getActiveProfile());
+
     VehicleStatistics stats;
-    Dashboard dashboard(sensors, alertMgr, stats);
+    Dashboard dashboard(sensors, alertMgr, stats, profileMgr);
 
     // Initial stats recording so dashboard has some initial values (instead of N/A)
     for (const auto& sensor : sensors) {
@@ -280,16 +305,20 @@ int main() {
 
     ThreadManager threadMgr;
 
+    HealthMonitor healthMonitor;
+
     // --- Thread 1: Alert Monitor ---
     threadMgr.start([&]() {
         LOG_INFO("MonitorThread", "Alert monitoring thread started");
         while (g_running.load()) {
+            healthMonitor.ping("MonitorThread");
+            
             if (!g_sensorsInitialized.load()) {
                 std::this_thread::sleep_for(std::chrono::milliseconds(alertInterval));
                 continue;
             }
             try {
-                alertMgr.evaluateConditions(sensors, engineThreshold, batteryThreshold, tireThreshold, speedLimit, doorSpeedThreshold);
+                alertMgr.evaluateConditions(sensors);
             } catch (const std::exception& e) {
                 LOG_CRITICAL("MonitorThread", std::string("Exception: ") + e.what());
             }
@@ -302,6 +331,13 @@ int main() {
     threadMgr.start([&]() {
         LOG_INFO("LoggerThread", "Logger processing thread started");
         while (g_running.load()) {
+            if (g_simulateHang.load()) {
+                std::this_thread::sleep_for(std::chrono::seconds(10));
+                g_simulateHang.store(false);
+            }
+            
+            healthMonitor.ping("LoggerThread");
+            
             try {
                 logger.processPendingEvents();
             } catch (const std::exception& e) {
@@ -312,6 +348,77 @@ int main() {
         logger.flushAll();
         LOG_INFO("LoggerThread", "Logger processing thread stopped");
     }, "LoggerThread");
+
+    // --- Thread 3: Watchdog ---
+    threadMgr.start([&]() {
+        LOG_INFO("WatchdogThread", "Health monitor thread started");
+        while (g_running.load()) {
+            healthMonitor.checkHealth(alertMgr);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+        LOG_INFO("WatchdogThread", "Health monitor thread stopped");
+    }, "WatchdogThread");
+
+    // --- Thread 4: Auto-Simulator ---
+    threadMgr.start([&]() {
+        LOG_INFO("SimThread", "Auto-simulation thread started (initially OFF)");
+        auto startTime = std::chrono::steady_clock::now();
+        
+        while (g_running.load()) {
+            healthMonitor.ping("SimThread");
+            
+            if (g_autoSimulate.load()) {
+                auto now = std::chrono::steady_clock::now();
+                double elapsed = std::chrono::duration<double>(now - startTime).count();
+                
+                for (auto& sensor : sensors) {
+                    SensorType type = sensor->getType();
+                    double newVal = 0.0;
+                    bool skip = false;
+                    
+                    switch (type) {
+                        case SensorType::EngineTemp:
+                            // Base 85C, Amp 30C, Freq 0.05
+                            newVal = 85.0 + 30.0 * std::sin(elapsed * 0.2);
+                            break;
+                        case SensorType::VehicleSpeed:
+                            // Base 60km/h, Amp 60km/h, Freq 0.1
+                            newVal = 60.0 + 60.0 * std::sin(elapsed * 0.5);
+                            if (newVal < 0) newVal = 0.0; // Don't go backwards
+                            break;
+                        case SensorType::BatteryVoltage:
+                            // Base 12.5V, Amp 2.0V, Freq 0.02
+                            newVal = 12.5 + 2.0 * std::sin(elapsed * 0.2);
+                            break;
+                        case SensorType::TirePressure:
+                            // Base 32 PSI, Amp 5 PSI, Freq 0.01
+                            newVal = 32.0 + 5.0 * std::sin(elapsed * 0.2);
+                            break;
+                        case SensorType::DoorStatus:
+                        case SensorType::Seatbelt:
+                            // 5% chance to toggle state every 500ms
+                            if (std::rand() % 100 < 5) {
+                                newVal = (sensor->getValue() >= 1.0) ? 0.0 : 1.0;
+                            } else {
+                                skip = true;
+                            }
+                            break;
+                        default:
+                            skip = true;
+                            break;
+                    }
+                    
+                    if (!skip) {
+                        sensor->setValue(newVal);
+                        stats.recordReading(type, newVal);
+                    }
+                }
+                g_sensorsInitialized.store(true);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Update sensors every 500ms
+        }
+        LOG_INFO("SimThread", "Auto-simulation thread stopped");
+    }, "SimThread");
 
     // --- Dashboard logic moved to main thread ---
 
@@ -330,11 +437,23 @@ int main() {
 
         switch (input[0]) {
             case '1':
-                dashboard.renderLiveDashboard();
-                dashboard.logSensorSnapshot();
-                dashboard.logAlertSnapshot();
-                std::cout << "\nPress Enter to return to menu...";
-                std::getline(std::cin, input);
+                while (true) {
+                    dashboard.renderLiveDashboard();
+                    dashboard.logSensorSnapshot();
+                    dashboard.logAlertSnapshot();
+                    std::cout << "\nPress [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter] to return to menu: ";
+                    std::getline(std::cin, input);
+                    if (input.empty()) break;
+                    if (input[0] == 'Q' || input[0] == 'q') {
+                        bool state = g_autoSimulate.load();
+                        g_autoSimulate.store(!state);
+                        std::cout << "    " << main_ansi::GREEN << "[OK] Auto-Simulation is now " << (g_autoSimulate.load() ? "ON" : "OFF") << main_ansi::RESET << "\n";
+                        std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                        continue;
+                    }
+                    if (input[0] == 'R' || input[0] == 'r') continue;
+                    break;
+                }
                 break;
             case '2':
                 dashboard.renderActiveAlerts();
@@ -359,8 +478,38 @@ int main() {
             case '7':
                 g_running.store(false);
                 break;
+            case '8': {
+                bool inProfileMenu = true;
+                while (inProfileMenu) {
+                    dashboard.renderProfileMenu();
+                    std::string pInput;
+                    std::cout << "Choice: ";
+                    std::getline(std::cin, pInput);
+                    if (pInput.empty()) continue;
+                    
+                    if (pInput[0] == 'B' || pInput[0] == 'b') {
+                        inProfileMenu = false;
+                    } else {
+                        try {
+                            size_t idx = std::stoul(pInput) - 1;
+                            if (idx < profileMgr.getProfiles().size()) {
+                                profileMgr.setActiveProfile(idx);
+                                alertMgr.updateThresholds(profileMgr.getActiveProfile());
+                                std::cout << main_ansi::GREEN << "  [OK] Switched active profile." << main_ansi::RESET << "\n";
+                                std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                            }
+                        } catch (...) {}
+                    }
+                }
+                break;
+            }
+            case '9':
+                std::cout << main_ansi::RED << "  [DEBUG] Simulating LoggerThread hang for 10 seconds..." << main_ansi::RESET << "\n";
+                g_simulateHang.store(true);
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+                break;
             default:
-                std::cout << main_ansi::YELLOW << "  Invalid choice. Please enter 1-7." << main_ansi::RESET << "\n";
+                std::cout << main_ansi::YELLOW << "  Invalid choice. Please enter 1-8." << main_ansi::RESET << "\n";
                 std::this_thread::sleep_for(std::chrono::seconds(1));
                 break;
         }

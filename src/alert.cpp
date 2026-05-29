@@ -105,6 +105,7 @@ std::string Alert::typeToString(AlertType t) {
         case AlertType::OVERSPEED:         return "OVERSPEED";
         case AlertType::DOOR_OPEN:         return "DOOR OPEN";
         case AlertType::SEATBELT_WARNING:  return "SEATBELT WARNING";
+        case AlertType::ECU_FAULT:         return "ECU FAULT";
     }
     return "UNKNOWN ALERT";
 }
@@ -129,10 +130,7 @@ bool AlertManager::isAlertActive(AlertType type) const {
         [type](const std::shared_ptr<Alert>& a) { return a->getType() == type && a->isActive(); });
 }
 
-void AlertManager::evaluateConditions(
-    const std::vector<std::unique_ptr<Sensor>>& sensors,
-    double engineThreshold, double batteryThreshold,
-    double tireThreshold, double speedLimit, double doorSpeedThreshold)
+void AlertManager::evaluateConditions(const std::vector<std::unique_ptr<Sensor>>& sensors)
 {
     double engineTemp = 0.0, batteryVolts = 0.0, speed = 0.0;
     double tirePressure = 0.0, doorStatus = 0.0, seatbeltStatus = 0.0;
@@ -149,6 +147,13 @@ void AlertManager::evaluateConditions(
     }
 
     std::lock_guard<std::mutex> lock(mtx_);
+
+    // Extract thresholds from current profile
+    double engineThreshold = currentProfile_.engineThreshold;
+    double batteryThreshold = currentProfile_.batteryThreshold;
+    double tireThreshold = currentProfile_.tireThreshold;
+    double speedLimit = currentProfile_.speedLimit;
+    double doorSpeedThreshold = currentProfile_.doorSpeedThreshold;
 
     auto checkCondition = [&](bool condition, AlertType type, AlertSeverity severity, const std::string& msg, const std::string& logName) {
         if (condition) {
@@ -205,18 +210,18 @@ void AlertManager::evaluateConditions(
 
     // Overspeed
     std::ostringstream speedMsg;
-    speedMsg << std::fixed << std::setprecision(1) << "Speed " << speed << " km/h exceeds " << speedLimit << " km/h";
+    speedMsg << std::fixed << std::setprecision(1) << "Speed " << speed << " km/h exceeds limit of " << speedLimit << " km/h";
     checkCondition(speed > speedLimit, AlertType::OVERSPEED, AlertSeverity::WARNING, speedMsg.str(), "OVERSPEED");
 
-    // Door Open
+    // Door Open While Moving
     std::ostringstream doorMsg;
-    doorMsg << std::fixed << std::setprecision(1) << "Door OPEN at " << speed << " km/h (threshold: " << doorSpeedThreshold << " km/h)";
-    checkCondition(doorStatus >= 1.0 && speed > doorSpeedThreshold, AlertType::DOOR_OPEN, AlertSeverity::CRITICAL, doorMsg.str(), "DOOR OPEN");
+    doorMsg << std::fixed << std::setprecision(1) << "Door OPEN at " << speed << " km/h (Limit: " << doorSpeedThreshold << ")";
+    checkCondition(doorStatus == 1.0 && speed > doorSpeedThreshold, AlertType::DOOR_OPEN, AlertSeverity::CRITICAL, doorMsg.str(), "DOOR OPEN");
 
-    // Seatbelt Warning
+    // Seatbelt Unbuckled While Moving
     std::ostringstream beltMsg;
-    beltMsg << std::fixed << std::setprecision(1) << "Seatbelt UNLOCKED while moving at " << speed << " km/h";
-    checkCondition(seatbeltStatus >= 1.0 && speed > 0.0, AlertType::SEATBELT_WARNING, AlertSeverity::WARNING, beltMsg.str(), "SEATBELT WARNING");
+    beltMsg << std::fixed << std::setprecision(1) << "Seatbelt UNLOCKED at " << speed << " km/h";
+    checkCondition(seatbeltStatus == 1.0 && speed > 0.0, AlertType::SEATBELT_WARNING, AlertSeverity::WARNING, beltMsg.str(), "SEATBELT WARNING");
 
     // Trim history
     while (alertHistory_.size() > maxHistory_) {

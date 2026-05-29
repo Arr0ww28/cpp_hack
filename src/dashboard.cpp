@@ -8,6 +8,7 @@
 #include <ctime>
 #include <algorithm>
 #include <limits>
+#include <queue>
 
 namespace dash_ansi {
     const std::string GREEN  = "\033[32m";
@@ -23,6 +24,9 @@ void VehicleStatistics::recordReading(SensorType type, double value) {
     if (minValues_.find(type) == minValues_.end() || value < minValues_[type]) minValues_[type] = value;
     avgAccumulators_[type] += value;
     sampleCounts_[type]++;
+    auto& hist = historyValues_[type];
+    hist.push_back(value);
+    if (hist.size() > HISTORY_SIZE) hist.pop_front();
 }
 
 double VehicleStatistics::getMax(SensorType type) const {
@@ -54,6 +58,13 @@ int VehicleStatistics::getSampleCount(SensorType type) const {
 bool VehicleStatistics::hasData(SensorType type) const {
     std::lock_guard<std::mutex> lock(mtx_);
     return sampleCounts_.find(type) != sampleCounts_.end();
+}
+
+std::deque<double> VehicleStatistics::getHistory(SensorType type) const {
+    std::lock_guard<std::mutex> lock(mtx_);
+    auto it = historyValues_.find(type);
+    if (it != historyValues_.end()) return it->second;
+    return {};
 }
 
 std::ostream& operator<<(std::ostream& os, const VehicleStatistics& stats) {
@@ -105,8 +116,8 @@ void Dashboard::printDoubleSeparator(int width) {
 }
 
 Dashboard::Dashboard(const std::vector<std::unique_ptr<Sensor>>& sensors,
-                     const AlertManager& alertMgr, VehicleStatistics& stats)
-    : sensors_(sensors), alertMgr_(alertMgr), stats_(stats) {}
+                     const AlertManager& alertMgr, VehicleStatistics& stats, ProfileManager& profileMgr)
+    : sensors_(sensors), alertMgr_(alertMgr), stats_(stats), profileMgr_(profileMgr) {}
 
 std::string Dashboard::sensorTypeName(SensorType type) {
     switch (type) {
@@ -190,6 +201,15 @@ void Dashboard::printSensorTable() const {
     printSeparator();
 }
 
+struct AlertPriorityCmp {
+    bool operator()(const std::shared_ptr<Alert>& a, const std::shared_ptr<Alert>& b) const {
+        if (a->getSeverity() != b->getSeverity()) {
+            return static_cast<int>(a->getSeverity()) < static_cast<int>(b->getSeverity());
+        }
+        return a->getTimestamp() > b->getTimestamp();
+    }
+};
+
 void Dashboard::printActiveAlerts() const {
     auto alerts = alertMgr_.getActiveAlerts();
     std::cout << "| " << dash_ansi::BOLD << "ACTIVE ALERTS (" << alerts.size() << ")"
@@ -199,7 +219,15 @@ void Dashboard::printActiveAlerts() const {
     if (alerts.empty()) {
         std::cout << "| " << green("No active alerts — all systems nominal") << std::string(1, ' ') << "|\n";
     } else {
+        std::priority_queue<std::shared_ptr<Alert>, std::vector<std::shared_ptr<Alert>>, AlertPriorityCmp> pq;
         for (const auto& alert : alerts) {
+            pq.push(alert);
+        }
+
+        while (!pq.empty()) {
+            auto alert = pq.top();
+            pq.pop();
+            
             std::string rawMsg = "[" + Alert::severityToString(alert->getSeverity()) + "] " + Alert::typeToString(alert->getType()) + " - " + alert->getMessage();
             std::string color = (alert->getSeverity() == AlertSeverity::CRITICAL) ? dash_ansi::RED : (alert->getSeverity() == AlertSeverity::WARNING) ? dash_ansi::YELLOW : dash_ansi::GREEN;
 
@@ -275,6 +303,77 @@ void Dashboard::printStatisticsTable() const {
               << std::string(TABLE_WIDTH - 50 - std::to_string(Alert::getTotalAlertCount()).size(), ' ') << "|\n";
 }
 
+void Dashboard::printSparklines() const {
+    const std::string blocks[] = {"\u2581", "\u2582", "\u2583", "\u2584", "\u2585", "\u2586", "\u2587", "\u2588"};
+    const int GRAPH_WIDTH = 40;
+
+    printDoubleSeparator();
+    std::string title = "PERFORMANCE TREND (Last 20 Readings)";
+    int pad = (TABLE_WIDTH - static_cast<int>(title.size())) / 2;
+    std::cout << "|" << dash_ansi::BOLD << std::string(pad, ' ') << title
+              << std::string(TABLE_WIDTH - pad - static_cast<int>(title.size()), ' ')
+              << dash_ansi::RESET << "|\n";
+    printSeparator();
+
+    auto drawSensor = [&](SensorType type, const std::string& name, const std::string& unit) {
+        auto history = stats_.getHistory(type);
+
+        std::string label = name + " (" + unit + ")";
+        std::cout << "|  " << dash_ansi::BOLD << std::left << std::setw(TABLE_WIDTH - 3) << label
+                  << dash_ansi::RESET << "|\n";
+
+        if (history.empty()) {
+            std::string noData = "  (no readings recorded)";
+            std::cout << "|" << noData << std::string(TABLE_WIDTH - noData.size(), ' ') << "|\n";
+            std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
+            return;
+        }
+
+        double lo = *std::min_element(history.begin(), history.end());
+        double hi = *std::max_element(history.begin(), history.end());
+        double range = hi - lo;
+        if (range < 0.001) range = 1.0;
+
+        std::string spark;
+        int charCount = 0;
+        for (double v : history) {
+            int level = static_cast<int>(((v - lo) / range) * 7.0);
+            if (level < 0) level = 0;
+            if (level > 7) level = 7;
+            spark += blocks[level];
+            charCount++;
+        }
+        for (int i = charCount; i < GRAPH_WIDTH; i++) {
+            spark += "\u00B7";
+            charCount++;
+        }
+
+        std::string prefix = "  ";
+        int rem = TABLE_WIDTH - static_cast<int>(prefix.size()) - charCount;
+        std::cout << "|" << prefix << dash_ansi::GREEN << spark << dash_ansi::RESET;
+        if (rem > 0) std::cout << std::string(rem, ' ');
+        std::cout << "|\n";
+
+        std::ostringstream loStr, hiStr;
+        loStr << std::fixed << std::setprecision(1) << lo << " " << unit;
+        hiStr << std::fixed << std::setprecision(1) << hi << " " << unit;
+        std::string scaleLeft = "  " + loStr.str();
+        std::string scaleRight = hiStr.str();
+        int gap = TABLE_WIDTH - static_cast<int>(scaleLeft.size()) - static_cast<int>(scaleRight.size());
+        if (gap < 1) gap = 1;
+        std::cout << "|" << scaleLeft << std::string(gap, ' ') << scaleRight << "|\n";
+
+        std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
+    };
+
+    std::cout << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
+    drawSensor(SensorType::EngineTemp,     "Engine Temperature", "C");
+    drawSensor(SensorType::BatteryVoltage, "Battery Voltage",    "V");
+    drawSensor(SensorType::VehicleSpeed,   "Vehicle Speed",      "km/h");
+    drawSensor(SensorType::TirePressure,   "Tire Pressure",      "PSI");
+    printSeparator();
+}
+
 void Dashboard::printFooter(const std::string& prompt) const {
     printDoubleSeparator();
     int padding = (TABLE_WIDTH - static_cast<int>(prompt.size())) / 2;
@@ -318,6 +417,7 @@ void Dashboard::renderStatistics() const {
               << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
     printDoubleSeparator();
     printStatisticsTable();
+    printSparklines();
     printFooter("Press [Enter] to return to menu");
 }
 
@@ -338,9 +438,10 @@ void Dashboard::renderMenu() const {
               << "|   [5] Search Event Log     (filter by severity/keyword)      |\n"
               << "|   [6] Manual Sensor Input        (set values for debug)      |\n"
               << "|   [7] Exit                         (graceful shutdown)       |\n"
+              << "|   [8] Manage Driver Profiles       (set profiles)            |\n"
               << "|" << std::string(TABLE_WIDTH, ' ') << "|\n";
     printDoubleSeparator();
-    std::cout << "Enter choice [1-7]: " << std::flush;
+    std::cout << "Enter choice [1-8]: " << std::flush;
 }
 
 void Dashboard::logSensorSnapshot() const {
@@ -381,4 +482,27 @@ void Dashboard::logStatisticsSnapshot() const {
     std::ostringstream oss;
     oss << "--- STATISTICS SNAPSHOT ---\n" << stats_;
     LOG_INFO("Dashboard", oss.str());
+}
+
+void Dashboard::renderProfileMenu() {
+    std::lock_guard<std::mutex> lock(mtx_);
+    clearScreen();
+    printDoubleSeparator();
+    std::string title = "DRIVER PROFILE MANAGEMENT";
+    int padding = (TABLE_WIDTH - static_cast<int>(title.size())) / 2;
+    std::cout << "|" << dash_ansi::BOLD << std::string(padding, ' ') << title
+              << std::string(TABLE_WIDTH - padding - static_cast<int>(title.size()), ' ') << dash_ansi::RESET << "|\n";
+    printDoubleSeparator();
+
+    const auto& profiles = profileMgr_.getProfiles();
+    size_t activeIdx = profileMgr_.getActiveIndex();
+
+    std::cout << "| Available Profiles:\n";
+    for (size_t i = 0; i < profiles.size(); ++i) {
+        std::cout << "|   [" << (i + 1) << "] " << std::left << std::setw(20) << profiles[i].name;
+        if (i == activeIdx) std::cout << dash_ansi::GREEN << " (ACTIVE)" << dash_ansi::RESET;
+        std::cout << "\n";
+    }
+    std::cout << "|\n|   [B] Back to Main Menu\n";
+    printSeparator();
 }

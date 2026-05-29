@@ -1,0 +1,36 @@
+{
+  "profiles": [
+    {
+      "name": "Default",
+      "engineThreshold": 115,
+      "batteryThreshold": 11,
+      "tireThreshold": 25,
+      "speedLimit": 120,
+      "doorSpeedThreshold": 5
+    },
+    {
+      "name": "Eco",
+      "engineThreshold": 100,
+      "batteryThreshold": 11.5,
+      "tireThreshold": 30,
+      "speedLimit": 90,
+      "doorSpeedThreshold": 0
+    },
+    {
+      "name": "Sport",
+      "engineThreshold": 125,
+      "batteryThreshold": 10.5,
+      "tireThreshold": 22,
+      "speedLimit": 150,
+      "doorSpeedThreshold": 10
+    },
+    {
+      "name": "Performance",
+      "engineThreshold": 135,
+      "batteryThreshold": 10,
+      "tireThreshold": 20,
+      "speedLimit": 180,
+      "doorSpeedThreshold": 15
+    }
+  ]
+}
