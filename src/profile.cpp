@@ -79,7 +79,7 @@ void ProfileManager::loadProfiles() {
     }
 
     if (profiles_.empty()) {
-        profiles_.push_back({"Default", 115.0, 11.0, 25.0, 120.0, 5.0});
+        profiles_.push_back({"Default", 110.0, 11.0, 25.0, 120.0, 10.0});
     }
 }
 

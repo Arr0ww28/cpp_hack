@@ -1499,3 +1499,16 @@
   Log Session Ended: 2026-05-29 11:32:31
   Total Events Logged: 20
 ================================================================
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 11:33:15
+================================================================
+[2026-05-29 11:33:15] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 11:33:15] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 11:33:15] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 11:33:15] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 11:33:17] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 11:33:17] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 11:33:17] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 11:33:17] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
