@@ -553,8 +553,8 @@ def generate_report(results):
                 f.write(actual_html + "\n")
                 f.write("</td></tr></table>\n\n")
 
-            # Show raw output on failure
-            if not result["passed"]:
+            # Show raw output (collapsed) for all tests
+            if result.get("stdout"):
                 f.write("<details><summary>Raw stdout (truncated)</summary>\n\n```\n")
                 f.write(result["stdout"])
                 f.write("\n```\n</details>\n\n")

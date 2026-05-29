@@ -1,6 +1,6 @@
 # Smart Cabin & Vehicle Health Monitor — Test Report
 
-**Execution Time:** 2026-05-29 09:45:14  
+**Execution Time:** 2026-05-29 10:40:51  
 **Total: 41/41 PASSED** | **0 FAILED**
 
 ## 📝 Executive Summary
@@ -119,6 +119,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     72.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:23             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 72.00 km/h    | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                     
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-002: Engine temp 109.9°C — just below CRITICAL threshold
@@ -163,6 +247,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     109.9
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:23             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 109.90 C      | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                     
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-003: Engine temp 110.0°C — exact CRITICAL threshold boundary
@@ -206,6 +374,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     110.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:22             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 110.00 C      | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                     
+```
+</details>
 
 ---
 
@@ -259,6 +511,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:23             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 115.00 C      | [CRITICAL]             |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
+| 10.0 C                                                      |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-005: Battery 11.01V — just above LOW threshold, no alert
@@ -303,6 +639,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     11.01
+[OK] Value accepted.
+    [WARNING] Low battery voltage.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:23             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 11.01 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===================================================
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-006: Battery 11.0V — exact LOW BATTERY threshold (inclusive check)
@@ -346,6 +766,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     11.0
+[OK] Value accepted.
+    [WARNING] Low battery voltage.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:23             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 11.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++====================================================
+```
+</details>
 
 ---
 
@@ -399,6 +903,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     10.99
+[OK] Value accepted.
+    [WARNING] Low battery voltage.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:23             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 10.99 V       | [WARNING]              |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 11.0 V below 11.0 V         |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++================================
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-008: Speed 119.9 km/h — just below OVERSPEED threshold
@@ -443,6 +1031,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     119.9
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:22             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 119.90 km/h   | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                    
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-009: Speed 120.0 km/h — exact OVERSPEED threshold boundary
@@ -486,6 +1158,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     120.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:26             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 120.00 km/h   | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                    
+```
+</details>
 
 ---
 
@@ -539,6 +1295,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     121.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:27             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 121.00 km/h   | [WARNING]              |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [WARNING] OVERSPEED - Speed 121.0 km/h exceeds 120.0 km/h   |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+| 
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-011: Tire 25.1 PSI — just above LOW threshold, no alert
@@ -582,6 +1422,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     25.1
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:28             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 25.10 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                      
+```
+</details>
 
 ---
 
@@ -635,6 +1559,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     24.9
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:28             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 24.90 PSI     | [WARNING]              |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW TIRE PRESSURE - Pressure 24.9 PSI below 25.0  |
+|  PSI                                                        |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++====
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-013: Tire 45 PSI — high pressure input warning feedback
@@ -670,6 +1678,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     45.0
+[OK] Value accepted.
+    [WARNING] High tire pressure detected.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:29             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 45.00 PSI     | [WARNING]              |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [WARNING] HIGH TIRE PRESSURE - Pressure 45.0 PSI above 40.  |
+| 0 PSI                                                       |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN &
+```
+</details>
 
 ---
 
@@ -715,6 +1807,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:29             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | OPEN          | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                      
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-015: Door OPEN + Speed 10.0 km/h — exact boundary, no alert
@@ -758,6 +1934,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     10.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:29             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 10.00 km/h    | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | OPEN          | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                     
+```
+</details>
 
 ---
 
@@ -811,6 +2071,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     10.1
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:28             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 10.10 km/h    | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | OPEN          | [CRITICAL]             |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] DOOR OPEN - Door OPEN at 10.1 km/h (threshold:   |
+| 10.0 km/h)                                                  |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-017: Door OPEN + Speed 50 km/h — DOOR OPEN WARNING fires
@@ -855,6 +2199,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     50.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:31             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 50.00 km/h    | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | OPEN          | [CRITICAL]             |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] DOOR OPEN - Door OPEN at 50.0 km/h (threshold:   |
+| 10.0 km/h)                                                  |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-018: Seatbelt UNLOCKED + Speed 0 — false positive prevention
@@ -898,6 +2326,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:32             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | UNLOCKED      | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                      
+```
+</details>
 
 ---
 
@@ -951,6 +2463,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     30.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:33             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 30.00 km/h    | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | UNLOCKED      | [WARNING]              |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED while movin  |
+| g at 30.0 km/h                                              |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-SEN-020: Seatbelt LOCKED + Speed 100 km/h — no alert
@@ -994,6 +2590,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     100.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:33             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 100.00 km/h   | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                    
+```
+</details>
 
 ---
 
@@ -1067,6 +2747,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     8.0
+[OK] Value accepted.
+    [WARNING] Low battery voltage.
+  Vehicle Speed (km/h):     130.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     20.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:34             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 115.00 C      | [CRITICAL]             |
+| Battery Voltage       | 8.00 V        | [WARNING]              |
+| Vehicle Speed         | 130.00 km/h   | [WARNING]              |
+| Tire Pressure         | 20.00 PSI     | [WARNING]              |
+| Door Status           | OPEN          | [CRITICAL]             |
+| Seatbelt Status       | UNLOCKED      | [WARNING]              |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (6)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
+| 10.0 C                                                      |
+| [WARNING] LOW BATTERY - Voltage 8.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 20.0 PSI below 25.0  |
+|  PSI                                                        |
+| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds 120.0 km/h   |
+| [CRITICAL] DOOR OPEN - Door OPEN at 130.0 km/h (threshold:  |
+|  10.0 km/h)                                                 |
+| [WARN
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-ALT-002: Alert deduplication — same overheat across 5 monitor cycles
@@ -1110,6 +2874,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:34             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 115.00 C      | [CRITICAL]             |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
+| 10.0 C                                                      |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
 
 ---
 
@@ -1157,6 +3005,101 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     90.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CAB
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-ALT-004: Alert priority display — CRITICAL before WARNING in Option 2
@@ -1202,6 +3145,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     130.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:34             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 115.00 C      | [CRITICAL]             |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 130.00 km/h   | [WARNING]              |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
+| 10.0 C                                                      |
+| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds 120.0 km/h   |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|  
+```
+</details>
 
 ---
 
@@ -1249,6 +3276,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:35             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 115.00 C      | [CRITICAL]             |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
+| 10.0 C                                                      |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-ALT-006: Door alert clears — door closed while still moving
@@ -1295,6 +3406,101 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     30.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     30.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CA
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-ALT-007: Static alert counter — 6 alerts generated, counter == 6
@@ -1333,6 +3539,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     115.0
+[OK] Value accepted.
+  Battery Voltage (V):     8.0
+[OK] Value accepted.
+    [WARNING] Low battery voltage.
+  Vehicle Speed (km/h):     130.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     20.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     1
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:37             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 115.00 C      | [CRITICAL]             |
+| Battery Voltage       | 8.00 V        | [WARNING]              |
+| Vehicle Speed         | 130.00 km/h   | [WARNING]              |
+| Tire Pressure         | 20.00 PSI     | [WARNING]              |
+| Door Status           | OPEN          | [CRITICAL]             |
+| Seatbelt Status       | UNLOCKED      | [WARNING]              |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (6)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
+| 10.0 C                                                      |
+| [WARNING] LOW BATTERY - Voltage 8.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 20.0 PSI below 25.0  |
+|  PSI                                                        |
+| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds 120.0 km/h   |
+| [CRITICAL] DOOR OPEN - Door OPEN at 130.0 km/h (threshold:  |
+|  10.0 km/h)                                                 |
+| [WARN
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-VAL-001: Non-numeric engine temp input 'abc' — rejected with feedback
@@ -1363,6 +3653,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     abc
+Invalid numeric input. Please try again.
+  Engine Temperature (C):     
+(skipped, keeping current value)
+  Battery Voltage (V):     
+(skipped, keeping current value)
+  Vehicle Speed (km/h):     
+(skipped, keeping current value)
+  Tire Pressure (PSI):     
+(skipped, keeping current value)
+  Door Status [0=CLOSED, 1=OPEN]:     
+(skipped, keeping current value)
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 2
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|            [ALERTS]  Updated: 2026-05-29 10:40:37            |
++==============================================================+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
+| PSI                                     
+```
+</details>
 
 ---
 
@@ -1395,6 +3769,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     
+(skipped, keeping current value)
+  Battery Voltage (V):     
+(skipped, keeping current value)
+  Vehicle Speed (km/h):     500.0
+[INVALID] Invalid speed. Must be between 0 and 300 km/h. Please try again.
+  Vehicle Speed (km/h):     
+(skipped, keeping current value)
+  Tire Pressure (PSI):     
+(skipped, keeping current value)
+  Door Status [0=CLOSED, 1=OPEN]:     
+(skipped, keeping current value)
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 2
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|            [ALERTS]  Updated: 2026-05-29 10:40:39            |
++==============================================================+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
+| PSI   
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-VAL-003: Negative speed -5 km/h — out of bounds, rejected
@@ -1425,6 +3883,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     
+(skipped, keeping current value)
+  Battery Voltage (V):     
+(skipped, keeping current value)
+  Vehicle Speed (km/h):     -5.0
+[INVALID] Invalid speed. Must be between 0 and 300 km/h. Please try again.
+  Vehicle Speed (km/h):     
+(skipped, keeping current value)
+  Tire Pressure (PSI):     
+(skipped, keeping current value)
+  Door Status [0=CLOSED, 1=OPEN]:     
+(skipped, keeping current value)
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 2
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|            [ALERTS]  Updated: 2026-05-29 10:40:39            |
++==============================================================+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
+| PSI    
+```
+</details>
 
 ---
 
@@ -1457,6 +3999,89 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     
+(skipped, keeping current value)
+  Battery Voltage (V):     
+(skipped, keeping current value)
+  Vehicle Speed (km/h):     
+(skipped, keeping current value)
+  Tire Pressure (PSI):     
+(skipped, keeping current value)
+  Door Status [0=CLOSED, 1=OPEN]:     
+(skipped, keeping current value)
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     
+(skipped, keeping current value)
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:39             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 0.00 C        | [NORMAL]               |
+| Battery Voltage       | 0.00 V        | [WARNING]              |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 0.00 PSI      | [WARNING]              |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
+| PSI                                                         |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+===============
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-VAL-005: Door input '2' — invalid discrete value, rejected
@@ -1487,6 +4112,89 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     
+(skipped, keeping current value)
+  Battery Voltage (V):     
+(skipped, keeping current value)
+  Vehicle Speed (km/h):     
+(skipped, keeping current value)
+  Tire Pressure (PSI):     
+(skipped, keeping current value)
+  Door Status [0=CLOSED, 1=OPEN]:     2
+[INVALID] Invalid door status. Must be exactly 0 (CLOSED) or 1 (OPEN). Please try again.
+  Door Status [0=CLOSED, 1=OPEN]:     
+(skipped, keeping current value)
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 2
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|            [ALERTS]  Updated: 2026-05-29 10:40:39            |
++==============================================================+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI bel
+```
+</details>
 
 ---
 
@@ -1519,6 +4227,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     
+(skipped, keeping current value)
+  Battery Voltage (V):     
+(skipped, keeping current value)
+  Vehicle Speed (km/h):     
+(skipped, keeping current value)
+  Tire Pressure (PSI):     
+(skipped, keeping current value)
+  Door Status [0=CLOSED, 1=OPEN]:     
+(skipped, keeping current value)
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     yes
+Invalid numeric input. Please try again.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     1
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 2
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|            [ALERTS]  Updated: 2026-05-29 10:40:40            |
++==============================================================+
+| ACTIVE ALERTS (2)                                         |
++--------------------------------------------------------------+
+| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
+| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
+| PSI                     
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-VAL-007: Main menu input '8' — invalid, error shown, menu repainted
@@ -1542,6 +4334,57 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]:   8
+Invalid choice. Please enter 1-7.
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 7
+
++==============================================================+
+|                    SYSTEM SHUTDOWN COMPLETE                   |
++==============================================================+
+  Sensors active at shutdown : 6
+  Total alerts generated     : 0
+  Total events logged        : 7
+  Log file                   : logs/vehicle_logs.txt
+  All resources released. Goodbye.
+
+
+```
+</details>
 
 ---
 
@@ -1567,6 +4410,57 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]:   abc
+Invalid choice. Please enter 1-7.
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 7
+
++==============================================================+
+|                    SYSTEM SHUTDOWN COMPLETE                   |
++==============================================================+
+  Sensors active at shutdown : 6
+  Total alerts generated     : 0
+  Total events logged        : 7
+  Log file                   : logs/vehicle_logs.txt
+  All resources released. Goodbye.
+
+
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-CFG-001: Valid config.txt loaded — thresholds override defaults
@@ -1588,6 +4482,42 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 7
+
++==============================================================+
+|                    SYSTEM SHUTDOWN COMPLETE                   |
++==============================================================+
+  Sensors active at shutdown : 6
+  Total alerts generated     : 0
+  Total events logged        : 8
+  Log file                   : logs/vehicle_logs.txt
+  All resources released. Goodbye.
+
+
+```
+</details>
 
 ---
 
@@ -1613,6 +4543,32 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[WARN] Cannot open config file: data/config.txt â€” using defaults.
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 7
+
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-CFG-003: config.txt with comments (#) and whitespace — parsed correctly
@@ -1634,6 +4590,42 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 7
+
++==============================================================+
+|                    SYSTEM SHUTDOWN COMPLETE                   |
++==============================================================+
+  Sensors active at shutdown : 6
+  Total alerts generated     : 0
+  Total events logged        : 5
+  Log file                   : logs/vehicle_logs.txt
+  All resources released. Goodbye.
+
+
+```
+</details>
 
 ---
 
@@ -1678,6 +4670,90 @@
   "system_running": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     106.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:44             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 106.00 C      | [CRITICAL]             |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (1)                                         |
++--------------------------------------------------------------+
+| [CRITICAL] ENGINE OVERHEAT - Temperature 106.0 C exceeds 1  |
+| 05.0 C                                                      |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++===
+```
+</details>
 
 ---
 
@@ -1731,6 +4807,90 @@
 }</pre>
 </td></tr></table>
 
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     72.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:45             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 72.00 km/h    | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                     
+```
+</details>
+
 ---
 
 ### ✅ PASS TC-DSH-002: Shutdown summary — sensor count and alert count displayed
@@ -1764,6 +4924,90 @@
   "input_accepted": true
 }</pre>
 </td></tr></table>
+
+<details><summary>Raw stdout (truncated)</summary>
+
+```
+[OK] Configuration loaded from data/config.txt
+[OK] 6 sensors initialized.
+[OK] All modules initialized.
+
+Starting system in 2 seconds...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 6
+
++----------------------------------------------+
+|            MANUAL SENSOR INPUT               |
++----------------------------------------------+
+(Enter a value for each sensor. Press Enter to skip.)
+
+  Engine Temperature (C):     85.0
+[OK] Value accepted.
+  Battery Voltage (V):     14.0
+[OK] Value accepted.
+  Vehicle Speed (km/h):     0.0
+[OK] Value accepted.
+  Tire Pressure (PSI):     32.0
+[OK] Value accepted.
+  Door Status [0=CLOSED, 1=OPEN]:     0
+[OK] Value accepted.
+  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
+[OK] Value accepted.
+
+Values updated. Returning to menu...
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                                                              |
+|   [1] Live Dashboard      (auto-refreshing sensor view)      |
+|   [2] View Active Alerts     (current warnings/criticals     |
+|   [3] View Alert History     (last 20 alerts with time)      |
+|   [4] View Statistics     (min / max / avg per sensor)       |
+|   [5] Search Event Log     (filter by severity/keyword)      |
+|   [6] Manual Sensor Input        (set values for debug)      |
+|   [7] Exit                         (graceful shutdown)       |
+|                                                              |
++==============================================================+
+Enter choice [1-7]: 1
++==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
+|             [LIVE]  Updated: 2026-05-29 10:40:45             |
++==============================================================+
+| SENSOR                | VALUE         | STATUS                 |
++--------------------------------------------------------------+
+| Engine Temperature    | 85.00 C       | [NORMAL]               |
+| Battery Voltage       | 14.00 V       | [NORMAL]               |
+| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
+| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
+| Door Status           | CLOSED        | [NORMAL]               |
+| Seatbelt Status       | LOCKED        | [NORMAL]               |
++--------------------------------------------------------------+
+| ACTIVE ALERTS (0)                                         |
++--------------------------------------------------------------+
+| No active alerts â€” all systems nominal |
++--------------------------------------------------------------+
++==============================================================+
+|               Press [Enter] to return to menu                |
++==============================================================+
+
+Press Enter to return to menu...+==============================================================+
+|             SMART CABIN & VEHICLE HEALTH MONITOR             |
++==============================================================+
+|                      
+```
+</details>
 
 ---
 
