@@ -20,6 +20,7 @@
 #include <iomanip>
 #include <stdexcept>
 #include <functional>
+#include <cmath>
 
 namespace main_ansi {
     const std::string GREEN  = "\033[32m";
@@ -32,6 +33,7 @@ namespace main_ansi {
 static std::atomic<bool> g_running{true};
 std::atomic<bool> g_sensorsInitialized{false};
 std::atomic<bool> g_simulateHang{false};
+std::atomic<bool> g_autoSimulate{false};
 
 void signalHandler(int /*signum*/) {
     g_running.store(false);
@@ -112,7 +114,8 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
     std::cout << "\n" << main_ansi::BOLD << "+----------------------------------------------+\n"
               << "|            MANUAL SENSOR INPUT               |\n"
               << "+----------------------------------------------+\n" << main_ansi::RESET
-              << "(Enter a value for each sensor. Press Enter to skip.)\n\n";
+              << "(Enter a value for each sensor. Press Enter to skip)\n"
+              << "Type 'S' and press Enter to toggle Auto-Simulation thread\n\n";
 
     for (auto& sensor : sensors) {
         SensorType type = sensor->getType();
@@ -134,6 +137,13 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
             if (input.empty()) {
                 std::cout << "    (skipped, keeping current value)\n";
                 break;
+            }
+
+            if (input == "S" || input == "s") {
+                bool state = g_autoSimulate.load();
+                g_autoSimulate.store(!state);
+                std::cout << "    " << main_ansi::GREEN << "[OK] Auto-Simulation is now " << (g_autoSimulate.load() ? "ON" : "OFF") << main_ansi::RESET << "\n";
+                break; // Skip the rest of the current input since they just wanted to toggle
             }
 
             try {
@@ -339,6 +349,58 @@ int main() {
         }
         LOG_INFO("WatchdogThread", "Health monitor thread stopped");
     }, "WatchdogThread");
+
+    // --- Thread 4: Auto-Simulator ---
+    threadMgr.start([&]() {
+        LOG_INFO("SimThread", "Auto-simulation thread started (initially OFF)");
+        auto startTime = std::chrono::steady_clock::now();
+        
+        while (g_running.load()) {
+            healthMonitor.ping("SimThread");
+            
+            if (g_autoSimulate.load()) {
+                auto now = std::chrono::steady_clock::now();
+                double elapsed = std::chrono::duration<double>(now - startTime).count();
+                
+                for (auto& sensor : sensors) {
+                    SensorType type = sensor->getType();
+                    double newVal = 0.0;
+                    bool skip = false;
+                    
+                    switch (type) {
+                        case SensorType::EngineTemp:
+                            // Base 85C, Amp 30C, Freq 0.05
+                            newVal = 85.0 + 30.0 * std::sin(elapsed * 0.05);
+                            break;
+                        case SensorType::VehicleSpeed:
+                            // Base 60km/h, Amp 60km/h, Freq 0.1
+                            newVal = 60.0 + 60.0 * std::sin(elapsed * 0.1);
+                            if (newVal < 0) newVal = 0.0; // Don't go backwards
+                            break;
+                        case SensorType::BatteryVoltage:
+                            // Base 12.5V, Amp 2.0V, Freq 0.02
+                            newVal = 12.5 + 2.0 * std::sin(elapsed * 0.02);
+                            break;
+                        case SensorType::TirePressure:
+                            // Base 32 PSI, Amp 5 PSI, Freq 0.01
+                            newVal = 32.0 + 5.0 * std::sin(elapsed * 0.01);
+                            break;
+                        default:
+                            skip = true;
+                            break;
+                    }
+                    
+                    if (!skip) {
+                        sensor->setValue(newVal);
+                        stats.recordReading(type, newVal);
+                    }
+                }
+                g_sensorsInitialized.store(true);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(500)); // Update sensors every 500ms
+        }
+        LOG_INFO("SimThread", "Auto-simulation thread stopped");
+    }, "SimThread");
 
     // --- Dashboard logic moved to main thread ---
 
