@@ -796,3 +796,417 @@
 [2026-05-29 10:18:52] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
 [2026-05-29 10:18:59] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
 [2026-05-29 10:19:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 112.3 km/h (Limit: 5.0)
+[2026-05-29 10:19:18] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:19:20] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.3 km/h (Limit: 5.0)
+[2026-05-29 10:19:23] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:19:28] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:19:30] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 12.5 km/h (Limit: 5.0)
+[2026-05-29 10:19:31] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:19:31] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:19:33] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 20.2 km/h (Limit: 5.0)
+[2026-05-29 10:19:43] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:19:49] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 100.8 km/h (Limit: 5.0)
+[2026-05-29 10:19:51] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:19:52] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 106.7 km/h
+[2026-05-29 10:19:55] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:20:01] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:20:02] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:20:20] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 16.6 km/h
+[2026-05-29 10:20:23] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:20:25] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 84.4 km/h (Limit: 5.0)
+[2026-05-29 10:20:26] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:20:26] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:20:29] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 109.6 km/h (Limit: 5.0)
+[2026-05-29 10:20:33] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:20:34] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:20:35] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.2 km/h (Limit: 5.0)
+[2026-05-29 10:20:40] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:20:48] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 13.5 km/h
+[2026-05-29 10:20:49] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 51.9 km/h (Limit: 5.0)
+[2026-05-29 10:20:55] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:20:58] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:21:03] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:21:04] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 93.2 km/h
+[2026-05-29 10:21:04] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:21:06] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:21:08] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 77.9 km/h
+[2026-05-29 10:21:09] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 48.3 km/h (Limit: 5.0)
+[2026-05-29 10:21:11] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:21:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 21.7 km/h (Limit: 5.0)
+[2026-05-29 10:21:22] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:21:24] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 0.7 km/h
+[2026-05-29 10:21:24] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:21:25] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.4 km/h (Limit: 5.0)
+[2026-05-29 10:21:26] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:21:29] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:21:30] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:21:36] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:21:37] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 3.0 km/h
+[2026-05-29 10:21:39] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 31.2 km/h (Limit: 5.0)
+[2026-05-29 10:21:43] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:21:49] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:21:54] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 99.6 km/h
+[2026-05-29 10:22:00] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:22:08] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:22:09] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 115.9 km/h (Limit: 5.0)
+[2026-05-29 10:22:14] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:22:16] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.9 km/h (Limit: 5.0)
+[2026-05-29 10:22:17] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:22:26] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:22:32] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:22:32] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 95.7 km/h
+[2026-05-29 10:22:35] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:22:38] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 31.4 km/h (Limit: 5.0)
+[2026-05-29 10:22:39] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:22:39] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:22:41] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.4 km/h (Limit: 5.0)
+[2026-05-29 10:22:42] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 37.1 km/h
+[2026-05-29 10:22:44] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:22:47] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 111.5 km/h (Limit: 5.0)
+[2026-05-29 10:22:50] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:22:56] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 64.8 km/h (Limit: 5.0)
+[2026-05-29 10:23:03] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:23:04] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:23:05] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:23:06] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.2 km/h (Limit: 5.0)
+[2026-05-29 10:23:06] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 11.2 km/h
+[2026-05-29 10:23:11] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:23:17] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:23:19] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.3 km/h (Limit: 5.0)
+[2026-05-29 10:23:20] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:23:23] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:23:33] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 59.9 km/h (Limit: 5.0)
+[2026-05-29 10:23:35] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:23:38] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:23:39] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 68.4 km/h
+[2026-05-29 10:23:42] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:23:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:23:45] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 43.4 km/h
+[2026-05-29 10:23:50] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:23:59] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 85.7 km/h
+[2026-05-29 10:24:00] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 108.6 km/h (Limit: 5.0)
+[2026-05-29 10:24:04] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:24:06] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:24:08] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:24:09] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 15.5 km/h (Limit: 5.0)
+[2026-05-29 10:24:12] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:24:14] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:24:17] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 73.3 km/h
+[2026-05-29 10:24:20] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:24:23] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 38.7 km/h
+[2026-05-29 10:24:26] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 114.5 km/h (Limit: 5.0)
+[2026-05-29 10:24:29] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:24:30] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:24:38] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:24:39] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 120.0 km/h (Limit: 5.0)
+[2026-05-29 10:24:44] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 10.4 km/h
+[2026-05-29 10:24:45] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:24:45] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:24:47] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 12.3 km/h (Limit: 5.0)
+[2026-05-29 10:24:47] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:24:47] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:24:48] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 50.0 km/h
+[2026-05-29 10:24:50] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:24:51] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 118.3 km/h (Limit: 5.0)
+[2026-05-29 10:24:53] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:25:06] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 93.0 km/h
+[2026-05-29 10:25:09] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:25:14] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:25:16] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:25:32] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 68.0 km/h
+[2026-05-29 10:25:36] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:25:41] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:25:42] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 119.3 km/h
+[2026-05-29 10:25:44] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:25:47] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:25:53] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 98.5 km/h (Limit: 5.0)
+[2026-05-29 10:25:56] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:26:03] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 40.4 km/h (Limit: 5.0)
+[2026-05-29 10:26:05] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 84.3 km/h
+[2026-05-29 10:26:09] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:26:12] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:26:17] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 68.3 km/h (Limit: 5.0)
+[2026-05-29 10:26:19] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:26:24] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:26:35] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:26:40] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 12.2 km/h (Limit: 5.0)
+[2026-05-29 10:26:41] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:26:41] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 49.7 km/h (Limit: 5.0)
+[2026-05-29 10:26:42] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 79.3 km/h
+[2026-05-29 10:26:43] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:26:43] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:26:44] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:26:47] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 92.0 km/h (Limit: 5.0)
+[2026-05-29 10:26:48] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 48.7 km/h
+[2026-05-29 10:26:50] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:26:50] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:26:53] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 21.3 km/h (Limit: 5.0)
+[2026-05-29 10:26:56] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:26:57] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 120.0 km/h
+[2026-05-29 10:26:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:27:03] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:27:04] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 0.3 km/h
+[2026-05-29 10:27:05] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.2 km/h (Limit: 5.0)
+[2026-05-29 10:27:11] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:27:13] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:27:14] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:27:15] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 5.6 km/h
+[2026-05-29 10:27:18] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:27:22] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:27:31] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 29.4 km/h
+[2026-05-29 10:27:38] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:27:45] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 85.5 km/h (Limit: 5.0)
+[2026-05-29 10:27:45] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 85.5 km/h
+[2026-05-29 10:27:46] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:27:50] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:27:53] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:27:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:28:08] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 25.4 km/h
+[2026-05-29 10:28:17] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 19.2 km/h (Limit: 5.0)
+[2026-05-29 10:28:17] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:28:18] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:28:20] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.4 km/h (Limit: 5.0)
+[2026-05-29 10:28:22] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:28:24] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:28:29] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:28:30] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 10.5 km/h
+[2026-05-29 10:28:34] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 35.5 km/h (Limit: 5.0)
+[2026-05-29 10:28:44] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:28:45] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.2 km/h (Limit: 5.0)
+[2026-05-29 10:28:48] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:28:49] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:28:50] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 117.9 km/h (Limit: 5.0)
+[2026-05-29 10:28:53] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:28:56] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:28:56] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:28:58] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.3 km/h (Limit: 5.0)
+[2026-05-29 10:29:04] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 113.9 km/h
+[2026-05-29 10:29:09] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:29:09] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:29:11] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 18.9 km/h (Limit: 5.0)
+[2026-05-29 10:29:20] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:29:21] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 14.6 km/h
+[2026-05-29 10:29:21] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:29:23] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 8.5 km/h (Limit: 5.0)
+[2026-05-29 10:29:25] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:29:26] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 87.2 km/h
+[2026-05-29 10:29:27] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:29:27] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:29:28] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 119.7 km/h
+[2026-05-29 10:29:30] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:29:33] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:29:41] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 119.5 km/h
+[2026-05-29 10:29:44] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 56.8 km/h (Limit: 5.0)
+[2026-05-29 10:29:47] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:29:48] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:29:48] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 15.5 km/h (Limit: 5.0)
+[2026-05-29 10:29:49] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:29:51] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:29:54] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 109.7 km/h
+[2026-05-29 10:29:55] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 99.8 km/h (Limit: 5.0)
+[2026-05-29 10:29:59] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:29:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:30:00] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.1 km/h (Limit: 5.0)
+[2026-05-29 10:30:00] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:30:02] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 38.6 km/h
+[2026-05-29 10:30:12] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:30:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.4 km/h (Limit: 5.0)
+[2026-05-29 10:30:21] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:30:23] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:30:23] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:30:30] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:30:36] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 21.8 km/h (Limit: 5.0)
+[2026-05-29 10:30:36] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:30:39] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.2 km/h (Limit: 5.0)
+[2026-05-29 10:30:49] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:30:51] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 20.0 km/h (Limit: 5.0)
+[2026-05-29 10:30:53] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:30:54] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:30:57] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 105.8 km/h
+[2026-05-29 10:31:00] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:31:02] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:31:08] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 116.8 km/h (Limit: 5.0)
+[2026-05-29 10:31:12] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 39.1 km/h
+[2026-05-29 10:31:15] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:31:26] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 15.8 km/h (Limit: 5.0)
+[2026-05-29 10:31:26] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:31:27] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:31:29] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:31:33] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:31:38] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 28.6 km/h (Limit: 5.0)
+[2026-05-29 10:31:38] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 28.6 km/h
+[2026-05-29 10:31:39] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:31:41] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.8 km/h (Limit: 5.0)
+[2026-05-29 10:31:52] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:31:54] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.1 km/h (Limit: 5.0)
+[2026-05-29 10:31:57] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:31:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:02] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:32:05] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:32:08] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 51.5 km/h
+[2026-05-29 10:32:10] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:32:11] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 118.7 km/h (Limit: 5.0)
+[2026-05-29 10:32:13] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:14] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 76.7 km/h (Limit: 5.0)
+[2026-05-29 10:32:17] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:19] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 12.2 km/h (Limit: 5.0)
+[2026-05-29 10:32:21] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:24] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 118.3 km/h
+[2026-05-29 10:32:29] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:32:29] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:32:32] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 21.3 km/h (Limit: 5.0)
+[2026-05-29 10:32:33] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 33.9 km/h
+[2026-05-29 10:32:36] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:32:36] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:32:38] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:39] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 65.4 km/h (Limit: 5.0)
+[2026-05-29 10:32:42] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 12.6 km/h
+[2026-05-29 10:32:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:32:44] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.2 km/h (Limit: 5.0)
+[2026-05-29 10:32:52] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 67.2 km/h
+[2026-05-29 10:32:55] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:32:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:33:00] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 88.3 km/h (Limit: 5.0)
+[2026-05-29 10:33:00] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:33:00] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 110.2 km/h
+[2026-05-29 10:33:07] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:33:08] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:33:09] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 17.4 km/h (Limit: 5.0)
+[2026-05-29 10:33:10] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:33:15] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 108.0 km/h (Limit: 5.0)
+[2026-05-29 10:33:15] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:33:20] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:33:21] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 7.5 km/h (Limit: 5.0)
+[2026-05-29 10:33:24] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 56.1 km/h
+[2026-05-29 10:33:24] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:33:32] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:33:32] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:33:33] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 1.5 km/h
+[2026-05-29 10:33:39] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:33:51] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 118.9 km/h (Limit: 5.0)
+[2026-05-29 10:33:57] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:34:03] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:34:09] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.9 km/h (Limit: 5.0)
+[2026-05-29 10:34:10] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:34:10] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:34:12] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 22.2 km/h (Limit: 5.0)
+[2026-05-29 10:34:21] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:34:23] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:34:24] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.8 km/h (Limit: 5.0)
+[2026-05-29 10:34:30] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:34:31] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 104.9 km/h
+[2026-05-29 10:34:34] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:34:41] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 111.1 km/h (Limit: 5.0)
+[2026-05-29 10:34:42] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:34:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:34:44] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 95.0 km/h
+[2026-05-29 10:34:48] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:34:50] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 18.6 km/h (Limit: 5.0)
+[2026-05-29 10:34:51] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:34:52] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 59.4 km/h (Limit: 5.0)
+[2026-05-29 10:34:55] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 10:34:58
+================================================================
+[2026-05-29 10:34:58] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 10:34:58] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 10:34:58] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 10:34:58] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 10:35:00] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 10:35:00] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 10:35:00] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 10:35:00] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 10:35:02] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 8.3 km/h (Limit: 5.0)
+[2026-05-29 10:35:02] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:35:05] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 86.8 km/h
+[2026-05-29 10:35:05] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:35:06] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:35:13] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:35:14] [CRITICAL] [AlertManager | alert.cpp:operator()          ] ENGINE OVERHEAT triggered: Temperature 120.0 C exceeds 115.0 C
+[2026-05-29 10:35:14] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 120.0 km/h (Limit: 5.0)
+[2026-05-29 10:35:14] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 120.0 km/h
+[2026-05-29 10:35:14] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Engine Temperature set to 120.000000
+[2026-05-29 10:35:14] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Seatbelt Status set to 1.000000
+[2026-05-29 10:35:14] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Vehicle Speed set to 120.000000
+[2026-05-29 10:35:14] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Battery Voltage set to 14.200000
+[2026-05-29 10:35:14] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Door Status set to 1.000000
+[2026-05-29 10:35:14] [INFO    ] [ManualInput | main.cpp:manualSensorInput     ] Tire Pressure set to 32.000000
+[2026-05-29 10:35:15] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 120.00 C [!] | Battery Voltage: 14.20 V | Vehicle Speed: 120.00 km/h | Tire Pressure: 32.00 PSI | Door Status: OPEN [!] | Seatbelt Status: UNLOCKED [!]
+[2026-05-29 10:35:15] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 3 | [CRITICAL] ENGINE OVERHEAT - Temperature 120.0 C exceeds 115.0 C | [CRITICAL] DOOR OPEN - Door OPEN at 120.0 km/h (Limit: 5.0) | [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 120.0 km/h
+[2026-05-29 10:35:19] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:35:27] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 1.6 km/h
+[2026-05-29 10:35:28] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 15.2 km/h (Limit: 5.0)
+[2026-05-29 10:35:37] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V
+[2026-05-29 10:35:38] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:35:40] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.0 km/h (Limit: 5.0)
+[2026-05-29 10:35:41] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:35:44] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:35:47] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 89.3 km/h (Limit: 5.0)
+[2026-05-29 10:35:47] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:35:51] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:35:52] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.3 km/h (Limit: 5.0)
+[2026-05-29 10:35:54] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 36.7 km/h
+[2026-05-29 10:35:57] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:35:59] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:01] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 62.3 km/h (Limit: 5.0)
+[2026-05-29 10:36:04] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:05] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 12.0 km/h (Limit: 5.0)
+[2026-05-29 10:36:08] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:36:09] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 104.0 km/h
+[2026-05-29 10:36:11] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:36:16] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:36:16] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:18] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.0 km/h (Limit: 5.0)
+[2026-05-29 10:36:20] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 77.5 km/h
+[2026-05-29 10:36:24] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:25] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 80.2 km/h (Limit: 5.0)
+[2026-05-29 10:36:29] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:31] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 10.1 km/h (Limit: 5.0)
+[2026-05-29 10:36:40] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:36:42] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:46] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:36:48] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:36:51] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 69.1 km/h (Limit: 5.0)
+[2026-05-29 10:36:52] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:36:57] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 42.7 km/h (Limit: 5.0)
+[2026-05-29 10:37:07] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:37:08] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 7.3 km/h (Limit: 5.0)
+[2026-05-29 10:37:10] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 41.0 km/h
+[2026-05-29 10:37:12] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:37:19] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:37:19] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:37:19] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:37:21] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 14.9 km/h (Limit: 5.0)
+[2026-05-29 10:37:24] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:37:28] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 100.4 km/h
+[2026-05-29 10:37:33] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 5.8 km/h (Limit: 5.0)
+[2026-05-29 10:37:33] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:37:37] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 95.0 km/h
+[2026-05-29 10:37:43] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:37:43] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:37:50] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:37:58] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 11.7 km/h (Limit: 5.0)
+[2026-05-29 10:38:07] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:38:07] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:38:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 47.4 km/h (Limit: 5.0)
+[2026-05-29 10:38:15] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.8 V below 11.0 V
+[2026-05-29 10:38:16] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 118.6 km/h
+[2026-05-29 10:38:22] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:38:22] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:38:25] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 60.6 km/h (Limit: 5.0)
+[2026-05-29 10:38:27] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:38:37] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 18.3 km/h (Limit: 5.0)
+[2026-05-29 10:38:46] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 11.0 V below 11.0 V
+[2026-05-29 10:38:47] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:38:49] [INFO    ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING cleared
+[2026-05-29 10:38:53] [INFO    ] [AlertManager | alert.cpp:operator()          ]  cleared
+[2026-05-29 10:38:54] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 119.5 km/h (Limit: 5.0)
+[2026-05-29 10:39:00] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:39:01] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 15.9 km/h (Limit: 5.0)
+[2026-05-29 10:39:07] [INFO    ] [AlertManager | alert.cpp:operator()          ] DOOR OPEN cleared
+[2026-05-29 10:39:13] [CRITICAL] [AlertManager | alert.cpp:operator()          ] DOOR OPEN triggered: Door OPEN at 6.4 km/h (Limit: 5.0)
+[2026-05-29 10:39:16] [WARNING ] [AlertManager | alert.cpp:operator()          ] SEATBELT WARNING triggered: Seatbelt UNLOCKED at 83.3 km/h
+[2026-05-29 10:39:17] [WARNING ] [AlertManager | alert.cpp:operator()          ] LOW BATTERY triggered: Voltage 10.9 V below 11.0 V

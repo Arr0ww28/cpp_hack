@@ -157,6 +157,13 @@ void manualSensorInput(std::vector<std::unique_ptr<Sensor>>& sensors, VehicleSta
                     continue;
                 }
 
+                // If they entered a manual value, auto-simulate MUST be disabled
+                // otherwise the background thread will overwrite it in 500ms
+                if (g_autoSimulate.load()) {
+                    g_autoSimulate.store(false);
+                    std::cout << "    " << main_ansi::YELLOW << "[NOTE] Auto-Simulation automatically turned OFF to preserve manual input." << main_ansi::RESET << "\n";
+                }
+
                 sensor->setValue(val);
                 if (type != SensorType::DoorStatus && type != SensorType::Seatbelt) {
                     stats.recordReading(type, val);
@@ -434,9 +441,16 @@ int main() {
                     dashboard.renderLiveDashboard();
                     dashboard.logSensorSnapshot();
                     dashboard.logAlertSnapshot();
-                    std::cout << "\nPress [R] to Refresh, or [Enter] to return to menu: ";
+                    std::cout << "\nPress [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter] to return to menu: ";
                     std::getline(std::cin, input);
                     if (input.empty()) break;
+                    if (input[0] == 'Q' || input[0] == 'q') {
+                        bool state = g_autoSimulate.load();
+                        g_autoSimulate.store(!state);
+                        std::cout << "    " << main_ansi::GREEN << "[OK] Auto-Simulation is now " << (g_autoSimulate.load() ? "ON" : "OFF") << main_ansi::RESET << "\n";
+                        std::this_thread::sleep_for(std::chrono::milliseconds(800));
+                        continue;
+                    }
                     if (input[0] == 'R' || input[0] == 'r') continue;
                     break;
                 }
