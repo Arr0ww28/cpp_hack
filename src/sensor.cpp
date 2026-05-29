@@ -104,7 +104,7 @@ std::string EngineTemperatureSensor::getFormattedValue() const {
 
 bool EngineTemperatureSensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ >= profile.engineThreshold;
+    return currentValue_ > profile.engineThreshold;
 }
 
 BatterySensor::BatterySensor()
@@ -128,7 +128,7 @@ std::string BatterySensor::getFormattedValue() const {
 
 bool BatterySensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ <= profile.batteryThreshold || currentValue_ >= 15.0;
+    return currentValue_ < profile.batteryThreshold || currentValue_ > 15.0;
 }
 
 SpeedSensor::SpeedSensor()
@@ -152,7 +152,7 @@ std::string SpeedSensor::getFormattedValue() const {
 
 bool SpeedSensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ >= profile.speedLimit;
+    return currentValue_ > profile.speedLimit;
 }
 
 TirePressureSensor::TirePressureSensor()
@@ -176,7 +176,7 @@ std::string TirePressureSensor::getFormattedValue() const {
 
 bool TirePressureSensor::isCritical(const DriverProfile& profile) const {
     std::lock_guard<std::mutex> lock(mtx_);
-    return currentValue_ <= profile.tireThreshold || currentValue_ >= 45.0;
+    return currentValue_ < profile.tireThreshold || currentValue_ > 45.0;
 }
 
 DoorSensor::DoorSensor()

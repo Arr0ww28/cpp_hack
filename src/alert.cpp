@@ -176,15 +176,15 @@ void AlertManager::evaluateConditions(const std::vector<std::unique_ptr<Sensor>>
     // Engine Overheat
     std::ostringstream engineMsg;
     engineMsg << std::fixed << std::setprecision(1) << "Temperature " << engineTemp << " C exceeds " << engineThreshold << " C";
-    checkCondition(engineTemp >= engineThreshold, AlertType::ENGINE_OVERHEAT, AlertSeverity::CRITICAL, engineMsg.str(), "ENGINE OVERHEAT");
+    checkCondition(engineTemp > engineThreshold, AlertType::ENGINE_OVERHEAT, AlertSeverity::CRITICAL, engineMsg.str(), "ENGINE OVERHEAT");
 
     // Low/High Battery
     std::ostringstream battMsg;
-    if (batteryVolts <= batteryThreshold) {
+    if (batteryVolts < batteryThreshold) {
         battMsg << std::fixed << std::setprecision(1) << "Voltage " << batteryVolts << " V below " << batteryThreshold << " V";
         checkCondition(true, AlertType::LOW_BATTERY, AlertSeverity::WARNING, battMsg.str(), "LOW BATTERY");
         checkCondition(false, AlertType::HIGH_BATTERY, AlertSeverity::WARNING, "", "");
-    } else if (batteryVolts >= 15.0) {
+    } else if (batteryVolts > 15.0) {
         battMsg << std::fixed << std::setprecision(1) << "Voltage " << batteryVolts << " V above 15.0 V";
         checkCondition(true, AlertType::HIGH_BATTERY, AlertSeverity::WARNING, battMsg.str(), "HIGH BATTERY");
         checkCondition(false, AlertType::LOW_BATTERY, AlertSeverity::WARNING, "", "");
@@ -195,11 +195,11 @@ void AlertManager::evaluateConditions(const std::vector<std::unique_ptr<Sensor>>
 
     // Low/High Tire Pressure
     std::ostringstream tireMsg;
-    if (tirePressure <= tireThreshold) {
+    if (tirePressure < tireThreshold) {
         tireMsg << std::fixed << std::setprecision(1) << "Pressure " << tirePressure << " PSI below " << tireThreshold << " PSI";
         checkCondition(true, AlertType::LOW_TIRE_PRESSURE, AlertSeverity::WARNING, tireMsg.str(), "LOW TIRE PRESSURE");
         checkCondition(false, AlertType::HIGH_TIRE_PRESSURE, AlertSeverity::WARNING, "", "");
-    } else if (tirePressure >= 45.0) {
+    } else if (tirePressure > 45.0) {
         tireMsg << std::fixed << std::setprecision(1) << "Pressure " << tirePressure << " PSI above 45.0 PSI";
         checkCondition(true, AlertType::HIGH_TIRE_PRESSURE, AlertSeverity::WARNING, tireMsg.str(), "HIGH TIRE PRESSURE");
         checkCondition(false, AlertType::LOW_TIRE_PRESSURE, AlertSeverity::WARNING, "", "");
@@ -211,7 +211,7 @@ void AlertManager::evaluateConditions(const std::vector<std::unique_ptr<Sensor>>
     // Overspeed
     std::ostringstream speedMsg;
     speedMsg << std::fixed << std::setprecision(1) << "Speed " << speed << " km/h exceeds limit " << speedLimit << " km/h";
-    checkCondition(speed >= speedLimit, AlertType::OVERSPEED, AlertSeverity::WARNING, speedMsg.str(), "OVERSPEED");
+    checkCondition(speed > speedLimit, AlertType::OVERSPEED, AlertSeverity::WARNING, speedMsg.str(), "OVERSPEED");
 
     // Door Open While Moving
     std::ostringstream doorMsg;
