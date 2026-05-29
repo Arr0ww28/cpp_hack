@@ -11,7 +11,7 @@ A production-grade, multi-threaded C++ Command Line Interface (CLI) application 
 
 ---
 
-## 🛠 Features and Modules
+## Features and Modules
 
 The system is highly modular and broken down into advanced core components:
 
@@ -53,7 +53,7 @@ A highly robust, asynchronous logging pipeline.
 
 ---
 
-## 🚀 How to Build and Run
+## How to Build and Run
 
 ### Prerequisites
 * A C++17 compatible compiler (e.g., GCC or Clang).
@@ -77,13 +77,13 @@ Upon launching, the interactive menu will appear. Use the numeric keys `1-8` to 
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 The system behavior is governed by `data/config.txt` and `profiles.json`. You can modify these files to adjust baseline thresholds, update intervals, and execution modes.
 
 ---
 
-## 🔍 Smart Log Viewer (`slog`)
+## Smart Log Viewer (`slog`)
 
 A custom bash script is provided to easily search and tail the output logs (`logs/vehicle_logs.txt`).
 
