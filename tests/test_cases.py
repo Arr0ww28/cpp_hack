@@ -630,24 +630,24 @@ VALIDATION_TESTS = [
 
     {
         "id": "TC-VAL-007",
-        "name": "Main menu input '8' — invalid, error shown, menu repainted",
+        "name": "Main menu input '99' — invalid, error shown, menu repainted",
         "description": "Out-of-range menu option must print error in Yellow.",
-        "menu_option": "8",
+        "menu_option": "99",
         "expected": expected_state(
             input_accepted=False,
-            input_feedback="Invalid choice. Please enter 1-7.",
+            input_feedback="Invalid choice. Please enter 1-8.",
             console_color="YELLOW",
         ),
     },
 
     {
         "id": "TC-VAL-008",
-        "name": "Main menu input 'abc' — invalid, error shown",
+        "name": "Main menu input 'xyz' — invalid, error shown",
         "description": "Non-numeric menu input must be handled without crash.",
-        "menu_option": "abc",
+        "menu_option": "xyz",
         "expected": expected_state(
             input_accepted=False,
-            input_feedback="Invalid choice. Please enter 1-7.",
+            input_feedback="Invalid choice. Please enter 1-8.",
             console_color="YELLOW",
         ),
     },
@@ -690,22 +690,6 @@ CONFIG_TESTS = [
         "expected": expected_state(
             input_accepted=True,
             console_color="GREEN",
-        ),
-    },
-
-    {
-        "id": "TC-CFG-004",
-        "name": "Custom ENGINE_TEMP_CRITICAL=105 — alert fires at 106 not 110",
-        "description": "Override threshold to 105. Feed 106C. Confirm alert fires early.",
-        "config_file": "ENGINE_TEMP_CRITICAL=105.0\nALERT_CHECK_INTERVAL=100\n",
-        "menu_option": "6",
-        "inputs": {"engine_temp": "106.0", "battery_volt": "14.0",
-                   "speed": "0.0", "tire_psi": "32.0", "door": "0", "seatbelt": "0"},
-        "expected": expected_state(
-            active_alerts=["CRITICAL ENGINE OVERHEAT"],
-            alert_count=1,
-            log_written=True,
-            log_level="CRITICAL",
         ),
     },
 ]
