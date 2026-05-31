@@ -1739,3 +1739,47 @@
 [2026-05-29 12:06:40] [CRITICAL] [HealthMonitor | health.cpp:checkHealth       ] WATCHDOG TIMEOUT: LoggerThread is unresponsive (no heartbeat for 2990ms)
 [2026-05-29 12:06:41] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 0.00 C | Battery Voltage: 0.00 V | Vehicle Speed: 0.00 km/h | Tire Pressure: 0.00 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
 [2026-05-29 12:06:41] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [CRITICAL] ECU FAULT - LoggerThread is unresponsive (no heartbeat for 2990ms)
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 20:36:51
+================================================================
+[2026-05-29 20:36:51] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 20:36:51] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 20:36:51] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 20:36:51] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 20:36:53] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 20:36:53] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 20:36:53] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 20:36:53] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 20:40:04] [CRITICAL] [HealthMonitor | health.cpp:checkHealth       ] WATCHDOG TIMEOUT: LoggerThread is unresponsive (no heartbeat for 2718ms)
+[2026-05-29 20:40:08] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [CRITICAL] ECU FAULT - LoggerThread is unresponsive (no heartbeat for 2718ms)
+[2026-05-29 20:40:58] [INFO    ] [Dashboard | dashboard.cpp:logSensorSnapshot  ] --- SENSOR SNAPSHOT --- | Engine Temperature: 0.00 C | Battery Voltage: 0.00 V | Vehicle Speed: 0.00 km/h | Tire Pressure: 0.00 PSI | Door Status: CLOSED | Seatbelt Status: LOCKED
+[2026-05-29 20:40:58] [INFO    ] [Dashboard | dashboard.cpp:logAlertSnapshot   ] --- ALERT SNAPSHOT --- Active: 1 | [CRITICAL] ECU FAULT - LoggerThread is unresponsive (no heartbeat for 2718ms)
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 20:57:06
+================================================================
+[2026-05-29 20:57:06] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 20:57:06] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 20:57:06] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 20:57:06] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 20:57:08] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 20:57:08] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 20:57:08] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 20:57:08] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+
+================================================================
+  Vehicle Health Monitor — Log Session Started
+  Timestamp: 2026-05-29 21:28:06
+================================================================
+[2026-05-29 21:28:06] [INFO    ] [Main | main.cpp:main                         ] === Smart Cabin & Vehicle Health Monitor Starting ===
+[2026-05-29 21:28:06] [INFO    ] [Main | main.cpp:main                         ] 6 sensors initialized
+[2026-05-29 21:28:06] [INFO    ] [Main | main.cpp:main                         ] Configuration loaded from data/config.txt
+[2026-05-29 21:28:06] [INFO    ] [Main | main.cpp:main                         ] AlertManager, VehicleStatistics, Dashboard initialized
+[2026-05-29 21:28:08] [INFO    ] [MonitorThread | main.cpp:operator()          ] Alert monitoring thread started
+[2026-05-29 21:28:08] [INFO    ] [LoggerThread | main.cpp:operator()           ] Logger processing thread started
+[2026-05-29 21:28:08] [INFO    ] [WatchdogThread | main.cpp:operator()         ] Health monitor thread started
+[2026-05-29 21:28:08] [INFO    ] [SimThread | main.cpp:operator()              ] Auto-simulation thread started (initially OFF)
+[2026-05-29 21:37:13] [INFO    ] [Main | main.cpp:main                         ] === System Shutdown Initiated ===

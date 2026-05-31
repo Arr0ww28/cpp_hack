@@ -142,11 +142,11 @@ def build_test_input(test):
         lines.extend(["", "7"])
 
     # ---- Dashboard view tests (option 1-4) ----
-    elif menu_option in ("1", "2", "3", "4"):
+    elif menu_option in ("1", "2", "3", "4", "8"):
         lines.extend([menu_option, "", "7"])
 
     # ---- Invalid menu option tests ----
-    elif menu_option and menu_option not in "1234567":
+    elif menu_option and menu_option not in "12345678":
         lines.extend([menu_option, "7"])
 
     # ---- Logger-only / startup tests ----
@@ -307,7 +307,7 @@ def weave_inputs_into_stdout(stdout, input_str):
         input_lines.pop()
         
     prompts = [
-        "Enter choice [1-7]:",
+        "Enter choice [1-8]:",
         "Engine Temperature (C):",
         "Battery Voltage (V):",
         "Vehicle Speed (km/h):",
@@ -597,7 +597,7 @@ def compile_project():
     # Fallback: direct g++ compilation
     src_files = [
         "src/sensor.cpp", "src/logger.cpp", "src/alert.cpp",
-        "src/dashboard.cpp", "src/main.cpp",
+        "src/dashboard.cpp", "src/health.cpp", "src/profile.cpp", "src/main.cpp",
     ]
     cmd = [
         "g++", "-std=c++17", "-Wall", "-Wextra", "-Wpedantic",

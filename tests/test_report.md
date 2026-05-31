@@ -1,7 +1,7 @@
 # Smart Cabin & Vehicle Health Monitor — Test Report
 
-**Execution Time:** 2026-05-29 10:40:51  
-**Total: 41/41 PASSED** | **0 FAILED**
+**Execution Time:** 2026-05-31 10:35:26  
+**Total: 40/40 PASSED** | **0 FAILED**
 
 ## 📝 Executive Summary
 
@@ -40,14 +40,13 @@
 | 31 | TC-VAL-004 | Empty input (Enter) — sensor retains previous value | ✅ PASS |
 | 32 | TC-VAL-005 | Door input '2' — invalid discrete value, rejected | ✅ PASS |
 | 33 | TC-VAL-006 | Seatbelt input 'yes' — non-integer rejected | ✅ PASS |
-| 34 | TC-VAL-007 | Main menu input '8' — invalid, error shown, menu repainted | ✅ PASS |
-| 35 | TC-VAL-008 | Main menu input 'abc' — invalid, error shown | ✅ PASS |
+| 34 | TC-VAL-007 | Main menu input '99' — invalid, error shown, menu repainted | ✅ PASS |
+| 35 | TC-VAL-008 | Main menu input 'xyz' — invalid, error shown | ✅ PASS |
 | 36 | TC-CFG-001 | Valid config.txt loaded — thresholds override defaults | ✅ PASS |
 | 37 | TC-CFG-002 | config.txt missing — warn and use defaults | ✅ PASS |
 | 38 | TC-CFG-003 | config.txt with comments (#) and whitespace — parsed correct | ✅ PASS |
-| 39 | TC-CFG-004 | Custom ENGINE_TEMP_CRITICAL=105 — alert fires at 106 not 110 | ✅ PASS |
-| 40 | TC-DSH-001 | Dashboard Option 1 — all 6 sensor rows present | ✅ PASS |
-| 41 | TC-DSH-002 | Shutdown summary — sensor count and alert count displayed | ✅ PASS |
+| 39 | TC-DSH-001 | Dashboard Option 1 — all 6 sensor rows present | ✅ PASS |
+| 40 | TC-DSH-002 | Shutdown summary — sensor count and alert count displayed | ✅ PASS |
 
 ---
 
@@ -138,14 +137,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -172,12 +173,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:23             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -196,10 +198,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                     
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter
 ```
 </details>
 
@@ -266,14 +265,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     109.9
 [OK] Value accepted.
@@ -300,12 +301,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:23             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -324,10 +326,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                     
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter
 ```
 </details>
 
@@ -394,14 +393,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     110.0
 [OK] Value accepted.
@@ -428,12 +429,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:22             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -452,10 +454,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                     
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter
 ```
 </details>
 
@@ -530,14 +529,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -564,12 +565,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:23             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -587,11 +589,7 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
++============================================
 ```
 </details>
 
@@ -658,14 +656,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -693,12 +693,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:23             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -717,9 +718,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===================================================
+Press [R] to Refresh, [Q] t
 ```
 </details>
 
@@ -786,14 +785,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -821,12 +822,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:23             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -845,9 +847,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+====================================================
+Press [R] to Refresh, [Q] to
 ```
 </details>
 
@@ -922,14 +922,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -957,12 +959,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:23             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -981,9 +984,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+================================
+Press [R
 ```
 </details>
 
@@ -1050,14 +1051,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1084,12 +1087,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:22             |
+|             [LIVE]  Updated: 2026-05-31 10:35:03             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -1108,10 +1112,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                    
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Ente
 ```
 </details>
 
@@ -1178,14 +1179,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1212,12 +1215,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:26             |
+|             [LIVE]  Updated: 2026-05-31 10:35:07             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -1236,10 +1240,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                    
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Ente
 ```
 </details>
 
@@ -1314,14 +1315,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1348,12 +1351,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:27             |
+|             [LIVE]  Updated: 2026-05-31 10:35:07             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -1366,16 +1370,12 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | ACTIVE ALERTS (1)                                         |
 +--------------------------------------------------------------+
-| [WARNING] OVERSPEED - Speed 121.0 km/h exceeds 120.0 km/h   |
+| [WARNING] OVERSPEED - Speed 121.0 km/h exceeds limit 120.0  |
+|  km/h                                                       |
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-| 
++===========================================
 ```
 </details>
 
@@ -1442,14 +1442,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1476,12 +1478,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:28             |
+|             [LIVE]  Updated: 2026-05-31 10:35:08             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -1500,10 +1503,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                      
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter]
 ```
 </details>
 
@@ -1578,14 +1578,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1612,12 +1614,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:28             |
+|             [LIVE]  Updated: 2026-05-31 10:35:08             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -1635,11 +1638,7 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+====
++=============================================
 ```
 </details>
 
@@ -1698,14 +1697,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1733,33 +1734,32 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:29             |
+|             [LIVE]  Updated: 2026-05-31 10:35:09             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
 | Engine Temperature    | 85.00 C       | [NORMAL]               |
 | Battery Voltage       | 14.00 V       | [NORMAL]               |
 | Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
-| Tire Pressure         | 45.00 PSI     | [WARNING]              |
+| Tire Pressure         | 45.00 PSI     | [NORMAL]               |
 | Door Status           | CLOSED        | [NORMAL]               |
 | Seatbelt Status       | LOCKED        | [NORMAL]               |
 +--------------------------------------------------------------+
-| ACTIVE ALERTS (1)                                         |
+| ACTIVE ALERTS (0)                                         |
 +--------------------------------------------------------------+
-| [WARNING] HIGH TIRE PRESSURE - Pressure 45.0 PSI above 40.  |
-| 0 PSI                                                       |
+| No active alerts â€” all systems nominal |
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN &
+Press [R] to Refresh
 ```
 </details>
 
@@ -1826,14 +1826,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1860,12 +1862,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:29             |
+|             [LIVE]  Updated: 2026-05-31 10:35:09             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -1884,10 +1887,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                      
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter]
 ```
 </details>
 
@@ -1954,14 +1954,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -1988,12 +1990,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:29             |
+|             [LIVE]  Updated: 2026-05-31 10:35:09             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2012,10 +2015,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                     
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter
 ```
 </details>
 
@@ -2090,14 +2090,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -2124,12 +2126,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:28             |
+|             [LIVE]  Updated: 2026-05-31 10:35:09             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2142,16 +2145,12 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | ACTIVE ALERTS (1)                                         |
 +--------------------------------------------------------------+
-| [CRITICAL] DOOR OPEN - Door OPEN at 10.1 km/h (threshold:   |
-| 10.0 km/h)                                                  |
+| [CRITICAL] DOOR OPEN - Door OPEN at 10.1 km/h (Limit: 10.0  |
+| )                                                           |
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
++============================================
 ```
 </details>
 
@@ -2218,14 +2217,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -2252,12 +2253,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:31             |
+|             [LIVE]  Updated: 2026-05-31 10:35:12             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2270,16 +2272,12 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | ACTIVE ALERTS (1)                                         |
 +--------------------------------------------------------------+
-| [CRITICAL] DOOR OPEN - Door OPEN at 50.0 km/h (threshold:   |
-| 10.0 km/h)                                                  |
+| [CRITICAL] DOOR OPEN - Door OPEN at 50.0 km/h (Limit: 10.0  |
+| )                                                           |
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
++============================================
 ```
 </details>
 
@@ -2346,14 +2344,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -2380,12 +2380,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:32             |
+|             [LIVE]  Updated: 2026-05-31 10:35:12             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2404,10 +2405,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                      
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter]
 ```
 </details>
 
@@ -2482,14 +2480,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -2516,12 +2516,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:33             |
+|             [LIVE]  Updated: 2026-05-31 10:35:12             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2534,16 +2535,12 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | ACTIVE ALERTS (1)                                         |
 +--------------------------------------------------------------+
-| [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED while movin  |
-| g at 30.0 km/h                                              |
+| [WARNING] SEATBELT WARNING - Seatbelt UNLOCKED at 30.0 km/  |
+| h                                                           |
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
++============================================
 ```
 </details>
 
@@ -2610,14 +2607,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -2644,12 +2643,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:33             |
+|             [LIVE]  Updated: 2026-05-31 10:35:13             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2668,10 +2668,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                    
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Ente
 ```
 </details>
 
@@ -2766,14 +2763,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -2801,12 +2800,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:34             |
+|             [LIVE]  Updated: 2026-05-31 10:35:14             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2821,13 +2821,10 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
 | 10.0 C                                                      |
-| [WARNING] LOW BATTERY - Voltage 8.0 V below 11.0 V          |
+| [CRITICAL] DOOR OPEN - Door OPEN at 130.0 km/h (Limit: 10.  |
+| 0)                                                          |
 | [WARNING] LOW TIRE PRESSURE - Pressure 20.0 PSI below 25.0  |
-|  PSI                                                        |
-| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds 120.0 km/h   |
-| [CRITICAL] DOOR OPEN - Door OPEN at 130.0 km/h (threshold:  |
-|  10.0 km/h)                                                 |
-| [WARN
+|  PSI      
 ```
 </details>
 
@@ -2894,14 +2891,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -2928,12 +2927,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:34             |
+|             [LIVE]  Updated: 2026-05-31 10:35:14             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -2951,11 +2951,7 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
++============================================
 ```
 </details>
 
@@ -3024,14 +3020,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -3058,14 +3056,16 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     90.0
 [OK] Value accepted.
@@ -3091,12 +3091,7 @@ Values updated. Returning to menu...
 |   [4] View Statistics     (min / max / avg per sensor)       |
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
-|   [7] Exit                         (graceful shutdown)       |
-|                                                              |
-+==============================================================+
-Enter choice [1-7]: 1
-+==============================================================+
-|             SMART CAB
+|   [7] Exit                         (graceful shutdown)     
 ```
 </details>
 
@@ -3165,14 +3160,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -3199,12 +3196,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:34             |
+|             [LIVE]  Updated: 2026-05-31 10:35:14             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -3219,14 +3217,10 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
 | 10.0 C                                                      |
-| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds 120.0 km/h   |
+| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds limit 120.0  |
+|  km/h                                                       |
 +--------------------------------------------------------------+
-+==============================================================+
-|               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|  
++============================================
 ```
 </details>
 
@@ -3295,14 +3289,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -3329,12 +3325,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:35             |
+|             [LIVE]  Updated: 2026-05-31 10:35:17             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -3352,11 +3349,7 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 +==============================================================+
 |               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
++============================================
 ```
 </details>
 
@@ -3425,14 +3418,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -3459,14 +3454,16 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -3492,12 +3489,7 @@ Values updated. Returning to menu...
 |   [4] View Statistics     (min / max / avg per sensor)       |
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
-|   [7] Exit                         (graceful shutdown)       |
-|                                                              |
-+==============================================================+
-Enter choice [1-7]: 1
-+==============================================================+
-|             SMART CA
+|   [7] Exit                         (graceful shutdown)    
 ```
 </details>
 
@@ -3558,14 +3550,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     115.0
 [OK] Value accepted.
@@ -3593,12 +3587,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:37             |
+|             [LIVE]  Updated: 2026-05-31 10:35:18             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -3613,13 +3608,10 @@ Enter choice [1-7]: 1
 +--------------------------------------------------------------+
 | [CRITICAL] ENGINE OVERHEAT - Temperature 115.0 C exceeds 1  |
 | 10.0 C                                                      |
-| [WARNING] LOW BATTERY - Voltage 8.0 V below 11.0 V          |
+| [CRITICAL] DOOR OPEN - Door OPEN at 130.0 km/h (Limit: 10.  |
+| 0)                                                          |
 | [WARNING] LOW TIRE PRESSURE - Pressure 20.0 PSI below 25.0  |
-|  PSI                                                        |
-| [WARNING] OVERSPEED - Speed 130.0 km/h exceeds 120.0 km/h   |
-| [CRITICAL] DOOR OPEN - Door OPEN at 130.0 km/h (threshold:  |
-|  10.0 km/h)                                                 |
-| [WARN
+|  PSI      
 ```
 </details>
 
@@ -3673,14 +3665,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     abc
 Invalid numeric input. Please try again.
@@ -3709,9 +3703,10 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 
+Enter choice [1-8]: 
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -3723,18 +3718,15 @@ Enter choice [1-7]:
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 2
+Enter choice [1-8]: 2
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|            [ALERTS]  Updated: 2026-05-29 10:40:37            |
+|            [ALERTS]  Updated: 2026-05-31 10:35:18            |
 +==============================================================+
-| ACTIVE ALERTS (2)                                         |
-+--------------------------------------------------------------+
-| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
-| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
-| PSI                                     
+| ACTIVE ALERTS (2)                          
 ```
 </details>
 
@@ -3788,14 +3780,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     
 (skipped, keeping current value)
@@ -3824,9 +3818,10 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 
+Enter choice [1-8]: 
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -3838,18 +3833,15 @@ Enter choice [1-7]:
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 2
+Enter choice [1-8]: 2
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|            [ALERTS]  Updated: 2026-05-29 10:40:39            |
+|            [ALERTS]  Updated: 2026-05-31 10:35:18            |
 +==============================================================+
-| ACTIVE ALERTS (2)                                         |
-+--------------------------------------------------------------+
-| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
-| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
-| PSI   
+| ACTIVE AL
 ```
 </details>
 
@@ -3903,14 +3895,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     
 (skipped, keeping current value)
@@ -3939,9 +3933,10 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 
+Enter choice [1-8]: 
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -3953,18 +3948,15 @@ Enter choice [1-7]:
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 2
+Enter choice [1-8]: 2
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|            [ALERTS]  Updated: 2026-05-29 10:40:39            |
+|            [ALERTS]  Updated: 2026-05-31 10:35:18            |
 +==============================================================+
-| ACTIVE ALERTS (2)                                         |
-+--------------------------------------------------------------+
-| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
-| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
-| PSI    
+| ACTIVE ALE
 ```
 </details>
 
@@ -4018,14 +4010,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     
 (skipped, keeping current value)
@@ -4052,12 +4046,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:39             |
+|             [LIVE]  Updated: 2026-05-31 10:35:18             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -4074,11 +4069,7 @@ Enter choice [1-7]: 1
 | [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
 | PSI                                                         |
 +--------------------------------------------------------------+
-+==============================================================+
-|               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+===============
++========================================================
 ```
 </details>
 
@@ -4132,14 +4123,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     
 (skipped, keeping current value)
@@ -4168,9 +4161,10 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 
+Enter choice [1-8]: 
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -4182,17 +4176,14 @@ Enter choice [1-7]:
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 2
+Enter choice [1-8]: 2
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|            [ALERTS]  Updated: 2026-05-29 10:40:39            |
-+==============================================================+
-| ACTIVE ALERTS (2)                                         |
-+--------------------------------------------------------------+
-| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
-| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI bel
+|            [ALERTS]  Updated: 2026-05-31 10:35:19            |
++=======================================================
 ```
 </details>
 
@@ -4246,14 +4237,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     
 (skipped, keeping current value)
@@ -4282,9 +4275,10 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 
+Enter choice [1-8]: 
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -4296,24 +4290,21 @@ Enter choice [1-7]:
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 2
+Enter choice [1-8]: 2
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|            [ALERTS]  Updated: 2026-05-29 10:40:40            |
+|            [ALERTS]  Updated: 2026-05-31 10:35:21            |
 +==============================================================+
-| ACTIVE ALERTS (2)                                         |
-+--------------------------------------------------------------+
-| [WARNING] LOW BATTERY - Voltage 0.0 V below 11.0 V          |
-| [WARNING] LOW TIRE PRESSURE - Pressure 0.0 PSI below 25.0   |
-| PSI                     
+| ACTIVE ALERTS (2)          
 ```
 </details>
 
 ---
 
-### ✅ PASS TC-VAL-007: Main menu input '8' — invalid, error shown, menu repainted
+### ✅ PASS TC-VAL-007: Main menu input '99' — invalid, error shown, menu repainted
 
 > Out-of-range menu option must print error in Yellow.
 
@@ -4354,10 +4345,11 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]:   8
-Invalid choice. Please enter 1-7.
+Enter choice [1-8]:   99
+Invalid choice. Please enter a single digit between 1 and 8.
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -4369,16 +4361,17 @@ Invalid choice. Please enter 1-7.
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 7
+Enter choice [1-8]: 7
 
 +==============================================================+
 |                    SYSTEM SHUTDOWN COMPLETE                   |
 +==============================================================+
   Sensors active at shutdown : 6
   Total alerts generated     : 0
-  Total events logged        : 7
+  Total events logged        : 9
   Log file                   : logs/vehicle_logs.txt
   All resources released. Goodbye.
 
@@ -4388,7 +4381,7 @@ Enter choice [1-7]: 7
 
 ---
 
-### ✅ PASS TC-VAL-008: Main menu input 'abc' — invalid, error shown
+### ✅ PASS TC-VAL-008: Main menu input 'xyz' — invalid, error shown
 
 > Non-numeric menu input must be handled without crash.
 
@@ -4429,10 +4422,11 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]:   abc
-Invalid choice. Please enter 1-7.
+Enter choice [1-8]:   xyz
+Invalid choice. Please enter a single digit between 1 and 8.
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
 +==============================================================+
@@ -4444,16 +4438,17 @@ Invalid choice. Please enter 1-7.
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 7
+Enter choice [1-8]: 7
 
 +==============================================================+
 |                    SYSTEM SHUTDOWN COMPLETE                   |
 +==============================================================+
   Sensors active at shutdown : 6
   Total alerts generated     : 0
-  Total events logged        : 7
+  Total events logged        : 9
   Log file                   : logs/vehicle_logs.txt
   All resources released. Goodbye.
 
@@ -4502,16 +4497,17 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 7
+Enter choice [1-8]: 7
 
 +==============================================================+
 |                    SYSTEM SHUTDOWN COMPLETE                   |
 +==============================================================+
   Sensors active at shutdown : 6
   Total alerts generated     : 0
-  Total events logged        : 8
+  Total events logged        : 5
   Log file                   : logs/vehicle_logs.txt
   All resources released. Goodbye.
 
@@ -4562,9 +4558,20 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 7
+Enter choice [1-8]: 7
+
++==============================================================+
+|                    SYSTEM SHUTDOWN COMPLETE                   |
++==============================================================+
+  Sensors active at shutdown : 6
+  Total alerts generated     : 0
+  Total events logged        : 11
+  Log file                   : logs/vehicle_logs.txt
+  All resources released. Goodbye.
+
 
 ```
 </details>
@@ -4610,148 +4617,21 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 7
+Enter choice [1-8]: 7
 
 +==============================================================+
 |                    SYSTEM SHUTDOWN COMPLETE                   |
 +==============================================================+
   Sensors active at shutdown : 6
   Total alerts generated     : 0
-  Total events logged        : 5
+  Total events logged        : 10
   Log file                   : logs/vehicle_logs.txt
   All resources released. Goodbye.
 
 
-```
-</details>
-
----
-
-### ✅ PASS TC-CFG-004: Custom ENGINE_TEMP_CRITICAL=105 — alert fires at 106 not 110
-
-> Override threshold to 105. Feed 106C. Confirm alert fires early.
-
-**Inputs:**
-```json
-{
-  "engine_temp": "106.0",
-  "battery_volt": "14.0",
-  "speed": "0.0",
-  "tire_psi": "32.0",
-  "door": "0",
-  "seatbelt": "0"
-}
-```
-
-<table><tr><td width="50%" valign="top">
-
-**Expected State:**
-
-<pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; line-height: 1.4; margin: 0; white-space: pre-wrap; word-break: break-all;">{
-  "active_alerts": {
-    "[CRITICAL] ENGINE OVERHEAT": &quot;CRITICAL&quot;
-  },
-  "alert_count": 1,
-  "input_accepted": true,
-  "system_running": true
-}</pre>
-</td><td width="50%" valign="top">
-
-**Actual State:**
-
-<pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; line-height: 1.4; margin: 0; white-space: pre-wrap; word-break: break-all;">{
-  "active_alerts": {
-    "[CRITICAL] ENGINE OVERHEAT": &quot;CRITICAL&quot;
-  },
-  "alert_count": 1,
-  "input_accepted": true,
-  "system_running": true
-}</pre>
-</td></tr></table>
-
-<details><summary>Raw stdout (truncated)</summary>
-
-```
-[OK] Configuration loaded from data/config.txt
-[OK] 6 sensors initialized.
-[OK] All modules initialized.
-
-Starting system in 2 seconds...
-+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                                                              |
-|   [1] Live Dashboard      (auto-refreshing sensor view)      |
-|   [2] View Active Alerts     (current warnings/criticals     |
-|   [3] View Alert History     (last 20 alerts with time)      |
-|   [4] View Statistics     (min / max / avg per sensor)       |
-|   [5] Search Event Log     (filter by severity/keyword)      |
-|   [6] Manual Sensor Input        (set values for debug)      |
-|   [7] Exit                         (graceful shutdown)       |
-|                                                              |
-+==============================================================+
-Enter choice [1-7]: 6
-
-+----------------------------------------------+
-|            MANUAL SENSOR INPUT               |
-+----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
-
-  Engine Temperature (C):     106.0
-[OK] Value accepted.
-  Battery Voltage (V):     14.0
-[OK] Value accepted.
-  Vehicle Speed (km/h):     0.0
-[OK] Value accepted.
-  Tire Pressure (PSI):     32.0
-[OK] Value accepted.
-  Door Status [0=CLOSED, 1=OPEN]:     0
-[OK] Value accepted.
-  Seatbelt Status [0=LOCKED, 1=UNLOCKED]:     0
-[OK] Value accepted.
-
-Values updated. Returning to menu...
-+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                                                              |
-|   [1] Live Dashboard      (auto-refreshing sensor view)      |
-|   [2] View Active Alerts     (current warnings/criticals     |
-|   [3] View Alert History     (last 20 alerts with time)      |
-|   [4] View Statistics     (min / max / avg per sensor)       |
-|   [5] Search Event Log     (filter by severity/keyword)      |
-|   [6] Manual Sensor Input        (set values for debug)      |
-|   [7] Exit                         (graceful shutdown)       |
-|                                                              |
-+==============================================================+
-Enter choice [1-7]: 1
-+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:44             |
-+==============================================================+
-| SENSOR                | VALUE         | STATUS                 |
-+--------------------------------------------------------------+
-| Engine Temperature    | 106.00 C      | [CRITICAL]             |
-| Battery Voltage       | 14.00 V       | [NORMAL]               |
-| Vehicle Speed         | 0.00 km/h     | [NORMAL]               |
-| Tire Pressure         | 32.00 PSI     | [NORMAL]               |
-| Door Status           | CLOSED        | [NORMAL]               |
-| Seatbelt Status       | LOCKED        | [NORMAL]               |
-+--------------------------------------------------------------+
-| ACTIVE ALERTS (1)                                         |
-+--------------------------------------------------------------+
-| [CRITICAL] ENGINE OVERHEAT - Temperature 106.0 C exceeds 1  |
-| 05.0 C                                                      |
-+--------------------------------------------------------------+
-+==============================================================+
-|               Press [Enter] to return to menu                |
-+==============================================================+
-
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+===
 ```
 </details>
 
@@ -4826,14 +4706,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -4860,12 +4742,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:45             |
+|             [LIVE]  Updated: 2026-05-31 10:35:23             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -4884,10 +4767,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                     
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter
 ```
 </details>
 
@@ -4944,14 +4824,16 @@ Starting system in 2 seconds...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 6
+Enter choice [1-8]: 6
 
 +----------------------------------------------+
 |            MANUAL SENSOR INPUT               |
 +----------------------------------------------+
-(Enter a value for each sensor. Press Enter to skip.)
+(Enter a value for each sensor. Press Enter to skip)
+Type 'S' and press Enter to toggle Auto-Simulation thread
 
   Engine Temperature (C):     85.0
 [OK] Value accepted.
@@ -4978,12 +4860,13 @@ Values updated. Returning to menu...
 |   [5] Search Event Log     (filter by severity/keyword)      |
 |   [6] Manual Sensor Input        (set values for debug)      |
 |   [7] Exit                         (graceful shutdown)       |
+|   [8] Manage Driver Profiles       (set profiles)            |
 |                                                              |
 +==============================================================+
-Enter choice [1-7]: 1
+Enter choice [1-8]: 1
 +==============================================================+
 |             SMART CABIN & VEHICLE HEALTH MONITOR             |
-|             [LIVE]  Updated: 2026-05-29 10:40:45             |
+|             [LIVE]  Updated: 2026-05-31 10:35:24             |
 +==============================================================+
 | SENSOR                | VALUE         | STATUS                 |
 +--------------------------------------------------------------+
@@ -5002,10 +4885,7 @@ Enter choice [1-7]: 1
 |               Press [Enter] to return to menu                |
 +==============================================================+
 
-Press Enter to return to menu...+==============================================================+
-|             SMART CABIN & VEHICLE HEALTH MONITOR             |
-+==============================================================+
-|                      
+Press [R] to Refresh, [Q] to Toggle Auto-Simulation, or [Enter]
 ```
 </details>
 
